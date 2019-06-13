@@ -1,6 +1,6 @@
 package ClientServer;
 
-import Domain.Operator;
+import model.Operator;
 
 import java.io.Serializable;
 

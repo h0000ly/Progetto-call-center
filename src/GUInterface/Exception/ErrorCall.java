@@ -7,6 +7,5 @@ public class ErrorCall extends MasterClassGUIException {
     private static final String TITLE="Error";
     public ErrorCall(){
         super(TITLE,TOSHOW);
-
    }
 }

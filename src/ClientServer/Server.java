@@ -2,8 +2,8 @@ package ClientServer;
 
 import DBOperation.DBOperationDAO;
 import DBOperator.DBOperatorDAO;
-import Domain.Operation;
-import Domain.Operator;
+import model.Operation;
+import model.Operator;
 
 import java.util.ArrayList;
 

@@ -4,7 +4,6 @@ import ClientServer.MessageServer;
 import ClientServer.MessageType;
 import ClientServer.ServerInfo;
 import GUInterface.Exception.ErrorCall;
-import GUInterface.Exception.NumberToCallNotFound;
 
 import javax.swing.*;
 import java.awt.*;
@@ -40,13 +39,13 @@ public class CallGUI extends JFrame implements ActionListener {
     private JButton buttonEC;
     private JButton buttonDel;
     private ArrayList<String> inputString;
-    private String telNumber;
+    private String telNumberCalled;
     private JPanel jPAll;
     private JLabel label1;
-    private JPanel panel;
     private JPanel topPanel;
     private ShowOption showOption;
     private JButton loginRegisterButton;
+
 
     public CallGUI(){
         inputString=new ArrayList<>();
@@ -190,7 +189,7 @@ public class CallGUI extends JFrame implements ActionListener {
                     ErrorCall eGUI1 = new ErrorCall();
                     eGUI1.setVisible(true);
                 } else {
-                    telNumber = text1.getText();
+                    telNumberCalled = text1.getText();
                     text1.setText("");
                     inputString.clear();
                     calling = true;
@@ -219,7 +218,7 @@ public class CallGUI extends JFrame implements ActionListener {
             socket = new Socket(ServerInfo.IP, ServerInfo.PORT);
             ObjectOutputStream os = new ObjectOutputStream(socket.getOutputStream());
             ObjectInputStream is = new ObjectInputStream(socket.getInputStream());
-            os.writeObject(new MessageServer(MessageType.RETURNAVAILABLECHOICES, telNumber,toTest));
+            os.writeObject(new MessageServer(MessageType.RETURNAVAILABLECHOICES, telNumberCalled,toTest));
             options = (ArrayList<String>)is.readObject();
             showOptions(options);
         } catch (IOException | ClassNotFoundException ex) {
@@ -242,7 +241,7 @@ public class CallGUI extends JFrame implements ActionListener {
                 // INPUT. WITHOUT IT EVERYONE CAN CALL A NUMBER AND BECOME AN OPERATOR OF THAT NUMBER
 
                 //if(!arrayList.isEmpty()) {
-                    RegisterLogin a = new RegisterLogin(telNumber);
+                    RegisterLogin a = new RegisterLogin(telNumberCalled);
                     a.setVisible(true);
                     showOption.setVisible(false);
                     closeWindow();

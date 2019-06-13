@@ -1,6 +1,6 @@
 package DBOperation;
 
-import Domain.Operation;
+import model.Operation;
 import GUInterface.Exception.DBOperationEmpty;
 import GUInterface.Exception.OperationNotFound;
 

@@ -6,12 +6,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ErrorRegisterLoginGUI extends JFrame implements ActionListener {
-    private int n;
+    private ExceptionEnum exceptionEnum;
     private JLabel errLabel;
     private JPanel buttonPanel;
     private String forTheAllign="       ";
-    public ErrorRegisterLoginGUI(int n){
-        this.n=n;
+    public ErrorRegisterLoginGUI(ExceptionEnum exceptionEnum){
+        this.exceptionEnum=exceptionEnum;
         initComponents();
     }
     private void initComponents(){
@@ -22,27 +22,8 @@ public class ErrorRegisterLoginGUI extends JFrame implements ActionListener {
 
         this.setSize(400,150);
         this.setLayout(new GridLayout(2,1));
-        switch(n){
 
-            case 1:
-                errLabel=new JLabel(forTheAllign+"Minimum length of 8 is required");
-                break;
-
-            case 2:
-                errLabel=new JLabel(forTheAllign+"The password must contain an uppercase letter");
-                break;
-            case 3:
-                errLabel=new JLabel(forTheAllign+"The password must contain a lowercase letter");
-                break;
-            case 4:
-                errLabel=new JLabel(forTheAllign+"The password must contain a number");
-                break;
-            case 5:
-                errLabel=new JLabel(forTheAllign+"The space character is not allowed");
-            default:
-                break;
-        }
-
+        errLabel=new JLabel(forTheAllign+exceptionEnum.getValue());
         this.add(errLabel);
         JButton OKButton=new JButton("OK");
         OKButton.addActionListener(this);

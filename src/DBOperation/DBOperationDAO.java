@@ -1,6 +1,6 @@
 package DBOperation;
 
-import Domain.Operation;
+import model.Operation;
 
 import java.sql.Connection;
 import java.util.ArrayList;

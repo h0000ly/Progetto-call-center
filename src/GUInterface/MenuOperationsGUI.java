@@ -3,7 +3,7 @@ package GUInterface;
 import ClientServer.MessageServer;
 import ClientServer.MessageType;
 import ClientServer.ServerInfo;
-import Domain.Operator;
+import model.Operator;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -109,7 +109,7 @@ public class MenuOperationsGUI extends JFrame {
         jB8.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                updateStatus();
+                //updateStatus();
                 close();
             }
         });
@@ -130,7 +130,7 @@ public class MenuOperationsGUI extends JFrame {
             @Override
             public void windowClosed(WindowEvent e) {
                 updateStatus();
-                close();
+                //close();
                 CallGUI newCall=new CallGUI();
                 newCall.setVisible(true);
             }

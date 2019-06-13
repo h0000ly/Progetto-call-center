@@ -1,6 +1,6 @@
 package DBOperator;
 
-import Domain.Operator;
+import model.Operator;
 
 import java.sql.Connection;
 

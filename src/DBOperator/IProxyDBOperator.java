@@ -1,9 +1,7 @@
 package DBOperator;
 
 
-import Domain.Operator;
-
-import java.util.ArrayList;
+import model.Operator;
 
 public interface IProxyDBOperator {
 

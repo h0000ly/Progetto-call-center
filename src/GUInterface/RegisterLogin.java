@@ -3,11 +3,8 @@ package GUInterface;
 import ClientServer.MessageServer;
 import ClientServer.MessageType;
 import ClientServer.ServerInfo;
-import Domain.Operator;
-import GUInterface.Exception.ErrorRegisterLoginGUI;
-import GUInterface.Exception.OperatorAlreadyLogged;
-import GUInterface.Exception.OperatorAlreadyUsed;
-import GUInterface.Exception.OperatorNotFound;
+import GUInterface.Exception.*;
+import model.Operator;
 
 import javax.swing.*;
 import java.awt.*;
@@ -156,23 +153,23 @@ public class RegisterLogin extends JFrame implements ActionListener {
             }
         }
         if(!isUpper){
-            errA=new ErrorRegisterLoginGUI(2);
+            errA=new ErrorRegisterLoginGUI(ExceptionEnum.UPPER);
             errA.setVisible(true);
         }
         if(!isNumber){
-            errA=new ErrorRegisterLoginGUI(4);
+            errA=new ErrorRegisterLoginGUI(ExceptionEnum.NUMBER);
             errA.setVisible(true);
         }
         if(!isLower){
-            errA=new ErrorRegisterLoginGUI(3);
+            errA=new ErrorRegisterLoginGUI(ExceptionEnum.LOWER);
             errA.setVisible(true);
         }
         if(isSpace){
-            errA=new ErrorRegisterLoginGUI(5);
+            errA=new ErrorRegisterLoginGUI(ExceptionEnum.SPACE);
             errA.setVisible(true);
         }
         if(isShort){
-            errA=new ErrorRegisterLoginGUI(1);
+            errA=new ErrorRegisterLoginGUI(ExceptionEnum.SHORT);
             errA.setVisible(true);
         }
         if(isNumber&&isLower&&!isSpace&&!isShort&&isUpper){
@@ -182,3 +179,4 @@ public class RegisterLogin extends JFrame implements ActionListener {
     }
 
 }
+

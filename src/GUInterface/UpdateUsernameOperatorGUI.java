@@ -5,6 +5,7 @@ import ClientServer.MessageType;
 import ClientServer.ServerInfo;
 import GUInterface.Exception.EmptyField;
 import GUInterface.Exception.ErrorRegisterLoginGUI;
+import GUInterface.Exception.ExceptionEnum;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -52,7 +53,7 @@ public class UpdateUsernameOperatorGUI extends JFrame {
                     end();
                     }
                     else{
-                        ErrorRegisterLoginGUI error=new ErrorRegisterLoginGUI(1);
+                        ErrorRegisterLoginGUI error=new ErrorRegisterLoginGUI(ExceptionEnum.SHORT);
                         error.setVisible(true);
                     }
                 }
