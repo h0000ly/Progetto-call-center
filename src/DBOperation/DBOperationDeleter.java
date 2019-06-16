@@ -1,16 +1,18 @@
 package DBOperation;
 
+import dataHistory.DataWriter;
 import model.Operation;
 import GUInterface.Exception.DBOperationEmpty;
 import GUInterface.Exception.OperationNotFound;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 
 public class DBOperationDeleter {
-
+    private DataWriter data;
     /**
      * Remove the Operation identified by id and number in the database of the operations
      *
@@ -18,8 +20,9 @@ public class DBOperationDeleter {
      * @param id
      * @param number
      */
-    void removeOperation(Connection connection, String id, String number) {
+    void removeOperation(Connection connection, String numCalling,String id, String number) {
         boolean found=false;
+        data=new DataWriter(numCalling);
         DBOperationReader dBR=new DBOperationReader();
         if(dBR.retrieveAllTheOperations(connection,number).isEmpty()){
             DBOperationEmpty d=new DBOperationEmpty();
@@ -41,8 +44,11 @@ public class DBOperationDeleter {
                     ps.execute();
                     connection.commit();
                     System.err.println("[DBOperationDeleter] - Operation " + id + " number " + number + " removed.");
+                    data.updateHistory("Operation " + id + " at number " + number + " removed.");
                 } catch (SQLException e) {
                     System.err.println("[DBOperationDeleter] - Exception " + e + " encountered in method removeOperation.");
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
             } else {
                 OperationNotFound b = new OperationNotFound();

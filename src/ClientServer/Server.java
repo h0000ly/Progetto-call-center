@@ -2,17 +2,21 @@ package ClientServer;
 
 import DBOperation.DBOperationDAO;
 import DBOperator.DBOperatorDAO;
+import dataHistory.DataWriter;
 import model.Operation;
 import model.Operator;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Server implements IServerProxy {
     private DBOperatorDAO dBR1;
     private DBOperationDAO dBR2;
+    private DataWriter data;
     public Server(){
         dBR1= DBOperatorDAO.getInstance();
         dBR2= DBOperationDAO.getInstance();
+
     }
 
     /**
@@ -20,9 +24,15 @@ public class Server implements IServerProxy {
      * @param messageServer
      */
     public synchronized void  addOperation(MessageServer messageServer){
-        Operation operation= new Operation(messageServer.getId(),messageServer.getNumber(),messageServer.getText());
+        data=new DataWriter(messageServer.getNumCalling());
         System.err.println("received addOperation request");
-        dBR2.addOperationToDatabase(operation);
+         try {
+            data.updateHistory("received addOperation request");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        dBR2.addOperationToDatabase(messageServer.getNumCalling(),messageServer.getOperation());
+
     }
 
     /**
@@ -30,8 +40,8 @@ public class Server implements IServerProxy {
      * @param messageServer
      * @return
      */
-    public ArrayList<String> retrieveJustTheRight(MessageServer messageServer){
-        ArrayList<String> a=dBR2.getAvailableOptionToShow(messageServer.getNumber(),messageServer.getNumSequence());
+    public ArrayList<Operation> retrieveJustTheRight(MessageServer messageServer){
+        ArrayList<Operation> a=dBR2.getAvailableOptionToShow(messageServer.getNumCalling(),messageServer.getNumber(),messageServer.getNumSequence());
         System.err.println("received showAvailableChoice request");
         return a;
     }
@@ -42,10 +52,16 @@ public class Server implements IServerProxy {
      * @return
      */
     public synchronized Operator addAndRetrieveOperator(MessageServer messageServer){
-        dBR1.addOperatorToDatabase(messageServer.getId(),messageServer.getNumber(),messageServer.getText());
-        System.err.println("received addAndRetreiveOperator request");
-        Operator operator=new Operator(messageServer.getId(),messageServer.getNumber(),messageServer.getText());
-        return operator;
+        data=new DataWriter(messageServer.getNumCalling());
+        try {
+            data.updateHistory("received addOperator request");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        dBR1.addOperatorToDatabase(messageServer.getNumCalling(),messageServer.getOperator());
+        System.err.println("received addAndRetrieveOperator request");
+
+        return messageServer.getOperator();
     }
 
     /**
@@ -53,7 +69,14 @@ public class Server implements IServerProxy {
      * @param messageServer
      */
     public synchronized void changeUsername(MessageServer messageServer){
-        dBR1.updateUsername(messageServer.getId(),messageServer.getNumber(),messageServer.getText());
+        data=new DataWriter(messageServer.getNumCalling());
+        try {
+            data.updateHistory("received changeUsername request");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        dBR1.updateUsername(messageServer.getNumCalling(),messageServer.getId(),messageServer.getNumber(),messageServer.getText());
+
         System.err.println("received changeUsername request");
     }
 
@@ -62,8 +85,15 @@ public class Server implements IServerProxy {
      * @param messageServer
      */
     public synchronized void changePassword(MessageServer messageServer){
-        dBR1.updatePassword(messageServer.getId(),messageServer.getNumber(),messageServer.getText());
+        data=new DataWriter(messageServer.getNumCalling());
+        try {
+            data.updateHistory("received changePassword request");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        dBR1.updatePassword(messageServer.getNumCalling(),messageServer.getOperator());
         System.err.println("received changePassword request");
+
     }
 
     /**
@@ -71,8 +101,15 @@ public class Server implements IServerProxy {
      * @param messageServer
      */
     public synchronized void removeOperation(MessageServer messageServer){
-        dBR2.removeOperation(messageServer.getNumber(),messageServer.getNumSequence());
+        data=new DataWriter(messageServer.getNumCalling());
+        try {
+            data.updateHistory("received removeOperation request");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        dBR2.removeOperation(messageServer.getNumCalling(),messageServer.getNumber(),messageServer.getNumSequence());
         System.err.println("received removeOperation request");
+
     }
 
     /**
@@ -80,8 +117,15 @@ public class Server implements IServerProxy {
      * @param messageServer
      */
     public synchronized void changeID(MessageServer messageServer){
-        dBR2.updateID(messageServer.getId(),messageServer.getNumber(),messageServer.getText());
+        data=new DataWriter(messageServer.getNumCalling());
+        try {
+            data.updateHistory("received changeID request");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        dBR2.updateID(messageServer.getNumCalling(),messageServer.getId(),messageServer.getNumber(),messageServer.getText());
         System.err.println("received changeID request");
+
     }
 
     /**
@@ -89,8 +133,15 @@ public class Server implements IServerProxy {
      * @param messageServer
      */
     public synchronized void changeText(MessageServer messageServer){
-        dBR2.updateText(messageServer.getId(),messageServer.getNumber(),messageServer.getText());
+        data=new DataWriter(messageServer.getNumCalling());
+        try {
+            data.updateHistory("received changeText request");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        dBR2.updateText(messageServer.getNumCalling(),messageServer.getOperation());
         System.err.println("received changeText request");
+
     }
 
     /**
@@ -98,8 +149,15 @@ public class Server implements IServerProxy {
      * @param messageServer
      */
     public synchronized void removeOperator(MessageServer messageServer){
-        dBR1.removeOperator(messageServer.getNumber(),messageServer.getNumSequence());
+        data=new DataWriter(messageServer.getNumCalling());
+        try {
+            data.updateHistory("received removeOperator request");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        dBR1.removeOperator(messageServer.getNumCalling(),messageServer.getNumber(),messageServer.getNumSequence());
         System.err.println("received removeOperator request");
+
     }
 
     /**
@@ -108,7 +166,7 @@ public class Server implements IServerProxy {
      * @return
      */
     public Operator findOperator(MessageServer messageServer){
-        Operator operator=dBR1.findOperator(messageServer.getOperator());
+        Operator operator=dBR1.findOperator(messageServer.getNumCalling(),messageServer.getOperator());
         System.err.println("received findOperator request");
         return operator;
     }
@@ -118,7 +176,23 @@ public class Server implements IServerProxy {
      * @param messageServer
      */
     public synchronized void changeStatus(MessageServer messageServer){
-        dBR1.logged(messageServer.getNumber(),messageServer.getUsername(),messageServer.isStatus());
+        data=new DataWriter(messageServer.getNumCalling());
+        if(messageServer.getOperator().isLoggedIn()){
+            try {
+                data.updateHistory("received request to login");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
+        else{
+            try {
+                data.updateHistory("received request to logout");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        dBR1.logged(messageServer.getNumCalling(),messageServer.getOperator());
         System.err.println("received changeStatus request");
 
     }

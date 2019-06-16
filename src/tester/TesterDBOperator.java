@@ -18,26 +18,27 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 public class TesterDBOperator {
+    private String numCalling="222333";
     @Before
     public void DataLoad(){
         DBOperatorDAO instance=new DBOperatorDAO();
-        instance.addOperatorToDatabase("5555","Nice Username","Nice Password");
-        instance.updateUsername("5555","Nice Username", "Nice Username 2");
-        instance.updatePassword("5555","Nice Username 2","Nice Password 2");
+        instance.addOperatorToDatabase(numCalling,new Operator("5555","Nice Username","Nice Password"));
+        instance.updateUsername(numCalling,"5555","Nice Username", "Nice Username 2");
+        instance.updatePassword(numCalling,new Operator("5555","Nice Username 2","Nice Password 2"));
     }
     @After
     public void dataClean(){
         DBOperatorDAO instance=DBOperatorDAO.getInstance();
-        instance.removeOperator("5555","Nice Username 2");
+        instance.removeOperator("345556","5555","Nice Username 2");
     }
 
 
     @Test
     public void test() {
         Server server = new Server();
-        MessageServer messageServer = new MessageServer(MessageType.JUSTTHEONEOPERATOR, new Operator("5555","Nice Username 2","Nice Password 2"));
+        MessageServer messageServer = new MessageServer(MessageType.JUSTTHEONEOPERATOR, "345556",new Operator("5555","Nice Username 2","Nice Password 2"));
         Operator result = server.findOperator(messageServer);
-        assertThat(result.equalsOperator(new Operator("5555","Nice Username 2","Nice Password 2")), is(true));
+        assertThat(result.equals(new Operator("5555","Nice Username 2","Nice Password 2")), is(true));
     }
 
     public static void main(String[] args) {

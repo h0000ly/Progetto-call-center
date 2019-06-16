@@ -4,12 +4,12 @@ import ClientServer.MessageServer;
 import ClientServer.MessageType;
 import ClientServer.ServerInfo;
 import GUInterface.Exception.*;
+import dataHistory.DataWriter;
 import model.Operator;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -20,10 +20,14 @@ public class RegisterLogin extends JFrame implements ActionListener {
     private JPasswordField pswText;
     private JButton butLog;
     private JButton butReg;
-    private String number;
+    private String numberCalled;
+    private String numberCalling;
+    private DataWriter data;
 
-    public RegisterLogin(String number) {
-        this.number=number;
+    public RegisterLogin(String numberCalling, String numberCalled) {
+        data=new DataWriter(numberCalling);
+        this.numberCalled = numberCalled;
+        this.numberCalling=numberCalling;
         initComponents();
     }
 
@@ -31,7 +35,7 @@ public class RegisterLogin extends JFrame implements ActionListener {
         this.setResizable(false);
         this.setLayout(null);
         this.setTitle("Login/Register GUI");
-        this.setBounds(600,300,350,270);
+        this.setBounds(600,200,350,270);
         Container pane = this.getContentPane();
         pane.setLayout(null);
         JLabel userLabel = new JLabel("Please insert Username: ");
@@ -63,7 +67,12 @@ public class RegisterLogin extends JFrame implements ActionListener {
             Operator opOut=null;
             opOut=findTheOne();
                 if(opOut!=null&&!opOut.isLoggedIn()) {
-                    MenuOperationsGUI menu = new MenuOperationsGUI(opOut);
+                    try {
+                        data.updateHistory("The user has logged in");
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                    MenuOperationsGUI menu = new MenuOperationsGUI(numberCalling,opOut);
                     menu.setVisible(true);
                     this.dispose();
                 }
@@ -93,10 +102,11 @@ public class RegisterLogin extends JFrame implements ActionListener {
                         socket = new Socket(ServerInfo.IP, ServerInfo.PORT);
                         ObjectOutputStream os = new ObjectOutputStream(socket.getOutputStream());
                         ObjectInputStream is = new ObjectInputStream(socket.getInputStream());
-                        os.writeObject(new MessageServer(MessageType.ADDOPERATOR, number, userText.getText().trim(), pswText.getText().trim()));
+                        os.writeObject(new MessageServer(MessageType.ADDOPERATOR,numberCalling, new Operator(numberCalled, userText.getText().trim(), pswText.getText().trim())));
                         operator = (Operator) is.readObject();
                         if (operator != null && !operator.isLoggedIn()) {
-                            MenuOperationsGUI menu = new MenuOperationsGUI(operator);
+                            data.updateHistory("The user registered");
+                            MenuOperationsGUI menu = new MenuOperationsGUI(numberCalling,operator);
                             menu.setVisible(true);
                             this.dispose();
                         }
@@ -119,7 +129,7 @@ public class RegisterLogin extends JFrame implements ActionListener {
             socket = new Socket(ServerInfo.IP, ServerInfo.PORT);
             ObjectOutputStream os = new ObjectOutputStream(socket.getOutputStream());
             ObjectInputStream is = new ObjectInputStream(socket.getInputStream());
-            os.writeObject(new MessageServer(MessageType.JUSTTHEONEOPERATOR,new Operator(number,userText.getText().trim(),pswText.getText().trim())));
+            os.writeObject(new MessageServer(MessageType.JUSTTHEONEOPERATOR,numberCalling,new Operator(numberCalled,userText.getText().trim(),pswText.getText().trim())));
             opOut1 = (Operator) is.readObject();
         } catch (IOException | ClassNotFoundException ex) {
             ex.printStackTrace();
@@ -177,6 +187,7 @@ public class RegisterLogin extends JFrame implements ActionListener {
         }
         return false;
     }
+
 
 }
 

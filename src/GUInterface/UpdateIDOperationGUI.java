@@ -17,9 +17,11 @@ public class UpdateIDOperationGUI extends JFrame {
     private JTextField jOldIDTextField;
     private JTextField jNewIDTextField;
     private String number;
+    private String numberCalling;
 
-    public UpdateIDOperationGUI(String number){
+    public UpdateIDOperationGUI(String numberCalling,String number){
         this.number=number;
+        this.numberCalling=numberCalling;
         initialize();}
 
      private void initialize(){
@@ -49,7 +51,7 @@ public class UpdateIDOperationGUI extends JFrame {
                         try {
                             socket = new Socket(ServerInfo.IP, ServerInfo.PORT);
                             ObjectOutputStream os = new ObjectOutputStream(socket.getOutputStream());
-                            os.writeObject(new MessageServer(MessageType.MODIFYIDOPERATION, jOldIDTextField.getText().trim(), number, jNewIDTextField.getText().trim()));
+                            os.writeObject(new MessageServer(MessageType.MODIFYIDOPERATION,numberCalling, jOldIDTextField.getText().trim(), number, jNewIDTextField.getText().trim()));
                         } catch (IOException ex) {
                             ex.printStackTrace();
                         }

@@ -2,6 +2,7 @@ package ClientServer;
 
 
 import GUInterface.CallGUI;
+import GUInterface.NumberPhoneGUI;
 
 import javax.swing.*;
 
@@ -12,8 +13,8 @@ public class Client extends Thread{
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                CallGUI cGUI =new CallGUI();
-                cGUI.setVisible(true);
+                NumberPhoneGUI startGUI=new NumberPhoneGUI();
+                startGUI.setVisible(true);
             }
         });
     }

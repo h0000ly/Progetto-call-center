@@ -21,16 +21,11 @@ public class DBOperatorDAO implements IProxyDBOperator {
         return instance;
     }
 
-    /**
-     * Add a new operator
-     * @param number
-     * @param username
-     * @param password
-     */
+
     @Override
-    public void addOperatorToDatabase(String number,String username,String password) {
+    public void addOperatorToDatabase(String numCalling,Operator operator) {
         connection = dBConnOp.connectToDB(connection);
-        dBIns.insertOperator(connection,number,username,password);
+        dBIns.insertOperator(connection,numCalling,operator);
         connection = dBConnOp.disconnectFromDB(connection);
 
     }
@@ -41,22 +36,20 @@ public class DBOperatorDAO implements IProxyDBOperator {
      * @param username
      */
     @Override
-    public void removeOperator(String number,String username) {
+    public void removeOperator(String numCalling,String number,String username) {
         connection = dBConnOp.connectToDB(connection);
-        dBDel.removeOperator(connection,number,username);
+        dBDel.removeOperator(connection,numCalling,number,username);
         connection = dBConnOp.disconnectFromDB(connection);
     }
 
     /**
      * change the password of an operator
-     * @param number
-     * @param username
-     * @param newPassword
+     * @param operator
      */
     @Override
-    public void updatePassword(String number,String username, String newPassword) {
+    public void updatePassword(String numCalling,Operator operator) {
         connection = dBConnOp.connectToDB(connection);
-        dBUp.updatePassword(connection,number,username,newPassword);
+        dBUp.updatePassword(connection,numCalling,operator);
         connection = dBConnOp.disconnectFromDB(connection);
 
     }
@@ -68,9 +61,9 @@ public class DBOperatorDAO implements IProxyDBOperator {
      * @param newUser
      */
     @Override
-    public void updateUsername(String number,String oldUser, String newUser) {
+    public void updateUsername(String numCalling,String number,String oldUser, String newUser) {
         connection = dBConnOp.connectToDB(connection);
-        dBUp.updateUsername(connection,number,oldUser,newUser);
+        dBUp.updateUsername(connection,numCalling,number,oldUser,newUser);
         connection = dBConnOp.disconnectFromDB(connection);
     }
 
@@ -80,24 +73,24 @@ public class DBOperatorDAO implements IProxyDBOperator {
      * @return
      */
     @Override
-    public Operator findOperator(Operator operatorIn) {
+    public Operator findOperator(String numCalling,Operator operatorIn) {
         Operator operator=null;
         connection=dBConnOp.connectToDB(connection);
-        operator=dBRet.retreiveJustTheOne(connection,operatorIn);
+        operator=dBRet.retreiveJustTheOne(connection,numCalling,operatorIn);
         connection=dBConnOp.disconnectFromDB(connection);
             return operator;
         }
 
-    /**
+
+    /***
      * change the status (Logged in or logged out) of an operator
-      * @param number
-     * @param username
-     * @param status
+     * @param operator
      */
     @Override
-    public void logged(String number, String username, boolean status) {
+    public void logged(String numCalling, Operator operator) {
+
         connection=dBConnOp.connectToDB(connection);
-        dBUp.logged(connection,number,username,status);
+        dBUp.logged(connection,numCalling,operator);
         connection=dBConnOp.disconnectFromDB(connection);
     }
 }

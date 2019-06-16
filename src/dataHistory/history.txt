@@ -1,0 +1,126 @@
+Sun 2019.06.16 at 07:15:53 PM CEST||# 556555 - Operation 12 added to Database
+Sun 2019.06.16 at 07:15:53 PM CEST||# 556555 - id 12 changed in 27
+Sun 2019.06.16 at 07:15:54 PM CEST||# 556555 - Operation 27 number 5569 removed.
+Sun 2019.06.16 at 07:16:01 PM CEST||# 222333 - Operator Nice Username added to database.
+Sun 2019.06.16 at 07:16:01 PM CEST||# 222333 - Username updated, new username: Nice Username 2
+Sun 2019.06.16 at 07:16:01 PM CEST||# 345556 - Operator Nice Username 2 number 5555 removed.
+Sun 2019.06.16 at 07:18:34 PM CEST||# 1235456 - Call Started
+Sun 2019.06.16 at 07:18:48 PM CEST||# 1235456 - Operator Ae12354xgj added to database.
+Sun 2019.06.16 at 07:18:48 PM CEST||# 1235456 - received addOperator request
+Sun 2019.06.16 at 07:18:48 PM CEST||# 1235456 - The user registered
+Sun 2019.06.16 at 07:18:48 PM CEST||# 1235456 - received request to login
+Sun 2019.06.16 at 07:19:30 PM CEST||# 1235456 - received changePassword request
+Sun 2019.06.16 at 07:20:16 PM CEST||# 1235456 - received request to logout
+Sun 2019.06.16 at 07:23:54 PM CEST||# 1235456 - Call Started
+Sun 2019.06.16 at 07:24:09 PM CEST||# 1235456 - The user has logged in
+Sun 2019.06.16 at 07:24:09 PM CEST||# 1235456 - received request to login
+Sun 2019.06.16 at 07:24:36 PM CEST||# 1235456 - received request to logout
+Sun 2019.06.16 at 07:24:36 PM CEST||# 1235456 - Operator Ae12354xgj number 555532 removed.
+Sun 2019.06.16 at 07:24:36 PM CEST||# 1235456 - received removeOperator request
+Sun 2019.06.16 at 08:34:02 PM CEST||# 4588545 - Call Started
+Sun 2019.06.16 at 08:34:27 PM CEST||# 4588545 - Operator Aey1995fd added to database.
+Sun 2019.06.16 at 08:34:27 PM CEST||# 4588545 - received addOperator request
+Sun 2019.06.16 at 08:34:27 PM CEST||# 4588545 - The user registered
+Sun 2019.06.16 at 08:34:27 PM CEST||# 4588545 - received request to login
+Sun 2019.06.16 at 08:35:38 PM CEST||# 4588545 - Operation 12 added to Database
+Sun 2019.06.16 at 08:35:38 PM CEST||# 4588545 - received addOperation request
+Sun 2019.06.16 at 08:36:19 PM CEST||# 4588545 - received changeID request
+Sun 2019.06.16 at 08:36:42 PM CEST||# 4588545 - id 12 changed in 45
+Sun 2019.06.16 at 08:36:42 PM CEST||# 4588545 - received changeID request
+Sun 2019.06.16 at 08:37:09 PM CEST||# 4588545 - received changeText request
+Sun 2019.06.16 at 08:37:27 PM CEST||# 4588545 - Operation 45 number 1111 removed.
+Sun 2019.06.16 at 08:37:27 PM CEST||# 4588545 - received removeOperation request
+Sun 2019.06.16 at 08:37:53 PM CEST||# 4588545 - Username updated, new username: Ayeye1995
+Sun 2019.06.16 at 08:37:53 PM CEST||# 4588545 - received changeUsername request
+Sun 2019.06.16 at 08:38:35 PM CEST||# 4588545 - received changePassword request
+Sun 2019.06.16 at 08:39:55 PM CEST||# 4588545 - received changePassword request
+Sun 2019.06.16 at 08:43:02 PM CEST||# 4588545 - received request to logout
+Sun 2019.06.16 at 08:52:23 PM CEST||# 123456 - Call Started
+Sun 2019.06.16 at 08:52:34 PM CEST||#  - SERVER ONLINE
+Sun 2019.06.16 at 08:52:46 PM CEST||# 123454848 - Call Started
+Sun 2019.06.16 at 08:54:55 PM CEST||# 5456456 - Call Started
+Sun 2019.06.16 at 08:56:20 PM CEST||# 5465456 - Call Started
+Sun 2019.06.16 at 08:56:23 PM CEST||# 5465456 - Call Ended
+Sun 2019.06.16 at 08:59:50 PM CEST||# 5465456 - Call Started
+Sun 2019.06.16 at 09:02:09 PM CEST||# 56456456 - Call Started
+Sun 2019.06.16 at 09:02:14 PM CEST||# 56456456 - Call Ended
+Sun 2019.06.16 at 09:06:45 PM CEST||# 5324545 - Call Started
+Sun 2019.06.16 at 09:08:47 PM CEST||# 524524353 - Call Started
+Sun 2019.06.16 at 09:08:50 PM CEST||# 524524353 - Call Ended
+Sun 2019.06.16 at 09:09:21 PM CEST||# 3213245 - Call Started
+Sun 2019.06.16 at 09:09:27 PM CEST||# 3213245 - Call Ended
+Sun 2019.06.16 at 09:10:49 PM CEST||# 245432543 - Call Started
+Sun 2019.06.16 at 09:12:16 PM CEST||# 45456245 - Call Started
+Sun 2019.06.16 at 09:13:03 PM CEST||# 34134 - Call Started
+Sun 2019.06.16 at 09:13:54 PM CEST||# 14341324 - Call Started
+Sun 2019.06.16 at 09:14:24 PM CEST||# 5425435 - Call Started
+Sun 2019.06.16 at 09:16:52 PM CEST||# 458924 - Call Started
+Sun 2019.06.16 at 09:17:03 PM CEST||# 458924 - The User pressed: 6
+Sun 2019.06.16 at 09:22:46 PM CEST||# 5456456 - Call Started
+Sun 2019.06.16 at 09:23:38 PM CEST||# 4563456 - Call Started
+Sun 2019.06.16 at 09:27:12 PM CEST||# 454563 - Call Started
+Sun 2019.06.16 at 09:29:04 PM CEST||# 354365 - Call Started
+Sun 2019.06.16 at 09:36:36 PM CEST||# 54654 - Call Started
+Sun 2019.06.16 at 09:37:20 PM CEST||# 43645 - Call Started
+Sun 2019.06.16 at 09:37:52 PM CEST||# 43645 - received addOperator request
+Sun 2019.06.16 at 09:37:52 PM CEST||# 43645 - Operator Aeiuiui1874at number 5555 added to database.
+Sun 2019.06.16 at 09:37:52 PM CEST||# 43645 - The user registered
+Sun 2019.06.16 at 09:37:52 PM CEST||# 43645 - received request to login
+Sun 2019.06.16 at 09:38:19 PM CEST||# 43645 - received request to logout
+Sun 2019.06.16 at 09:39:27 PM CEST||# 46565 - Call Started
+Sun 2019.06.16 at 09:39:46 PM CEST||# 46565 - received addOperator request
+Sun 2019.06.16 at 09:39:46 PM CEST||# 46565 - Operator Ae4674jghkat number 555424 added to database.
+Sun 2019.06.16 at 09:39:46 PM CEST||# 46565 - The user registered
+Sun 2019.06.16 at 09:39:46 PM CEST||# 46565 - received request to login
+Sun 2019.06.16 at 09:39:51 PM CEST||# 46565 - received request to logout
+Sun 2019.06.16 at 10:37:05 PM CEST||# 154512 - Call Started
+Sun 2019.06.16 at 10:37:07 PM CEST||# 154512 - The User pressed: 1
+Sun 2019.06.16 at 10:37:07 PM CEST||# 154512 - The User pressed: 5
+Sun 2019.06.16 at 10:37:07 PM CEST||# 154512 - The User pressed: 2
+Sun 2019.06.16 at 10:37:08 PM CEST||# 154512 - The User pressed: 4
+Sun 2019.06.16 at 10:37:08 PM CEST||# 154512 - The User pressed: 6
+Sun 2019.06.16 at 10:37:08 PM CEST||# 154512 - The User pressed: 6
+Sun 2019.06.16 at 10:37:08 PM CEST||# 154512 - The User pressed: 4
+Sun 2019.06.16 at 10:37:08 PM CEST||# 154512 - The User pressed: 5
+Sun 2019.06.16 at 10:37:10 PM CEST||# 154512 - The user deleted his last choice
+Sun 2019.06.16 at 10:37:10 PM CEST||# 154512 - The user deleted his last choice
+Sun 2019.06.16 at 10:37:11 PM CEST||# 154512 - The user deleted his last choice
+Sun 2019.06.16 at 10:37:11 PM CEST||# 154512 - The user deleted his last choice
+Sun 2019.06.16 at 10:37:11 PM CEST||# 154512 - The user deleted his last choice
+Sun 2019.06.16 at 10:37:11 PM CEST||# 154512 - The user deleted his last choice
+Sun 2019.06.16 at 10:37:12 PM CEST||# 154512 - The user deleted his last choice
+Sun 2019.06.16 at 10:37:12 PM CEST||# 154512 - The user deleted his last choice
+Sun 2019.06.16 at 10:37:19 PM CEST||# 154512 - The User pressed: 5
+Sun 2019.06.16 at 10:37:20 PM CEST||# 154512 - The User pressed: 6
+Sun 2019.06.16 at 10:37:20 PM CEST||# 154512 - The User pressed: 5
+Sun 2019.06.16 at 10:37:20 PM CEST||# 154512 - The User pressed: 1
+Sun 2019.06.16 at 10:37:20 PM CEST||# 154512 - The User pressed: 5
+Sun 2019.06.16 at 10:37:22 PM CEST||# 154512 - The user deleted his last choice
+Sun 2019.06.16 at 10:37:22 PM CEST||# 154512 - The user deleted his last choice
+Sun 2019.06.16 at 10:37:22 PM CEST||# 154512 - The user deleted his last choice
+Sun 2019.06.16 at 10:37:22 PM CEST||# 154512 - The user deleted his last choice
+Sun 2019.06.16 at 10:37:22 PM CEST||# 154512 - The user deleted his last choice
+Sun 2019.06.16 at 10:38:09 PM CEST||# 154512 - received addOperator request
+Sun 2019.06.16 at 10:38:09 PM CEST||# 154512 - Operator Ae15454645at number 55412 added to database.
+Sun 2019.06.16 at 10:38:09 PM CEST||# 154512 - The user registered
+Sun 2019.06.16 at 10:38:09 PM CEST||# 154512 - received request to login
+Sun 2019.06.16 at 10:38:32 PM CEST||# 154512 - received request to logout
+Sun 2019.06.16 at 10:38:35 PM CEST||# 154512 - Call Started
+Sun 2019.06.16 at 10:38:58 PM CEST||# 154512 - received addOperator request
+Sun 2019.06.16 at 10:38:58 PM CEST||# 154512 - Operator E451541fdgsafat number 88265 added to database.
+Sun 2019.06.16 at 10:38:58 PM CEST||# 154512 - The user registered
+Sun 2019.06.16 at 10:38:58 PM CEST||# 154512 - received request to login
+Sun 2019.06.16 at 10:39:26 PM CEST||# 154512 - received request to logout
+Sun 2019.06.16 at 10:39:28 PM CEST||# 154512 - Call Started
+Sun 2019.06.16 at 10:39:42 PM CEST||# 154512 - received addOperator request
+Sun 2019.06.16 at 10:39:42 PM CEST||# 154512 - Operator Ae1241551at number 5555 added to database.
+Sun 2019.06.16 at 10:39:42 PM CEST||# 154512 - The user registered
+Sun 2019.06.16 at 10:39:42 PM CEST||# 154512 - received request to login
+Sun 2019.06.16 at 10:39:59 PM CEST||# 154512 - received request to logout
+Sun 2019.06.16 at 10:43:09 PM CEST||# 454545454 - Call Started
+Sun 2019.06.16 at 10:43:49 PM CEST||# 454545454 - received addOperator request
+Sun 2019.06.16 at 10:43:49 PM CEST||# 454545454 - Operator Abcd1234at number 4569875 added to database.
+Sun 2019.06.16 at 10:43:49 PM CEST||# 454545454 - The user registered
+Sun 2019.06.16 at 10:43:49 PM CEST||# 454545454 - received request to login
+Sun 2019.06.16 at 10:44:03 PM CEST||# 454545454 - received request to logout
+Sun 2019.06.16 at 10:44:30 PM CEST||# 5456451 - Call Started

@@ -1,14 +1,17 @@
 package DBOperation;
 
+import dataHistory.DataWriter;
 import model.Operation;
 import GUInterface.Exception.DBOperationEmpty;
 import GUInterface.Exception.OperationNotFound;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class DBOperationUpdater {
+    private DataWriter data;
     DBOperationReader dBR=new DBOperationReader();
     /**
      * This method change the id of an operation
@@ -18,8 +21,9 @@ public class DBOperationUpdater {
      * @param newId
      */
 
-    void changeOperationID(Connection connection,String oldId,String number,String newId){
+    void changeOperationID(Connection connection,String numCalling,String oldId,String number,String newId){
         boolean found =false;
+        data=new DataWriter(numCalling);
         if(dBR.retrieveAllTheOperations(connection,number).isEmpty()){
             DBOperationEmpty d=new DBOperationEmpty();
             d.setVisible(true);
@@ -40,8 +44,11 @@ public class DBOperationUpdater {
                     ps.execute();
                     connection.commit();
                     System.err.println("[DBOperationUpdater] - id "+oldId+" changed in " + newId );
+                    data.updateHistory("Id apdated for the operation "+oldId+" at number "+number+", new id: "+newId);
                 } catch (SQLException e) {
                     System.err.println("[DBOperationUpdater] - Exception " + e + " encountered in method changeOperationID.");
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
             } else {
                 OperationNotFound b = new OperationNotFound();
@@ -53,34 +60,36 @@ public class DBOperationUpdater {
     /**
      * This method change the text of an operation
      * @param connection
-     * @param id
-     * @param number
-     * @param text
+     * @param operation
      */
-    void changeOperationText(Connection connection,String id,String number,String text) {
+    void changeOperationText(Connection connection,String numCalling,Operation operation) {
         boolean found=false;
-        if(dBR.retrieveAllTheOperations(connection,number).isEmpty()){
+        data=new DataWriter(numCalling);
+        if(dBR.retrieveAllTheOperations(connection,operation.getNumber()).isEmpty()){
             DBOperationEmpty d=new DBOperationEmpty();
             d.setVisible(true);
         }
         else {
-            for (Operation a : dBR.retrieveAllTheOperations(connection,number)) {
-                if (a.equalsIDString(id, number)) {
+            for (Operation a : dBR.retrieveAllTheOperations(connection,operation.getNumber())) {
+                if (a.equalsIDString(operation.getId(),operation.getNumber())) {
                     found = true;
                 }
             }
             if (found) {
                 try {
-                    System.err.println("[DBOperationUpdater] - Updating text at " + id );
+                    System.err.println("[DBOperationUpdater] - Updating text at " + operation.getId() );
                     PreparedStatement ps = connection.prepareStatement("UPDATE operation SET tex= ? WHERE id = ? AND numbe= ?;");
-                    ps.setString(1, text);
-                    ps.setString(2, id);
-                    ps.setString(3, number);
+                    ps.setString(1, operation.getTextOp());
+                    ps.setString(2, operation.getId());
+                    ps.setString(3, operation.getNumber());
                     ps.execute();
                     connection.commit();
-                    System.err.println("[DBOperationUpdater] - text " + text + " updated.");
+                    System.err.println("[DBOperationUpdater] - text " + operation.getTextOp() + " updated.");
+                    data.updateHistory("Text updated for the operation "+operation.getId()+" and number "+operation.getNumber());
                 } catch (SQLException e) {
                     System.err.println("[DBOperationUpdater] - Exception " + e + " encountered in method changeOperationText.");
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
             } else {
                 OperationNotFound b = new OperationNotFound();

@@ -16,8 +16,10 @@ import java.net.Socket;
 
 public class MenuOperationsGUI extends JFrame {
     private Operator operator;
-    public MenuOperationsGUI(Operator operator){
+    private String numberCalling;
+    public MenuOperationsGUI(String numberCalling,Operator operator){
         this.operator=operator;
+        this.numberCalling=numberCalling;
         updateStatus();
     this.setBounds(600,200,400,300);
         this.setLayout(null);
@@ -28,7 +30,7 @@ public class MenuOperationsGUI extends JFrame {
         jB1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                DeleteOperationGUI DONGUI=new DeleteOperationGUI(operator.getNumber());
+                DeleteOperationGUI DONGUI=new DeleteOperationGUI(numberCalling,operator.getNumber());
                 DONGUI.setVisible(true);
             }
         });
@@ -39,7 +41,7 @@ public class MenuOperationsGUI extends JFrame {
         jB2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               InsertOperationGUI IONGUI =new InsertOperationGUI(operator.getNumber());
+               InsertOperationGUI IONGUI =new InsertOperationGUI(numberCalling,operator.getNumber());
                IONGUI.setVisible(true);
             }
         });
@@ -50,7 +52,7 @@ public class MenuOperationsGUI extends JFrame {
         jB3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                UpdateIDOperationGUI UIDONGUI= new UpdateIDOperationGUI(operator.getNumber());
+                UpdateIDOperationGUI UIDONGUI= new UpdateIDOperationGUI(numberCalling,operator.getNumber());
                 UIDONGUI.setVisible(true);
             }
         });
@@ -61,7 +63,7 @@ public class MenuOperationsGUI extends JFrame {
         jB4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                UpdateTextOperationGUI UTONGUI=new UpdateTextOperationGUI(operator.getNumber());
+                UpdateTextOperationGUI UTONGUI=new UpdateTextOperationGUI(numberCalling,operator.getNumber());
                 UTONGUI.setVisible(true);
             }
         });
@@ -73,7 +75,7 @@ public class MenuOperationsGUI extends JFrame {
         jB5.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                DeleteOperatorGUI DORGUI=new DeleteOperatorGUI(getFrame(),operator);
+                DeleteOperatorGUI DORGUI=new DeleteOperatorGUI(getFrame(),numberCalling,operator);
                 DORGUI.setVisible(true);
             }
         });
@@ -85,7 +87,7 @@ public class MenuOperationsGUI extends JFrame {
         jB6.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                UpdateUsernameOperatorGUI UUORGUI= new UpdateUsernameOperatorGUI(operator.getNumber(),operator.getUsername());
+                UpdateUsernameOperatorGUI UUORGUI= new UpdateUsernameOperatorGUI(numberCalling,operator.getNumber(),operator.getUsername());
                 UUORGUI.setVisible(true);
             }
         });
@@ -96,7 +98,7 @@ public class MenuOperationsGUI extends JFrame {
         jB7.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                UpdatePasswordOperatorGUI UPORGUI=new UpdatePasswordOperatorGUI(operator.getNumber(),operator.getUsername());
+                UpdatePasswordOperatorGUI UPORGUI=new UpdatePasswordOperatorGUI(numberCalling,operator.getNumber(),operator.getUsername());
                 UPORGUI.setVisible(true);
             }
         });
@@ -130,9 +132,9 @@ public class MenuOperationsGUI extends JFrame {
             @Override
             public void windowClosed(WindowEvent e) {
                 updateStatus();
+
                 //close();
-                CallGUI newCall=new CallGUI();
-                newCall.setVisible(true);
+
             }
 
             @Override
@@ -163,7 +165,7 @@ public class MenuOperationsGUI extends JFrame {
         try {
             socket = new Socket(ServerInfo.IP, ServerInfo.PORT);
             ObjectOutputStream os = new ObjectOutputStream(socket.getOutputStream());
-            os.writeObject(new MessageServer(MessageType.LOGGED,operator.getNumber(),operator.getUsername(),operator.isLoggedIn() ));
+            os.writeObject(new MessageServer(MessageType.LOGGED,numberCalling,operator));
         } catch (IOException ex) {
             ex.printStackTrace();
         }

@@ -31,9 +31,9 @@ public class DBOperationDAO implements IDBOperationProxy {
      * @param operation
      */
     @Override
-    public void addOperationToDatabase(Operation operation) {
+    public void addOperationToDatabase(String numCalling,Operation operation) {
         connection = dBConnOp.connectToDB(connection);
-        dBIns.addOperation(connection,operation);
+        dBIns.addOperation(connection,numCalling,operation);
         connection = dBConnOp.disconnectFromDB(connection);
 
     }
@@ -44,9 +44,9 @@ public class DBOperationDAO implements IDBOperationProxy {
      * @param number
      */
     @Override
-    public void removeOperation(String id,String number) {
+    public void removeOperation(String numCalling,String id,String number) {
         connection=dBConnOp.connectToDB(connection);
-        dBDel.removeOperation(connection,id,number);
+        dBDel.removeOperation(connection,numCalling,id,number);
         connection=dBConnOp.disconnectFromDB(connection);
     }
 
@@ -57,22 +57,20 @@ public class DBOperationDAO implements IDBOperationProxy {
      * @param newID
      */
     @Override
-    public void updateID(String oldID, String number, String newID) {
+    public void updateID(String numCalling,String oldID, String number, String newID) {
         connection =dBConnOp.connectToDB(connection);
-        dBUp.changeOperationID(connection,oldID,number,newID);
+        dBUp.changeOperationID(connection,numCalling,oldID,number,newID);
         connection=dBConnOp.disconnectFromDB(connection);
     }
 
     /**
-     * change the text of an operation
-     * @param id
-     * @param number
-     * @param newText
+     * Change the textof an operation
+     * @param operation
      */
     @Override
-    public void updateText(String id, String number, String newText) {
+    public void updateText(String numCalling,Operation operation) {
         connection =dBConnOp.connectToDB(connection);
-        dBUp.changeOperationText(connection,id,number,newText);
+        dBUp.changeOperationText(connection,numCalling,operation);
         connection=dBConnOp.disconnectFromDB(connection);
     }
 
@@ -83,15 +81,14 @@ public class DBOperationDAO implements IDBOperationProxy {
      * @return
      */
     @Override
-    public ArrayList<String> getAvailableOptionToShow(String numCall,String numberSequence) {
-        ArrayList<String> options=new ArrayList<>();
+    public ArrayList<Operation> getAvailableOptionToShow(String numCalling,String numCall,String numberSequence) {
+        ArrayList<Operation> options;
         connection=dBConnOp.connectToDB(connection);
-        for(Operation b:dBRet.retrieveJustTheRightOnes(connection,numCall,numberSequence)){
-            options.add(b.getId().charAt(b.getId().length()-1)+" - "+b.getTextOp());
-        }
+        options=dBRet.retrieveJustTheRightOnes(connection,numCalling,numCall,numberSequence);
         connection=dBConnOp.disconnectFromDB(connection);
         return options;
     }
+
 
 
 

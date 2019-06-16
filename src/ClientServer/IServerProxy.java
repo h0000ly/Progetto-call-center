@@ -1,12 +1,13 @@
 package ClientServer;
 
+import model.Operation;
 import model.Operator;
 
 import java.util.ArrayList;
 
 public interface IServerProxy {
         void addOperation(MessageServer messageServer);
-        ArrayList<String> retrieveJustTheRight(MessageServer messageServer);
+        ArrayList<Operation> retrieveJustTheRight(MessageServer messageServer);
         Operator addAndRetrieveOperator(MessageServer messageServer);
         void changeUsername(MessageServer messageServer);
         void changePassword(MessageServer messageServer);

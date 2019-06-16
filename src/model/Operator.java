@@ -49,18 +49,11 @@ public class Operator implements Serializable {
         this.number = number;
     }
 
-    public boolean equalsOperator(Operator op){
+    public boolean equals(Operator op){
        if((this.getUsername().equals(op.getUsername()))&&(this.getNumber().equals(op.getNumber()))){
            return true;
        }
        return false;
     }
 
-
-    public boolean equalsIDString(String number,String username){
-        if((this.getNumber().equals(number))&&(this.getUsername().equals(username))){
-            return true;
-        }
-        return false;
-    }
 }

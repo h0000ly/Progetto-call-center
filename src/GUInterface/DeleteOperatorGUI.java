@@ -15,9 +15,11 @@ import java.net.Socket;
 public class DeleteOperatorGUI extends JFrame {
     private Operator operator=null;
     private MenuOperationsGUI menuOperationsGUI=null;
-    public DeleteOperatorGUI(MenuOperationsGUI menuOperationsGUI,Operator operator) {
+    private String numCalling;
+    public DeleteOperatorGUI(MenuOperationsGUI menuOperationsGUI,String numCalling,Operator operator) {
         this.operator = operator;
         this.menuOperationsGUI=menuOperationsGUI;
+        this.numCalling=numCalling;
         initialize();
     }
 
@@ -37,7 +39,7 @@ public class DeleteOperatorGUI extends JFrame {
                 try {
                     socket = new Socket(ServerInfo.IP, ServerInfo.PORT);
                     ObjectOutputStream os = new ObjectOutputStream(socket.getOutputStream());
-                    os.writeObject(new MessageServer(MessageType.DELETEOPERATOR,operator.getNumber(),operator.getUsername()));
+                    os.writeObject(new MessageServer(MessageType.DELETEOPERATOR,numCalling,operator.getNumber(),operator.getUsername()));
 
                 } catch (IOException ex) {
                     ex.printStackTrace();

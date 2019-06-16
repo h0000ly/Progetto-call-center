@@ -40,7 +40,7 @@ public class DBOperatorReader {
      * @param operatorIn
      * @return
      */
-    Operator retreiveJustTheOne(Connection connection,Operator operatorIn) {
+    Operator retreiveJustTheOne(Connection connection,String numCalling,Operator operatorIn) {
         Operator operator = null;
         try {
             System.err.println("[DBOperatorReader] - Retrieving just a operator to check ...");
@@ -49,10 +49,14 @@ public class DBOperatorReader {
             ps.setString(2, operatorIn.getUsername());
             ps.setString(3, operatorIn.getPassword());
             ResultSet rs = ps.executeQuery();
-
             rs.next();
-            operator = new Operator(rs.getString("numbe"), rs.getString("username"), rs.getString("passwor"));
-            operator.setLoggedIn(rs.getBoolean("LoggedIn"));
+            if(rs.getString("numbe")!=null&& rs.getString("username")!=null&& rs.getString("passwor")!=null) {
+                operator = new Operator(rs.getString("numbe"), rs.getString("username"), rs.getString("passwor"));
+                operator.setLoggedIn(rs.getBoolean("LoggedIn"));
+            }
+            else {
+                return null;
+            }
         } catch (SQLException e) {
             System.err.println("[DBOperatorReader] - Exception " + e + " encountered in method retrieveJustTheOne.");
         }

@@ -8,6 +8,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
 public class NumberPhoneGUI extends JFrame {
     private JTextField jNumber;
     private JButton jButtonOk;
@@ -37,7 +38,7 @@ public class NumberPhoneGUI extends JFrame {
                             errorCall.setVisible(true);
                         }
                         else {
-                            CallGUI call = new CallGUI();
+                            CallGUI call = new CallGUI(toCheck);
                             call.setVisible(true);
                             close();
                         }

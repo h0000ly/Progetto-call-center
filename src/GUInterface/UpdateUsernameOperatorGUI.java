@@ -18,9 +18,11 @@ import java.net.Socket;
 public class UpdateUsernameOperatorGUI extends JFrame {
     private JTextField jT1;
     private String number;
+    private String numCalling;
 
-    public UpdateUsernameOperatorGUI(String number,String username) {
+    public UpdateUsernameOperatorGUI(String numCalling,String number,String username) {
         this.number = number;
+        this.numCalling=numCalling;
         initialize(username);
     }
 
@@ -46,7 +48,7 @@ public class UpdateUsernameOperatorGUI extends JFrame {
                     try {
                         socket = new Socket(ServerInfo.IP, ServerInfo.PORT);
                         ObjectOutputStream os = new ObjectOutputStream(socket.getOutputStream());
-                        os.writeObject(new MessageServer(MessageType.MODIFYUSERNAME, number, username, jT1.getText().trim()));
+                        os.writeObject(new MessageServer(MessageType.MODIFYUSERNAME,numCalling, number, username, jT1.getText().trim()));
                     } catch (IOException ex) {
                         ex.printStackTrace();
                     }

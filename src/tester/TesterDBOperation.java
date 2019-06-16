@@ -16,12 +16,13 @@ import static org.junit.Assert.assertThat;
 import java.util.List;
 
 public class TesterDBOperation {
+    private String numCalling="556555";
 @Before
 public  void dataLoad(){
     DBOperationDAO instance=DBOperationDAO.getInstance();
-    instance.addOperationToDatabase(new Operation("12","5569","Nice test"));
-    instance.updateID("12","5569","27");
-    instance.updateText("27","5569","Well done");
+    instance.addOperationToDatabase(numCalling,new Operation("12","5569","Nice test"));
+    instance.updateID(numCalling,"12","5569","27");
+    instance.updateText(numCalling,new Operation("27","5569","Well done"));
     //Creo oggetti operation
     //
 }
@@ -29,15 +30,21 @@ public  void dataLoad(){
 @After
 public void dataClean(){
     DBOperationDAO instance=DBOperationDAO.getInstance();
-    instance.removeOperation("27","5569");
+    instance.removeOperation(numCalling,"27","5569");
 }
 
 @Test
 public void test() {
+    boolean found=false;
     Server server = new Server();
-    MessageServer messageServer = new MessageServer(MessageType.RETURNAVAILABLECHOICES, "5569", "2");
-    List<String> result = server.retrieveJustTheRight(messageServer);
-    assertThat(result.isEmpty(), is(false));
+    MessageServer messageServer = new MessageServer(MessageType.RETURNAVAILABLECHOICES,numCalling, "5569", "2");
+    List<Operation> result = server.retrieveJustTheRight(messageServer);
+    for(Operation toCheck:result){
+        if(toCheck.getId().equals("27")){
+            found=true;
+        }
+    }
+    assertThat(found, is(true));
 }
 
     public static void main(String[] args) {

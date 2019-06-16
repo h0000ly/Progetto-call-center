@@ -16,9 +16,11 @@ import java.net.Socket;
 public class DeleteOperationGUI extends JFrame{
     private JTextField jT1;
     private String number;
+    private String numCalling;
 
-    public DeleteOperationGUI(String number) {
+    public DeleteOperationGUI(String numCalling,String number) {
         this.number = number;
+        this.numCalling=numCalling;
         initiate();
     }
 
@@ -44,7 +46,7 @@ public class DeleteOperationGUI extends JFrame{
                         try {
                             socket = new Socket(ServerInfo.IP, ServerInfo.PORT);
                             ObjectOutputStream os = new ObjectOutputStream(socket.getOutputStream());
-                            os.writeObject(new MessageServer(MessageType.DELETEOPERATION, jT1.getText().trim(), number));
+                            os.writeObject(new MessageServer(MessageType.DELETEOPERATION,numCalling, jT1.getText().trim(), number));
                         } catch (IOException ex) {
                             ex.printStackTrace();
                         }

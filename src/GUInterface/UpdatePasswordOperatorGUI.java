@@ -7,6 +7,7 @@ import GUInterface.Exception.EmptyField;
 import GUInterface.Exception.ErrorRegisterLoginGUI;
 import GUInterface.Exception.ExceptionEnum;
 import GUInterface.Exception.PasswordNotEqual;
+import model.Operator;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -21,10 +22,12 @@ public class UpdatePasswordOperatorGUI extends JFrame {
     private JTextField jT2;
     private String number;
     private String username;
+    private String numCalling;
 
-    public UpdatePasswordOperatorGUI(String number,String username) {
+    public UpdatePasswordOperatorGUI(String numCalling,String number,String username) {
         this.number = number;
         this.username=username;
+        this.numCalling=numCalling;
         initialize();
     }
     private void initialize(){
@@ -55,7 +58,7 @@ public class UpdatePasswordOperatorGUI extends JFrame {
                             try {
                                 socket = new Socket(ServerInfo.IP, ServerInfo.PORT);
                                 ObjectOutputStream os = new ObjectOutputStream(socket.getOutputStream());
-                                os.writeObject(new MessageServer(MessageType.MODIFYPASSWORD, number, username, jT2.getText().trim()));
+                                os.writeObject(new MessageServer(MessageType.MODIFYPASSWORD,numCalling,new Operator( number, username, jT1.getText().trim())));
                             } catch (IOException ex) {
                                 ex.printStackTrace();
                             }

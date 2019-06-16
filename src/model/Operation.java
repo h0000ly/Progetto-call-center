@@ -38,7 +38,7 @@ public class Operation implements Serializable {
         this.number = number;
     }
 
-    public boolean equalsID(Operation op){
+    public boolean equals(Operation op){
 
         if((this.getId().equals(op.getId()))&&(this.getNumber().equals(op.getNumber()))){
             return true;

@@ -40,7 +40,7 @@ public class DBOperationReader {
      * @param numSequence
      * @return ArrayList<Operation>
      */
-    ArrayList<Operation> retrieveJustTheRightOnes(Connection connection,String numCall,String numSequence){
+    ArrayList<Operation> retrieveJustTheRightOnes(Connection connection,String numCalling,String numCall,String numSequence){
         ArrayList<Operation> ops=new ArrayList<>();
         try{
             System.err.println("[DBOperationReader] - Retrieving just the right ones ... ");

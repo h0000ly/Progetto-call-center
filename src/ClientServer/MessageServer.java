@@ -1,45 +1,47 @@
 package ClientServer;
 
+import model.Operation;
 import model.Operator;
 
 import java.io.Serializable;
 
 public class MessageServer implements Serializable {
-
+    private String numCalling;
     private MessageType messageType;
     private String id;
     private String number;
     private String text;
     private String numSequence;
     private Operator operator;
-    private String username;
-    private boolean status;
+    private Operation operation;
     private static final long serialVersionUID = 44154261654512454L;
 
 
-    public MessageServer(MessageType messageType, String id, String number, String text) {
+    public MessageServer(MessageType messageType,String numCalling, String id, String number, String text) {
         this.messageType = messageType;
         this.id = id;
         this.number = number;
         this.text = text;
+        this.numCalling=numCalling;
     }
 
-    public MessageServer(MessageType messageType,String number,String numSequence){
+    public MessageServer(MessageType messageType,String numCalling,String number,String numSequence){
         this.messageType=messageType;
         this.numSequence=numSequence;
         this.number=number;
+        this.numCalling=numCalling;
     }
 
-    public MessageServer(MessageType messageType, Operator operator){
+    public MessageServer(MessageType messageType,String numCalling, Operator operator){
         this.messageType =messageType;
         this.operator=operator;
+        this.numCalling=numCalling;
     }
 
-    public MessageServer(MessageType messageType,String number, String username,boolean status){
+    public MessageServer(MessageType messageType, String numCalling,Operation operation){
         this.messageType=messageType;
-        this.number=number;
-        this.username=username;
-        this.status=status;
+        this.operation=operation;
+        this.numCalling=numCalling;
     }
 
 
@@ -68,11 +70,11 @@ public class MessageServer implements Serializable {
         return operator;
     }
 
-    public String getUsername() {
-        return username;
+    public Operation getOperation() {
+        return operation;
     }
 
-    public boolean isStatus() {
-        return status;
+    public String getNumCalling() {
+        return numCalling;
     }
 }

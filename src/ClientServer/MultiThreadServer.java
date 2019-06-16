@@ -1,5 +1,7 @@
 package ClientServer;
 
+import dataHistory.DataWriter;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -12,10 +14,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MultiThreadServer implements Runnable {
-
     private Socket csocket;
     private Server real;
     private Map<MessageType, Method> methodCorrispondence = new HashMap<>();
+
+
 
     MultiThreadServer(Socket csocket) throws NoSuchMethodException, SocketException {
         this.csocket = csocket;
@@ -44,12 +47,17 @@ public class MultiThreadServer implements Runnable {
      * @throws Exception
      */
     public static void main(String args[]) throws Exception {
+        DataWriter data=new DataWriter("");
         ServerSocket ssock = new ServerSocket(ServerInfo.PORT);
         System.out.println("Server is listening");
+        data.updateHistory("SERVER ONLINE");
+
+
 
         while (true) {
             Socket sock = ssock.accept();
             System.out.println("Connected");
+
             new Thread(new MultiThreadServer(sock)).start();
         }
     }

@@ -5,6 +5,7 @@ import ClientServer.MessageType;
 import ClientServer.ServerInfo;
 import GUInterface.Exception.EmptyField;
 import GUInterface.Exception.IDIsANumber;
+import model.Operation;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -17,9 +18,11 @@ public class UpdateTextOperationGUI extends JFrame{
     private JTextField jT1;
     private JTextField jT2;
     private String number;
+    private String numCalling;
 
-    public UpdateTextOperationGUI(String number) {
+    public UpdateTextOperationGUI(String numCalling,String number) {
         this.number = number;
+        this.numCalling=numCalling;
         initialize();
     }
     private void initialize(){
@@ -49,7 +52,7 @@ public class UpdateTextOperationGUI extends JFrame{
                         try {
                             socket = new Socket(ServerInfo.IP, ServerInfo.PORT);
                             ObjectOutputStream os = new ObjectOutputStream(socket.getOutputStream());
-                            os.writeObject(new MessageServer(MessageType.MODIFYTEXTOPERATION, jT1.getText().trim(), number, jT2.getText().trim()));
+                            os.writeObject(new MessageServer(MessageType.MODIFYTEXTOPERATION, numCalling,new Operation(jT1.getText().trim(), number, jT2.getText().trim())));
                         } catch (IOException ex) {
                             ex.printStackTrace();
                         }

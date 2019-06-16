@@ -1,11 +1,15 @@
 package DBOperator;
 
+import dataHistory.DataWriter;
+import model.Operator;
+
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class DBOperatorUpdater {
-    private DBOperatorReader dbR=new DBOperatorReader();
+    private DataWriter data;
 
     /**
      * This method change the username of a defined operator
@@ -14,7 +18,8 @@ public class DBOperatorUpdater {
      * @param oldUsername
      * @param newUsername
      */
-    public void updateUsername(Connection connection, String number,String oldUsername,String newUsername) {
+    public void updateUsername(Connection connection,String numCalling, String number,String oldUsername,String newUsername) {
+        data=new DataWriter(numCalling);
         /*boolean found=false;
         if(dbR.retrieveAllTheOperators(connection).isEmpty()){
             MasterClassExceptionGUI d=new MasterClassExceptionGUI();
@@ -37,10 +42,13 @@ public class DBOperatorUpdater {
                     ps.execute();
                     connection.commit();
                     System.err.println("[DBOperatorUpdater] - Username " + newUsername + " updated.");
+                    data.updateHistory("Username updated, new username: "+newUsername);
                 } catch (SQLException e) {
                     System.err.println("[DBOperatorUpdater] - Exception " + e + " encounterd in method updateUsername.");
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
-            }/*
+    }/*
             else{
                 OperatorNotFound b=new OperatorNotFound();
                 b.setVisible(true);
@@ -48,14 +56,9 @@ public class DBOperatorUpdater {
         }
     }*/
 
-    /**
-     * This method change the password of a defined operator
-     * @param connection
-     * @param number
-     * @param username
-     * @param newPassword
-     */
-    void updatePassword(Connection connection,String number,String username,String newPassword){
+
+    void updatePassword(Connection connection,String numCalling,Operator operator){
+        data=new DataWriter(numCalling);
         /*boolean found=false;
 
         if(dbR.retrieveAllTheOperators(connection).isEmpty()){
@@ -69,25 +72,28 @@ public class DBOperatorUpdater {
             }
             if(found){*/
                 try {
-                    System.err.println("[DBOperatorUpdater] - Updating password " + username + "...");
+                    System.err.println("[DBOperatorUpdater] - Updating password for " + operator.getUsername() + "...");
                     PreparedStatement ps = connection.prepareStatement("UPDATE operator SET passwor=? WHERE username = ? AND numbe=?;");
-                    ps.setString(1, newPassword);
-                    ps.setString(2, username);
-                    ps.setString(3, number);
+                    ps.setString(1, operator.getPassword());
+                    ps.setString(2, operator.getUsername());
+                    ps.setString(3, operator.getNumber());
                     ps.execute();
                     connection.commit();
-                    System.err.println("[DBOperatorUpdater] - Password " + newPassword + " updated.");
+                    System.err.println("[DBOperatorUpdater] - Password " + operator.getPassword() + " updated.");
+                    data.updateHistory("Password uptated for the operator "+operator.getUsername()+" and number "+operator.getNumber());
                 } catch (SQLException e) {
                     System.err.println("[DBOperatorUpdater] - Exception " + e + " encountered in method updatePassword.");
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
-            }/*
+    }/*
             else{
                 OperatorNotFound d=new OperatorNotFound();
                 d.setVisible(true);
             }
         }
     }*/
-    void logged(Connection connection,String number,String username,boolean status){
+    void logged(Connection connection, String numCalling,Operator operator){
         /*boolean found=false;
 
         if(dbR.retrieveAllTheOperators(connection).isEmpty()){
@@ -101,14 +107,14 @@ public class DBOperatorUpdater {
             }
             if(found){*/
                 try {
-                    System.err.println("[DBOperatorUpdater] - Updating status " + username + "...");
+                    System.err.println("[DBOperatorUpdater] - Updating status of the operator" + operator.getUsername() + "...");
                     PreparedStatement ps = connection.prepareStatement("UPDATE operator SET LoggedIn =? WHERE username = ? AND numbe=?;");
-                    ps.setBoolean(1, status);
-                    ps.setString(2, username);
-                    ps.setString(3,number);
+                    ps.setBoolean(1, operator.isLoggedIn());
+                    ps.setString(2, operator.getUsername());
+                    ps.setString(3,operator.getNumber());
                     ps.execute();
                     connection.commit();
-                    System.err.println("[DBOperatorUpdater] - Status " + status + " updated.");
+                    System.err.println("[DBOperatorUpdater] - Status " + operator.isLoggedIn() + " updated.");
                 } catch (SQLException e) {
                     System.err.println("[DBOperatorUpdater] - Exception " + e + " encountered in method logged.");
                 }
