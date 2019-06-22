@@ -30,21 +30,14 @@ public class DBOperatorReader {
         return ops;
     }*/
 
-    /**
-     * This method is used to return a defined operator
-     * @param connection
-     * @param numCalling
-     * @param operatorIn
-     * @return
-     */
-    Operator retreiveJustTheOne(Connection connection,String numCalling,Operator operatorIn) {
+
+    Operator retreiveJustTheOne(Connection connection,String numCalling,String number, String username) {
         Operator operator = null;
         try {
             System.err.println("[DBOperatorReader] - Retrieving just a operator to check ...");
-            PreparedStatement ps = connection.prepareStatement("SELECT * FROM operator where numbe = ? and username =? and passwor =?;");
-            ps.setString(1, operatorIn.getNumber());
-            ps.setString(2, operatorIn.getUsername());
-            ps.setString(3, operatorIn.getPassword());
+            PreparedStatement ps = connection.prepareStatement("SELECT * FROM operator where numbe = ? and username =? ;");
+            ps.setString(1, number);
+            ps.setString(2, username);
             ResultSet rs = ps.executeQuery();
             rs.next();
             if(rs.getString("numbe")!=null&& rs.getString("username")!=null&& rs.getString("passwor")!=null) {

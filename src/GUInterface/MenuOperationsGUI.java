@@ -103,7 +103,7 @@ public class MenuOperationsGUI extends JFrame {
         jB6.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                UpdateUsernameOperatorGUI UUORGUI= new UpdateUsernameOperatorGUI(numberCalling,operator.getNumber(),operator.getUsername());
+                UpdateUsernameOperatorGUI UUORGUI= new UpdateUsernameOperatorGUI(getFrame(),numberCalling,operator.getNumber(),operator.getUsername());
                 UUORGUI.setVisible(true);
                 data.updateHistory(CHANGEUSERNAMEOPERATORBUTTONPRESSED);
             }
@@ -115,7 +115,7 @@ public class MenuOperationsGUI extends JFrame {
         jB7.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                UpdatePasswordOperatorGUI UPORGUI=new UpdatePasswordOperatorGUI(numberCalling,operator.getNumber(),operator.getUsername());
+                UpdatePasswordOperatorGUI UPORGUI=new UpdatePasswordOperatorGUI(getFrame(),numberCalling,operator.getNumber(),operator.getUsername());
                 UPORGUI.setVisible(true);
                 data.updateHistory(CHANGEPASSWORDOPERATORBUTTONPRESSED);
             }
@@ -202,6 +202,7 @@ public class MenuOperationsGUI extends JFrame {
     }
 
     public void updateOperator(Operator operator){
+
         this.operator=operator;
     }
 

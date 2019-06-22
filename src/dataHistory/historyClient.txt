@@ -1,0 +1,57 @@
+Sat 2019.06.22 at 09:30:41 PM CEST||# 1245 - Call started
+Sat 2019.06.22 at 09:31:01 PM CEST||# 1245 - The user pressed the register button
+Sat 2019.06.22 at 09:33:00 PM CEST||# 1245 - The operator pressed the Change Username button
+Sat 2019.06.22 at 09:37:11 PM CEST||# 12345 - Call started
+Sat 2019.06.22 at 09:37:45 PM CEST||# 12345 - The user pressed the register button
+Sat 2019.06.22 at 09:37:53 PM CEST||# 12345 - The operator pressed the Change Username button
+Sat 2019.06.22 at 09:42:26 PM CEST||# 6666 - Call started
+Sat 2019.06.22 at 09:42:49 PM CEST||# 6666 - The user pressed the register button
+Sat 2019.06.22 at 09:42:56 PM CEST||# 6666 - The operator pressed the Change Username button
+Sat 2019.06.22 at 09:44:14 PM CEST||# 9876 - Call started
+Sat 2019.06.22 at 09:44:42 PM CEST||# 9876 - The user pressed the register button
+Sat 2019.06.22 at 09:44:51 PM CEST||# 9876 - The operator pressed the Change Username button
+Sat 2019.06.22 at 09:49:35 PM CEST||# 1234 - Call started
+Sat 2019.06.22 at 09:49:55 PM CEST||# 1234 - The user pressed the register button
+Sat 2019.06.22 at 09:50:03 PM CEST||# 1234 - The operator pressed the Change Username button
+Sat 2019.06.22 at 09:53:38 PM CEST||# 4589 - Call started
+Sat 2019.06.22 at 09:53:56 PM CEST||# 4589 - The user pressed the register button
+Sat 2019.06.22 at 09:54:02 PM CEST||# 4589 - The operator pressed the Change Username button
+Sat 2019.06.22 at 09:57:20 PM CEST||# 1245 - Call started
+Sat 2019.06.22 at 09:57:44 PM CEST||# 1245 - The user pressed the register button
+Sat 2019.06.22 at 09:57:49 PM CEST||# 1245 - The operator pressed the Change Username button
+Sat 2019.06.22 at 10:02:35 PM CEST||# 1245 - The operator pressed the Logout button
+Sat 2019.06.22 at 10:12:48 PM CEST||# 154654 - Call started
+Sat 2019.06.22 at 10:13:07 PM CEST||# 154654 - The user pressed the login button
+Sat 2019.06.22 at 10:13:26 PM CEST||# 154654 - The operator pressed the Change Password button
+Sat 2019.06.22 at 10:14:01 PM CEST||# 154654 - The operator pressed the Logout button
+Sat 2019.06.22 at 10:19:06 PM CEST||# 4545646 - Call started
+Sat 2019.06.22 at 10:27:14 PM CEST||# 124565 - Call started
+Sat 2019.06.22 at 10:27:50 PM CEST||# 45484 - Call started
+Sat 2019.06.22 at 10:31:39 PM CEST||# 1265456 - Call started
+Sat 2019.06.22 at 10:32:02 PM CEST||# 1265456 - The user pressed the register button
+Sat 2019.06.22 at 10:39:31 PM CEST||# 2564156 - Call started
+Sat 2019.06.22 at 10:41:08 PM CEST||# 2564156 - The user pressed the register button
+Sat 2019.06.22 at 10:43:18 PM CEST||# 56489 - Call started
+Sat 2019.06.22 at 10:43:35 PM CEST||# 56489 - The user pressed the register button
+Sat 2019.06.22 at 10:48:02 PM CEST||# 56489 - The user pressed the register button
+Sat 2019.06.22 at 10:48:24 PM CEST||# 5451251 - Call started
+Sat 2019.06.22 at 10:53:01 PM CEST||# 515152156 - Call started
+Sat 2019.06.22 at 10:53:25 PM CEST||# 515152156 - The user pressed the login button
+Sat 2019.06.22 at 10:56:51 PM CEST||# 54564564 - Call started
+Sat 2019.06.22 at 10:58:55 PM CEST||# 4564152 - Call started
+Sat 2019.06.22 at 11:04:55 PM CEST||# 654561 - Call started
+Sat 2019.06.22 at 11:05:32 PM CEST||# 654561 - The user pressed the login button
+Sat 2019.06.22 at 11:06:46 PM CEST||# 454654 - Call started
+Sat 2019.06.22 at 11:07:00 PM CEST||# 454654 - The user pressed the register button
+Sat 2019.06.22 at 11:07:02 PM CEST||# 454654 - The operator pressed the Change Username button
+Sat 2019.06.22 at 11:12:01 PM CEST||# 58415856 - Call started
+Sat 2019.06.22 at 11:12:29 PM CEST||# 58415856 - The user pressed the register button
+Sat 2019.06.22 at 11:12:39 PM CEST||# 58415856 - The operator pressed the Change Username button
+Sat 2019.06.22 at 11:13:08 PM CEST||# 58415856 - The operator pressed the Logout button
+Sat 2019.06.22 at 11:15:23 PM CEST||# 1111 - Call started
+Sat 2019.06.22 at 11:15:35 PM CEST||# 1111 - The user pressed the register button
+Sat 2019.06.22 at 11:15:38 PM CEST||# 1111 - The operator pressed the Change Username button
+Sat 2019.06.22 at 11:17:12 PM CEST||# 1111 - Call started
+Sat 2019.06.22 at 11:17:29 PM CEST||# 1111 - The user pressed the login button
+Sat 2019.06.22 at 11:17:31 PM CEST||# 1111 - The operator pressed the Change Password button
+Sat 2019.06.22 at 11:18:00 PM CEST||# 1111 - The operator pressed the Logout button

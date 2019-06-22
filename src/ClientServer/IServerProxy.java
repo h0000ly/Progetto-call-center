@@ -9,8 +9,8 @@ public interface IServerProxy {
         void addOperation(MessageServer messageServer);
         ArrayList<Operation> retrieveJustTheRight(MessageServer messageServer);
         Operator addAndRetrieveOperator(MessageServer messageServer);
-        void changeUsername(MessageServer messageServer);
-        void changePassword(MessageServer messageServer);
+        Operator changeUsername(MessageServer messageServer);
+        Operator changePassword(MessageServer messageServer);
         void removeOperation(MessageServer messageServer);
         void changeID(MessageServer messageServer);
         void changeText(MessageServer messageServer);

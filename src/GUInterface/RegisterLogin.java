@@ -72,7 +72,7 @@ public class RegisterLogin extends JFrame implements ActionListener{
         if (e.getActionCommand().equalsIgnoreCase("Login")) {
             Operator opOut=null;
             opOut=findTheOne();
-                if(opOut!=null&&!opOut.isLoggedIn()) {
+                if(opOut!=null&&!opOut.isLoggedIn()&&opOut.getPassword().equals(pswText.getText().trim())) {
 
                         data.updateHistory(LOGINPRESSED);
 
@@ -85,11 +85,13 @@ public class RegisterLogin extends JFrame implements ActionListener{
                         OperatorNotFound oNF = new OperatorNotFound();
                         oNF.setVisible(true);
                     }
-                    else{
-                        if(opOut.isLoggedIn()){
-                            OperatorAlreadyLogged oAL=new OperatorAlreadyLogged();
-                            oAL.setVisible(true);
-                        }
+                    else if (opOut.isLoggedIn()) {
+                        OperatorAlreadyLogged oAL=new OperatorAlreadyLogged();
+                        oAL.setVisible(true);
+                    }
+                    else if (opOut != null) {
+                        WrongPassword wo = new WrongPassword();
+                        wo.setVisible(true);
                     }
                 }
         }
@@ -101,7 +103,9 @@ public class RegisterLogin extends JFrame implements ActionListener{
                 Operator operator=null;
                 Operator operatorIn=null;
                 operatorIn=findTheOne();
-                if(operatorIn==null) {
+                if(operatorIn==null){
+
+
                     try {
                         socket = new Socket(ServerInfo.IP, ServerInfo.PORT);
                         ObjectOutputStream os = new ObjectOutputStream(socket.getOutputStream());
@@ -119,8 +123,14 @@ public class RegisterLogin extends JFrame implements ActionListener{
                     }
                 }
                 else{
+                    if(operatorIn.getNumber().equals(numberCalled)&&operatorIn.getUsername().equals(userText.getText().trim())) {
+                        OperatorAlreadyUsed oAU=new OperatorAlreadyUsed();
+                        oAU.setVisible(true);
+                    }
+                    else{
                     OperatorAlreadyUsed oAU=new OperatorAlreadyUsed();
                     oAU.setVisible(true);
+                    }
                 }
             }
         }

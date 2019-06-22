@@ -23,11 +23,13 @@ public class UpdatePasswordOperatorGUI extends JFrame {
     private String number;
     private String username;
     private String numCalling;
+    private MenuOperationsGUI menuOperationsGUI;
 
-    public UpdatePasswordOperatorGUI(String numCalling,String number,String username) {
+    public UpdatePasswordOperatorGUI(MenuOperationsGUI menuOperationsGUI,String numCalling,String number,String username) {
         this.number = number;
         this.username=username;
         this.numCalling=numCalling;
+        this.menuOperationsGUI=menuOperationsGUI;
         initialize();
     }
     private void initialize(){
@@ -51,6 +53,7 @@ public class UpdatePasswordOperatorGUI extends JFrame {
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Operator operatorUpdated=null;
                 Socket socket = null;
                 if(!jT1.getText().equals("")&&!jT2.getText().equals("")) {
                     if(jT1.getText().trim().equals(jT2.getText().trim())) {
@@ -58,8 +61,11 @@ public class UpdatePasswordOperatorGUI extends JFrame {
                             try {
                                 socket = new Socket(ServerInfo.IP, ServerInfo.PORT);
                                 ObjectOutputStream os = new ObjectOutputStream(socket.getOutputStream());
+                                ObjectInputStream is=new ObjectInputStream(socket.getInputStream());
                                 os.writeObject(new MessageServer(MessageType.MODIFYPASSWORD,numCalling,new Operator( number, username, jT1.getText().trim())));
-                            } catch (IOException ex) {
+                                operatorUpdated=(Operator) is.readObject();
+                                menuOperationsGUI.updateOperator(operatorUpdated);
+                            } catch (IOException | ClassNotFoundException ex) {
                                 ex.printStackTrace();
                             }
                             end();

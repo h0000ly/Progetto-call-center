@@ -32,10 +32,13 @@ public class DBOperatorDAO implements IProxyDBOperator {
      */
 
     @Override
-    public void addOperatorToDatabase(String numCalling,Operator operator) {
+    public Operator addOperatorToDatabase(String numCalling,Operator operator) {
+        Operator newOperator=null;
         connection = dBConnOp.connectToDB(connection);
         dBIns.insertOperator(connection,numCalling,operator);
+        newOperator=dBRet.retreiveJustTheOne(connection,numCalling,operator.getNumber(),operator.getUsername());
         connection = dBConnOp.disconnectFromDB(connection);
+        return newOperator;
 
     }
 
@@ -58,11 +61,13 @@ public class DBOperatorDAO implements IProxyDBOperator {
      * @param operator
      */
     @Override
-    public void updatePassword(String numCalling,Operator operator) {
+    public Operator updatePassword(String numCalling,Operator operator) {
+        Operator updatedOperator=null;
         connection = dBConnOp.connectToDB(connection);
         dBUp.updatePassword(connection,numCalling,operator);
+        updatedOperator=dBRet.retreiveJustTheOne(connection,numCalling,operator.getNumber(),operator.getUsername());
         connection = dBConnOp.disconnectFromDB(connection);
-
+        return updatedOperator;
     }
 
     /**
@@ -73,10 +78,13 @@ public class DBOperatorDAO implements IProxyDBOperator {
      * @param newUser
      */
     @Override
-    public void updateUsername(String numCalling,String number,String oldUser, String newUser) {
+    public Operator updateUsername(String numCalling,String number,String oldUser, String newUser) {
+        Operator updatedOperator=null;
         connection = dBConnOp.connectToDB(connection);
         dBUp.updateUsername(connection,numCalling,number,oldUser,newUser);
+        updatedOperator=dBRet.retreiveJustTheOne(connection,numCalling,number,newUser);
         connection = dBConnOp.disconnectFromDB(connection);
+        return updatedOperator;
     }
 
     /**
@@ -89,7 +97,7 @@ public class DBOperatorDAO implements IProxyDBOperator {
     public Operator findOperator(String numCalling,Operator operatorIn) {
         Operator operator=null;
         connection=dBConnOp.connectToDB(connection);
-        operator=dBRet.retreiveJustTheOne(connection,numCalling,operatorIn);
+        operator=dBRet.retreiveJustTheOne(connection,numCalling,operatorIn.getNumber(),operatorIn.getUsername());
         connection=dBConnOp.disconnectFromDB(connection);
         return operator;
         }

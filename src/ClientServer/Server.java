@@ -9,18 +9,18 @@ import model.Operator;
 import java.util.ArrayList;
 
 public class Server implements IServerProxy {
-    private final static String ADDOPERATIONREQUEST="received addOperation request";
-    private final static String ADDOPERATORREQUEST="received addAndRetrieveOperator request";
-    private final static String RETRIEVEOPERATIONREQUEST="received retrieveTheAvailableOption request";
-    private final static String CHANGEUSERNAMEREQUEST="received changeUsername request";
-    private final static String CHANGEPASSWORDREQUEST="received changePassword request";
-    private final static String REMOVEOPERATIONREQUEST="received removeOperation request";
-    private final static String CHANGEIDREQUEST="received changeID request";
-    private final static String CHANGETEXTREQUEST= "received changeText request";
-    private final static String REMOVEOPERATORREQUEST= "received removeOperator request";
-    private final static String FINDOPERATORREQUEST="received findOperator request ";
-    private final static String LOGINREQUEST="received request to login";
-    private final static String LOGOUTREQUEST="received request to logout";
+    private final  String ADDOPERATIONREQUEST="received addOperation request";
+    private final  String ADDOPERATORREQUEST="received addAndRetrieveOperator request";
+    private final  String RETRIEVEOPERATIONREQUEST="received retrieveTheAvailableOption request";
+    private final  String CHANGEUSERNAMEREQUEST="received changeUsername request";
+    private final  String CHANGEPASSWORDREQUEST="received changePassword request";
+    private final  String REMOVEOPERATIONREQUEST="received removeOperation request";
+    private final  String CHANGEIDREQUEST="received changeID request";
+    private final  String CHANGETEXTREQUEST= "received changeText request";
+    private final  String REMOVEOPERATORREQUEST= "received removeOperator request";
+    private final  String FINDOPERATORREQUEST="received findOperator request ";
+    private final  String LOGINREQUEST="received request to login";
+    private final  String LOGOUTREQUEST="received request to logout";
     private DBOperatorDAO dBR1;
     private DBOperationDAO dBR2;
     private DataWriterServer data;
@@ -60,40 +60,38 @@ public class Server implements IServerProxy {
      * @return
      */
     public synchronized Operator addAndRetrieveOperator(MessageServer messageServer){
+        Operator newOperator=null;
         data=new DataWriterServer(messageServer.getNumCalling());
         data.updateHistory(ADDOPERATORREQUEST);
-        dBR1.addOperatorToDatabase(messageServer.getNumCalling(),messageServer.getOperator());
+        newOperator=dBR1.addOperatorToDatabase(messageServer.getNumCalling(),messageServer.getOperator());
         System.err.println("received addAndRetrieveOperator request");
-
-        return messageServer.getOperator();
+        return newOperator;
     }
 
     /**
      * This method is used to change the username af an operator
      * @param messageServer
      */
-    public synchronized void changeUsername(MessageServer messageServer){
+    public synchronized Operator changeUsername(MessageServer messageServer){
+        Operator updatedOperator=null;
         data=new DataWriterServer(messageServer.getNumCalling());
-
         data.updateHistory(CHANGEUSERNAMEREQUEST);
-
-        dBR1.updateUsername(messageServer.getNumCalling(),messageServer.getId(),messageServer.getNumber(),messageServer.getText());
-
+        updatedOperator=dBR1.updateUsername(messageServer.getNumCalling(),messageServer.getId(),messageServer.getNumber(),messageServer.getText());
         System.err.println("received changeUsername request");
+        return updatedOperator;
     }
 
     /**
      * This method is used to change the password of an operator
      * @param messageServer
      */
-    public synchronized void changePassword(MessageServer messageServer){
+    public synchronized Operator changePassword(MessageServer messageServer){
+        Operator updatedOperator=null;
         data=new DataWriterServer(messageServer.getNumCalling());
-
         data.updateHistory(CHANGEPASSWORDREQUEST);
-
-        dBR1.updatePassword(messageServer.getNumCalling(),messageServer.getOperator());
+        updatedOperator=dBR1.updatePassword(messageServer.getNumCalling(),messageServer.getOperator());
         System.err.println("received changePassword request");
-
+        return updatedOperator;
     }
 
     /**

@@ -6,12 +6,15 @@ import ClientServer.ServerInfo;
 import GUInterface.Exception.EmptyField;
 import GUInterface.Exception.ErrorRegisterLoginGUI;
 import GUInterface.Exception.ExceptionEnum;
+import GUInterface.Exception.OperatorAlreadyUsed;
+import model.Operator;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
@@ -19,10 +22,12 @@ public class UpdateUsernameOperatorGUI extends JFrame {
     private JTextField jT1;
     private String number;
     private String numCalling;
+    private MenuOperationsGUI menuOperationsGUI;
 
-    public UpdateUsernameOperatorGUI(String numCalling,String number,String username) {
+    public UpdateUsernameOperatorGUI(MenuOperationsGUI menuOperationsGUI,String numCalling,String number,String username) {
         this.number = number;
         this.numCalling=numCalling;
+        this.menuOperationsGUI=menuOperationsGUI;
         initialize(username);
     }
 
@@ -42,17 +47,29 @@ public class UpdateUsernameOperatorGUI extends JFrame {
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Operator updatedOperator=null;
                 Socket socket = null;
                 if(!jT1.getText().equals("")) {
                     if(isValid(jT1)){
                     try {
                         socket = new Socket(ServerInfo.IP, ServerInfo.PORT);
+
                         ObjectOutputStream os = new ObjectOutputStream(socket.getOutputStream());
+                        ObjectInputStream is =new ObjectInputStream(socket.getInputStream());
                         os.writeObject(new MessageServer(MessageType.MODIFYUSERNAME,numCalling, number, username, jT1.getText().trim()));
-                    } catch (IOException ex) {
+                        updatedOperator=(Operator)is.readObject();
+                        if(updatedOperator.getUsername().equals(jT1.getText().trim())){
+                            OperatorAlreadyUsed oA=new OperatorAlreadyUsed();
+                            oA.setVisible(true);
+                        }
+                        else {
+                            menuOperationsGUI.updateOperator(updatedOperator);
+                            end();
+                        }
+                    } catch (IOException | ClassNotFoundException ex) {
                         ex.printStackTrace();
                     }
-                    end();
+
                     }
                     else{
                         ErrorRegisterLoginGUI error=new ErrorRegisterLoginGUI(ExceptionEnum.SHORT);
