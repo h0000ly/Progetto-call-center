@@ -1,6 +1,7 @@
 package DBOperator;
 
 import dataHistory.DataWriter;
+import dataHistory.DataWriterServer;
 import model.Operator;
 
 import java.io.IOException;
@@ -9,17 +10,18 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class DBOperatorUpdater {
-    private DataWriter data;
+    private DataWriterServer data;
 
     /**
-     * This method change the username of a defined operator
+     * This method is used to change the username of an operator in the database
      * @param connection
+     * @param numCalling
      * @param number
      * @param oldUsername
      * @param newUsername
      */
     public void updateUsername(Connection connection,String numCalling, String number,String oldUsername,String newUsername) {
-        data=new DataWriter(numCalling);
+        data=new DataWriterServer(numCalling);
         /*boolean found=false;
         if(dbR.retrieveAllTheOperators(connection).isEmpty()){
             MasterClassExceptionGUI d=new MasterClassExceptionGUI();
@@ -45,8 +47,6 @@ public class DBOperatorUpdater {
                     data.updateHistory("Username updated, new username: "+newUsername);
                 } catch (SQLException e) {
                     System.err.println("[DBOperatorUpdater] - Exception " + e + " encounterd in method updateUsername.");
-                } catch (IOException e) {
-                    e.printStackTrace();
                 }
     }/*
             else{
@@ -56,9 +56,14 @@ public class DBOperatorUpdater {
         }
     }*/
 
-
+    /**
+     * This method is used to change the password of an operator in the database
+     * @param connection
+     * @param numCalling
+     * @param operator
+     */
     void updatePassword(Connection connection,String numCalling,Operator operator){
-        data=new DataWriter(numCalling);
+        data=new DataWriterServer(numCalling);
         /*boolean found=false;
 
         if(dbR.retrieveAllTheOperators(connection).isEmpty()){
@@ -83,8 +88,6 @@ public class DBOperatorUpdater {
                     data.updateHistory("Password uptated for the operator "+operator.getUsername()+" and number "+operator.getNumber());
                 } catch (SQLException e) {
                     System.err.println("[DBOperatorUpdater] - Exception " + e + " encountered in method updatePassword.");
-                } catch (IOException e) {
-                    e.printStackTrace();
                 }
     }/*
             else{
@@ -93,6 +96,13 @@ public class DBOperatorUpdater {
             }
         }
     }*/
+
+    /**
+     * This method change the status (logged in or logged out) of an operator in the database
+     * @param connection
+     * @param numCalling
+     * @param operator
+     */
     void logged(Connection connection, String numCalling,Operator operator){
         /*boolean found=false;
 

@@ -17,6 +17,7 @@ public class ErrorRegisterLoginGUI extends JFrame implements ActionListener {
     private void initComponents(){
         this.setLocation(600,300);
         this.setVisible(true);
+        this.setTitle("Error");
         buttonPanel=new JPanel();
         buttonPanel.setLayout(null);
 
@@ -33,6 +34,10 @@ public class ErrorRegisterLoginGUI extends JFrame implements ActionListener {
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 
+    /**
+     * This method is used to close the window
+     * @param e
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         this.dispose();

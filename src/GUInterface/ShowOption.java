@@ -19,7 +19,10 @@ public class ShowOption extends JFrame {
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 
-
+    /**
+     * This method is used to update the available choices for the user displayed
+     * @param toShow
+     */
     public void updateOptions(ArrayList<String> toShow){
         int i=30;
         toClean.removeAll();

@@ -63,6 +63,10 @@ public class DeleteOperatorGUI extends JFrame {
 
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
+
+    /**
+     * This method dispose the window
+     */
     private void end(){
         this.dispose();
     }

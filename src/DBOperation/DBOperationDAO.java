@@ -19,6 +19,10 @@ public class DBOperationDAO implements IDBOperationProxy {
     private DBOperationReader dBRet=new DBOperationReader();
     private DBConnectionManagerOperation dBConnOp=new DBConnectionManagerOperation();
 
+    private DBOperationDAO(){
+
+    }
+
     public static DBOperationDAO getInstance(){
         if(instance==null){
             instance=new DBOperationDAO();
@@ -27,11 +31,12 @@ public class DBOperationDAO implements IDBOperationProxy {
     }
 
     /**
-     * add a new operation
+     * This method is called to add a new operation in the storage unit
+     * @param numCalling
      * @param operation
      */
     @Override
-    public void addOperationToDatabase(String numCalling,Operation operation) {
+    public void addOperation(String numCalling, Operation operation) {
         connection = dBConnOp.connectToDB(connection);
         dBIns.addOperation(connection,numCalling,operation);
         connection = dBConnOp.disconnectFromDB(connection);
@@ -39,7 +44,8 @@ public class DBOperationDAO implements IDBOperationProxy {
     }
 
     /**
-     * remove an operation
+     * This method is called to remove an operation in the storage unit at a certain number and id
+     * @param numCalling
      * @param id
      * @param number
      */
@@ -51,7 +57,8 @@ public class DBOperationDAO implements IDBOperationProxy {
     }
 
     /**
-     * change the id of an operation
+     * This method is called to change the id of an operation in the storage unit at a certain number and old id
+     * @param numCalling
      * @param oldID
      * @param number
      * @param newID
@@ -64,7 +71,8 @@ public class DBOperationDAO implements IDBOperationProxy {
     }
 
     /**
-     * Change the textof an operation
+     * This method is called to change the text of an operation
+     * @param numCalling
      * @param operation
      */
     @Override
@@ -75,7 +83,8 @@ public class DBOperationDAO implements IDBOperationProxy {
     }
 
     /**
-     * returns all the available choices for the number called
+     * This method returns all the operations having a certain id and number
+     * @param numCalling
      * @param numCall
      * @param numberSequence
      * @return

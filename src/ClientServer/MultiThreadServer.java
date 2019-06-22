@@ -1,6 +1,7 @@
 package ClientServer;
 
 import dataHistory.DataWriter;
+import dataHistory.DataWriterServer;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -47,7 +48,7 @@ public class MultiThreadServer implements Runnable {
      * @throws Exception
      */
     public static void main(String args[]) throws Exception {
-        DataWriter data=new DataWriter("");
+        DataWriterServer data=new DataWriterServer("");
         ServerSocket ssock = new ServerSocket(ServerInfo.PORT);
         System.out.println("Server is listening");
         data.updateHistory("SERVER ONLINE");

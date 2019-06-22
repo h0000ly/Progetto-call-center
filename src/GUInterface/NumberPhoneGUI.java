@@ -14,7 +14,7 @@ public class NumberPhoneGUI extends JFrame {
     private JButton jButtonOk;
 
     public NumberPhoneGUI(){
-        this.setBounds(600,300,350,170);
+        this.setBounds(650,300,350,170);
         this.setTitle("Number Phone Window");
         this.setResizable(false);
         this.setLayout(null);
@@ -59,6 +59,12 @@ public class NumberPhoneGUI extends JFrame {
 
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
+
+    /**
+     * This method checks if the input is composed only by numbers
+     * @param iDToCheck
+     * @return
+     */
     private boolean isValid(String iDToCheck){
 
         for(int i=0;i<iDToCheck.length();i++){
@@ -68,6 +74,10 @@ public class NumberPhoneGUI extends JFrame {
         }
         return true;
     }
+
+    /**
+     * This method is used to dispose the window
+     */
     private void close(){
         this.dispose();
     }

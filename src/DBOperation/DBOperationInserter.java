@@ -1,6 +1,7 @@
 package DBOperation;
 
 import dataHistory.DataWriter;
+import dataHistory.DataWriterServer;
 import model.Operation;
 import GUInterface.Exception.OperationAlreadyUsed;
 
@@ -10,14 +11,16 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class DBOperationInserter {
-    private DataWriter data;
+    private DataWriterServer data;
+
     /**
-     * This method add a new Operation in the database operationdb
+     * This method is called to add a new operation in the database
      * @param connection
+     * @param numCalling
      * @param operation
      */
     public void addOperation(Connection connection,String numCalling,Operation operation){
-        data=new DataWriter(numCalling);
+        data=new DataWriterServer(numCalling);
         DBOperationReader dBR=new DBOperationReader();
         boolean found=false;
         for(Operation a:dBR.retrieveAllTheOperations(connection,operation.getNumber())){
@@ -38,8 +41,6 @@ public class DBOperationInserter {
                 data.updateHistory("Operation "+operation.getId()+" at number"+operation.getNumber()+" added to Database");
             } catch (SQLException e) {
                 System.err.println("[DBOperationInserter] - Exception " + e + " encountered in method insertOperation.");
-            } catch (IOException e) {
-                e.printStackTrace();
             }
         }
         else{

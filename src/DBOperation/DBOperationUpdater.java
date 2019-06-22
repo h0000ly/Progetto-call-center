@@ -1,6 +1,7 @@
 package DBOperation;
 
 import dataHistory.DataWriter;
+import dataHistory.DataWriterServer;
 import model.Operation;
 import GUInterface.Exception.DBOperationEmpty;
 import GUInterface.Exception.OperationNotFound;
@@ -11,11 +12,13 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class DBOperationUpdater {
-    private DataWriter data;
+    private DataWriterServer data;
     DBOperationReader dBR=new DBOperationReader();
+
     /**
-     * This method change the id of an operation
+     * This method is called to change the id of an operation in the database
      * @param connection
+     * @param numCalling
      * @param oldId
      * @param number
      * @param newId
@@ -23,7 +26,7 @@ public class DBOperationUpdater {
 
     void changeOperationID(Connection connection,String numCalling,String oldId,String number,String newId){
         boolean found =false;
-        data=new DataWriter(numCalling);
+        data=new DataWriterServer(numCalling);
         if(dBR.retrieveAllTheOperations(connection,number).isEmpty()){
             DBOperationEmpty d=new DBOperationEmpty();
             d.setVisible(true);
@@ -47,8 +50,6 @@ public class DBOperationUpdater {
                     data.updateHistory("Id apdated for the operation "+oldId+" at number "+number+", new id: "+newId);
                 } catch (SQLException e) {
                     System.err.println("[DBOperationUpdater] - Exception " + e + " encountered in method changeOperationID.");
-                } catch (IOException e) {
-                    e.printStackTrace();
                 }
             } else {
                 OperationNotFound b = new OperationNotFound();
@@ -58,13 +59,14 @@ public class DBOperationUpdater {
     }
 
     /**
-     * This method change the text of an operation
+     * This method is used to change the text of an operation in the database
      * @param connection
+     * @param numCalling
      * @param operation
      */
     void changeOperationText(Connection connection,String numCalling,Operation operation) {
         boolean found=false;
-        data=new DataWriter(numCalling);
+        data=new DataWriterServer(numCalling);
         if(dBR.retrieveAllTheOperations(connection,operation.getNumber()).isEmpty()){
             DBOperationEmpty d=new DBOperationEmpty();
             d.setVisible(true);
@@ -88,8 +90,6 @@ public class DBOperationUpdater {
                     data.updateHistory("Text updated for the operation "+operation.getId()+" and number "+operation.getNumber());
                 } catch (SQLException e) {
                     System.err.println("[DBOperationUpdater] - Exception " + e + " encountered in method changeOperationText.");
-                } catch (IOException e) {
-                    e.printStackTrace();
                 }
             } else {
                 OperationNotFound b = new OperationNotFound();

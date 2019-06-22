@@ -1,6 +1,7 @@
 package DBOperator;
 
 import dataHistory.DataWriter;
+import dataHistory.DataWriterServer;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -9,15 +10,17 @@ import java.sql.SQLException;
 
 public class DBOperatorDeleter {
 
-    private DataWriter data;
+    private DataWriterServer data;
+
     /**
-     * This method delete an operator with a defined number and username
+     * This method is used to remove a defined operator in the database
      * @param connection
+     * @param numCalling
      * @param number
      * @param username
      */
     void removeOperator(Connection connection, String numCalling,String number,String username) {
-        data=new DataWriter(numCalling);
+        data=new DataWriterServer(numCalling);
         /*boolean found=false;
         DBOperatorReader dBR=new DBOperatorReader();
         if(dBR.retrieveAllTheOperators(connection).isEmpty()){
@@ -43,8 +46,6 @@ public class DBOperatorDeleter {
                     data.updateHistory("Operator " + username + " at number " + number + " removed.");
                 } catch (SQLException e) {
                     System.err.println("[DBOperatorDeleter] - Exception " + e + " encountered in method removeOperator.");
-                } catch (IOException e) {
-                    e.printStackTrace();
                 }
     } /*else {
                 OperatorNotFound d = new OperatorNotFound();

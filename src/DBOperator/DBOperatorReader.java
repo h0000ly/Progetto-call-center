@@ -9,12 +9,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class DBOperatorReader {
-    /**
-     * This method returns all the operators
-     * @param connection
-     * @return
-     */
-    ArrayList<Operator> retrieveAllTheOperators(Connection connection) {
+
+   /* ArrayList<Operator> retrieveAllTheOperators(Connection connection) {
         ArrayList<Operator> ops=new ArrayList<>(10);
         try {
             System.err.println("[DBOperatorReader] - Retrieving all the operators to check ...");
@@ -32,11 +28,12 @@ public class DBOperatorReader {
         }
 
         return ops;
-    }
+    }*/
 
     /**
-     * This method return only a defined operator
+     * This method is used to return a defined operator
      * @param connection
+     * @param numCalling
      * @param operatorIn
      * @return
      */

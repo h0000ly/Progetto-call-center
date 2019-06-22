@@ -1,6 +1,7 @@
 package DBOperator;
 
 import dataHistory.DataWriter;
+import dataHistory.DataWriterServer;
 import model.Operator;
 
 import java.io.IOException;
@@ -11,15 +12,16 @@ import java.sql.SQLException;
 
 
 public class DBOperatorInserter {
-    private DataWriter data;
+    private DataWriterServer data;
 
-    /***
-     * This method add a new operator in the database
+    /**
+     * This method is used to add a new operator in the database
      * @param connection
+     * @param numCalling
      * @param operator
      */
     void insertOperator(Connection connection,String numCalling, Operator operator) {
-        data=new DataWriter(numCalling);
+        data=new DataWriterServer(numCalling);
         try {
             System.err.println("[DBOperatorInserter] - Adding operator " + operator.getUsername() + " to database...");
             PreparedStatement ps = connection.prepareStatement("INSERT INTO operator VALUES (?,?,?,?);");
@@ -33,8 +35,6 @@ public class DBOperatorInserter {
             data.updateHistory("Operator " + operator.getUsername() + "at number "+operator.getNumber()+" added to database.");
         } catch (SQLException e) {
             System.err.println("[DBOperatorInserter] - Exception " + e + " encountered in method insertOperator.");
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 }

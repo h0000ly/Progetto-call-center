@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 
 
-public class MasterClassGUIException extends JFrame {
+public abstract class MasterClassGUIException extends JFrame {
     /**
      * macro for the allignment of the components
      */
@@ -42,7 +42,10 @@ public class MasterClassGUIException extends JFrame {
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 }
 
-    protected void close() {
+    /**
+     * This method is used to dispose the window
+     */
+    private void close() {
         this.dispose();
     }
 }

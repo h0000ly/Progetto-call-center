@@ -81,10 +81,18 @@ public class UpdatePasswordOperatorGUI extends JFrame {
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 
+    /**
+     * This method is used to dispose the window
+     */
     private void end(){
         this.dispose();
     }
 
+    /**
+     * This method is used to check if the input contains numbers, uppercase and lowercase character and not contains the space character
+     * @param toCheck
+     * @return
+     */
     private boolean isValid(JTextField toCheck){
         boolean isNumber=false;
         boolean isUpper=false;

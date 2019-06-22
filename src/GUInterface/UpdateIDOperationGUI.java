@@ -73,12 +73,15 @@ public class UpdateIDOperationGUI extends JFrame {
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 
+    /**
+     * This method is used to dispose the window
+     */
     private void end(){
         this.dispose();
     }
 
     /**
-     * This method is used to verify that the ID of an operation is a number
+     * This method is used to verify that the input is a number
      * @param iDToCheck
      * @return
      */

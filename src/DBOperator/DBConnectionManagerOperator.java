@@ -13,7 +13,7 @@ public class DBConnectionManagerOperator {
     private final String PASSWORD="ASSAssincreed5";
 
     /**
-     * Connect to the database of the operators
+     * This method is used to connect to the database of the operators
      * @param connection
      * @return
      */
@@ -31,7 +31,7 @@ public class DBConnectionManagerOperator {
     }
 
     /**
-     * Disconnects from the database of the operators
+     * This method is used to disconnect from the database of the operators
      */
     Connection disconnectFromDB(Connection connection) {
         try {

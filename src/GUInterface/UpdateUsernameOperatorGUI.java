@@ -70,10 +70,18 @@ public class UpdateUsernameOperatorGUI extends JFrame {
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 
+    /**
+     * This method dispose the window
+     */
     private void end(){
         this.dispose();
     }
 
+    /**
+     * This method is used to check if the input is long at least 8 characters
+     * @param toCheck
+     * @return
+     */
     private boolean isValid(JTextField toCheck){
         if(toCheck.getText().trim().length()<8){
             return false;

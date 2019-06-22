@@ -20,7 +20,7 @@ public class TesterDBOperation {
 @Before
 public  void dataLoad(){
     DBOperationDAO instance=DBOperationDAO.getInstance();
-    instance.addOperationToDatabase(numCalling,new Operation("12","5569","Nice test"));
+    instance.addOperation(numCalling,new Operation("12","5569","Nice test"));
     instance.updateID(numCalling,"12","5569","27");
     instance.updateText(numCalling,new Operation("27","5569","Well done"));
     //Creo oggetti operation

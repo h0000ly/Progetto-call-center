@@ -1,0 +1,9 @@
+Sat 2019.06.22 at 08:46:02 PM CEST||# 556555 - Operation 12 at number5569 added to Database
+Sat 2019.06.22 at 08:46:02 PM CEST||# 556555 - Id apdated for the operation 12 at number 5569, new id: 27
+Sat 2019.06.22 at 08:46:02 PM CEST||# 556555 - Text updated for the operation 27 and number 5569
+Sat 2019.06.22 at 08:46:02 PM CEST||# 556555 - The user pressed the button: 2
+Sat 2019.06.22 at 08:46:02 PM CEST||# 556555 - Operation 27 at number 5569 removed.
+Sat 2019.06.22 at 08:46:09 PM CEST||# 222333 - Operator Nice Usernameat number 5555 added to database.
+Sat 2019.06.22 at 08:46:09 PM CEST||# 222333 - Username updated, new username: Nice Username 2
+Sat 2019.06.22 at 08:46:09 PM CEST||# 222333 - Password uptated for the operator Nice Username 2 and number 5555
+Sat 2019.06.22 at 08:46:09 PM CEST||# 345556 - Operator Nice Username 2 at number 5555 removed.

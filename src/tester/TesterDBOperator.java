@@ -21,7 +21,7 @@ public class TesterDBOperator {
     private String numCalling="222333";
     @Before
     public void DataLoad(){
-        DBOperatorDAO instance=new DBOperatorDAO();
+        DBOperatorDAO instance=DBOperatorDAO.getInstance();
         instance.addOperatorToDatabase(numCalling,new Operator("5555","Nice Username","Nice Password"));
         instance.updateUsername(numCalling,"5555","Nice Username", "Nice Username 2");
         instance.updatePassword(numCalling,new Operator("5555","Nice Username 2","Nice Password 2"));

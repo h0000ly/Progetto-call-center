@@ -80,7 +80,7 @@ public class InsertOperationGUI extends JFrame {
     }
 
     /**
-     * This method is used to verify that the ID of an operation is a number
+     * This method is used to verify that the input is a number
      * @param iDToCheck
      * @return
      */
@@ -94,6 +94,9 @@ public class InsertOperationGUI extends JFrame {
         return true;
     }
 
+    /**
+     * This method dispose the window
+     */
     private void end(){
         this.dispose();
     }

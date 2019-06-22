@@ -5,6 +5,7 @@ import ClientServer.MessageType;
 import ClientServer.ServerInfo;
 import GUInterface.Exception.*;
 import dataHistory.DataWriter;
+import dataHistory.DataWriterClient;
 import model.Operator;
 
 import javax.swing.*;
@@ -15,19 +16,23 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
-public class RegisterLogin extends JFrame implements ActionListener {
+public class RegisterLogin extends JFrame implements ActionListener{
+    private static final String LOGINPRESSED="The user pressed the login button";
+    private static final String REGISTERPRESSED="The user pressed the register button";
     private JTextField userText;
     private JPasswordField pswText;
     private JButton butLog;
     private JButton butReg;
     private String numberCalled;
     private String numberCalling;
-    private DataWriter data;
+    private DataWriterClient data;
+
 
     public RegisterLogin(String numberCalling, String numberCalled) {
-        data=new DataWriter(numberCalling);
+        data=new DataWriterClient(numberCalling);
         this.numberCalled = numberCalled;
         this.numberCalling=numberCalling;
+
         initComponents();
     }
 
@@ -59,6 +64,7 @@ public class RegisterLogin extends JFrame implements ActionListener {
         butReg.setBounds(butLog.getX()+butLog.getWidth(),butLog.getY(),butLog.getWidth(),butLog.getHeight());
         pane.add(butReg);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+
     }
 
     @Override
@@ -67,11 +73,9 @@ public class RegisterLogin extends JFrame implements ActionListener {
             Operator opOut=null;
             opOut=findTheOne();
                 if(opOut!=null&&!opOut.isLoggedIn()) {
-                    try {
-                        data.updateHistory("The user has logged in");
-                    } catch (IOException ex) {
-                        ex.printStackTrace();
-                    }
+
+                        data.updateHistory(LOGINPRESSED);
+
                     MenuOperationsGUI menu = new MenuOperationsGUI(numberCalling,opOut);
                     menu.setVisible(true);
                     this.dispose();
@@ -105,7 +109,7 @@ public class RegisterLogin extends JFrame implements ActionListener {
                         os.writeObject(new MessageServer(MessageType.ADDOPERATOR,numberCalling, new Operator(numberCalled, userText.getText().trim(), pswText.getText().trim())));
                         operator = (Operator) is.readObject();
                         if (operator != null && !operator.isLoggedIn()) {
-                            data.updateHistory("The user registered");
+                            data.updateHistory(REGISTERPRESSED);
                             MenuOperationsGUI menu = new MenuOperationsGUI(numberCalling,operator);
                             menu.setVisible(true);
                             this.dispose();
@@ -121,6 +125,11 @@ public class RegisterLogin extends JFrame implements ActionListener {
             }
         }
     }
+
+    /**
+     * This method is used to find a defined operator in input
+     * @return
+     */
     private Operator findTheOne(){
         Operator opOut1=null;
         Socket socket = null;
@@ -137,6 +146,12 @@ public class RegisterLogin extends JFrame implements ActionListener {
         return opOut1;
     }
 
+    /**
+     * This method is used to check if the input contains numbers, uppercase and lowercase character and not contains the space character
+     * @param userText
+     * @param pswText
+     * @return
+     */
     private boolean isValid(JTextField userText,JPasswordField pswText){
         boolean isNumber=false;
         boolean isUpper=false;
@@ -187,6 +202,8 @@ public class RegisterLogin extends JFrame implements ActionListener {
         }
         return false;
     }
+
+
 
 
 }

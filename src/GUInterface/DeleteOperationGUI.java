@@ -67,10 +67,19 @@ public class DeleteOperationGUI extends JFrame{
         this.add(button);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
+
+    /**
+     * This method dispose the window
+     */
     private void end(){
         this.dispose();
     }
 
+    /**
+     * This method checks if the input is composed only by numbers
+     * @param iDToCheck
+     * @return
+     */
     private boolean isValid(String iDToCheck){
 
         for(int i=0;i<iDToCheck.length();i++){

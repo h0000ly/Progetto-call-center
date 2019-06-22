@@ -74,6 +74,11 @@ public class UpdateTextOperationGUI extends JFrame{
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 
+    /**
+     * This method checks if the input is composed only by numbers
+     * @param iDToCheck
+     * @return
+     */
     private boolean isValid(String iDToCheck){
 
         for(int i=0;i<iDToCheck.length();i++){
@@ -84,6 +89,9 @@ public class UpdateTextOperationGUI extends JFrame{
         return true;
     }
 
+    /**
+     * This method dispose the window
+     */
     private void end(){
         this.dispose();
     }
