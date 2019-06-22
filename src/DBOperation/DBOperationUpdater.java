@@ -1,5 +1,6 @@
 package DBOperation;
 
+import GUInterface.Exception.OperationAlreadyUsed;
 import dataHistory.DataWriter;
 import dataHistory.DataWriterServer;
 import model.Operation;
@@ -26,6 +27,7 @@ public class DBOperationUpdater {
 
     void changeOperationID(Connection connection,String numCalling,String oldId,String number,String newId){
         boolean found =false;
+        boolean updatedFound=false;
         data=new DataWriterServer(numCalling);
         if(dBR.retrieveAllTheOperations(connection,number).isEmpty()){
             DBOperationEmpty d=new DBOperationEmpty();
@@ -36,8 +38,12 @@ public class DBOperationUpdater {
                 if (a.equalsIDString(oldId, number)) {
                     found = true;
                 }
+                if(a.equalsIDString(newId,number)){
+                    updatedFound=true;
+                    break;
+                }
             }
-            if (found) {
+            if (found&&!updatedFound) {
                 try {
                     System.err.println("[DBOperationUpdater] - Updating id " + oldId);
                     PreparedStatement ps = connection.prepareStatement("UPDATE operation SET id = ? WHERE id = ? AND numbe = ?;");
@@ -52,8 +58,14 @@ public class DBOperationUpdater {
                     System.err.println("[DBOperationUpdater] - Exception " + e + " encountered in method changeOperationID.");
                 }
             } else {
-                OperationNotFound b = new OperationNotFound();
-                b.setVisible(true);
+                if(!found) {
+                    OperationNotFound b = new OperationNotFound();
+                    b.setVisible(true);
+                }
+                else if(updatedFound){
+                    OperationAlreadyUsed o=new OperationAlreadyUsed();
+                    o.setVisible(true);
+                }
             }
         }
     }

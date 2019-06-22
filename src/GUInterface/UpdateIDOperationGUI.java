@@ -5,11 +5,14 @@ import ClientServer.MessageType;
 import ClientServer.ServerInfo;
 import GUInterface.Exception.EmptyField;
 import GUInterface.Exception.IDIsANumber;
+import GUInterface.Exception.OperationAlreadyUsed;
+import model.Operation;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
@@ -46,16 +49,23 @@ public class UpdateIDOperationGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Socket socket = null;
-                if(!jOldIDTextField.getText().equals("")&&!jNewIDTextField.getText().equals("")) {
+
+                if(!jOldIDTextField.getText().equals("")&&!jNewIDTextField.getText().equals("")&&!jOldIDTextField.getText().trim().equals(jNewIDTextField.getText().trim())) {
                     if(isValid(jNewIDTextField.getText().trim())) {
                         try {
                             socket = new Socket(ServerInfo.IP, ServerInfo.PORT);
                             ObjectOutputStream os = new ObjectOutputStream(socket.getOutputStream());
+                            ObjectInputStream is=new ObjectInputStream(socket.getInputStream());
                             os.writeObject(new MessageServer(MessageType.MODIFYIDOPERATION,numberCalling, jOldIDTextField.getText().trim(), number, jNewIDTextField.getText().trim()));
-                        } catch (IOException ex) {
+                            Operation operationUpdated=(Operation) is.readObject();
+                            if(operationUpdated!=null&&operationUpdated.getId().equals(jOldIDTextField.getText().trim())){
+                                end();
+                            }
+                        } catch (IOException | ClassNotFoundException ex) {
                             ex.printStackTrace();
                         }
-                        end();
+
+
                     }
                     else{
                         IDIsANumber error=new IDIsANumber();

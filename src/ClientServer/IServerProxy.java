@@ -12,7 +12,7 @@ public interface IServerProxy {
         Operator changeUsername(MessageServer messageServer);
         Operator changePassword(MessageServer messageServer);
         void removeOperation(MessageServer messageServer);
-        void changeID(MessageServer messageServer);
+        Operation changeID(MessageServer messageServer);
         void changeText(MessageServer messageServer);
         void removeOperator(MessageServer messageServer);
         Operator findOperator(MessageServer messageServer);

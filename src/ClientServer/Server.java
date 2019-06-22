@@ -112,14 +112,12 @@ public class Server implements IServerProxy {
      * This method is used to change the id of an operation
      * @param messageServer
      */
-    public synchronized void changeID(MessageServer messageServer){
+    public synchronized Operation changeID(MessageServer messageServer){
         data=new DataWriterServer(messageServer.getNumCalling());
-
-            data.updateHistory(CHANGEIDREQUEST);
-
-        dBR2.updateID(messageServer.getNumCalling(),messageServer.getId(),messageServer.getNumber(),messageServer.getText());
+        data.updateHistory(CHANGEIDREQUEST);
+        Operation operationUpdated=dBR2.updateID(messageServer.getNumCalling(),messageServer.getId(),messageServer.getNumber(),messageServer.getText());
         System.err.println("received changeID request");
-
+        return operationUpdated;
     }
 
     /**

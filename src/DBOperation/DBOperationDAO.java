@@ -64,10 +64,19 @@ public class DBOperationDAO implements IDBOperationProxy {
      * @param newID
      */
     @Override
-    public void updateID(String numCalling,String oldID, String number, String newID) {
+    public Operation updateID(String numCalling,String oldID, String number, String newID) {
         connection =dBConnOp.connectToDB(connection);
         dBUp.changeOperationID(connection,numCalling,oldID,number,newID);
+        ArrayList<Operation> list=dBRet.retrieveAllTheOperations(connection,number);
+
         connection=dBConnOp.disconnectFromDB(connection);
+        for(Operation a:list){
+            if(a.equalsIDString(newID,number)){
+                return a;
+            }
+
+        }
+        return null;
     }
 
     /**

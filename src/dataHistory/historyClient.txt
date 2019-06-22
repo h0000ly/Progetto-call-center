@@ -55,3 +55,24 @@ Sat 2019.06.22 at 11:17:12 PM CEST||# 1111 - Call started
 Sat 2019.06.22 at 11:17:29 PM CEST||# 1111 - The user pressed the login button
 Sat 2019.06.22 at 11:17:31 PM CEST||# 1111 - The operator pressed the Change Password button
 Sat 2019.06.22 at 11:18:00 PM CEST||# 1111 - The operator pressed the Logout button
+Sat 2019.06.22 at 11:33:19 PM CEST||# 5454 - Call started
+Sat 2019.06.22 at 11:33:46 PM CEST||# 1111 - Call started
+Sat 2019.06.22 at 11:34:01 PM CEST||# 1111 - The user pressed the register button
+Sat 2019.06.22 at 11:34:05 PM CEST||# 1111 - The operator pressed the Delete Operation button
+Sat 2019.06.22 at 11:34:29 PM CEST||# 1111 - The operator pressed the Delete Operation button
+Sat 2019.06.22 at 11:34:45 PM CEST||# 1111 - The operator pressed the Change ID Operation button
+Sat 2019.06.22 at 11:55:55 PM CEST||# 545646 - Call started
+Sat 2019.06.22 at 11:56:10 PM CEST||# 545646 - The user pressed the register button
+Sat 2019.06.22 at 11:56:14 PM CEST||# 545646 - The operator pressed the Change ID Operation button
+Sat 2019.06.22 at 11:58:16 PM CEST||# 4456456 - Call started
+Sat 2019.06.22 at 11:58:27 PM CEST||# 4456456 - The user pressed the register button
+Sat 2019.06.22 at 11:58:33 PM CEST||# 4456456 - The operator pressed the Change ID Operation button
+Sun 2019.06.23 at 12:00:39 AM CEST||# 32543 - Call started
+Sun 2019.06.23 at 12:00:54 AM CEST||# 32543 - The user pressed the register button
+Sun 2019.06.23 at 12:00:57 AM CEST||# 32543 - The operator pressed the Change ID Operation button
+Sun 2019.06.23 at 12:01:53 AM CEST||# 1564654 - Call started
+Sun 2019.06.23 at 12:02:25 AM CEST||# 1564654 - The user pressed the register button
+Sun 2019.06.23 at 12:02:35 AM CEST||# 1564654 - The operator pressed the Change ID Operation button
+Sun 2019.06.23 at 12:04:42 AM CEST||# 54534534 - Call started
+Sun 2019.06.23 at 12:05:04 AM CEST||# 54534534 - The user pressed the register button
+Sun 2019.06.23 at 12:05:09 AM CEST||# 54534534 - The operator pressed the Change ID Operation button

@@ -70,3 +70,34 @@ Sat 2019.06.22 at 11:17:29 PM CEST||# 1111 - received request to login
 Sat 2019.06.22 at 11:17:48 PM CEST||# 1111 - received changePassword request
 Sat 2019.06.22 at 11:17:48 PM CEST||# 1111 - Password uptated for the operator Abcd1995 and number 1111
 Sat 2019.06.22 at 11:18:00 PM CEST||# 1111 - received request to logout
+Sat 2019.06.22 at 11:33:32 PM CEST||#  - SERVER ONLINE
+Sat 2019.06.22 at 11:34:01 PM CEST||# 1111 - received addAndRetrieveOperator request
+Sat 2019.06.22 at 11:34:01 PM CEST||# 1111 - Operator Kebab1995at number 4111 added to database.
+Sat 2019.06.22 at 11:34:01 PM CEST||# 1111 - received request to login
+Sat 2019.06.22 at 11:34:14 PM CEST||# 1111 - received addOperation request
+Sat 2019.06.22 at 11:34:14 PM CEST||# 1111 - Operation 12 at number4111 added to Database
+Sat 2019.06.22 at 11:34:35 PM CEST||# 1111 - received addOperation request
+Sat 2019.06.22 at 11:34:35 PM CEST||# 1111 - Operation 15 at number4111 added to Database
+Sat 2019.06.22 at 11:34:52 PM CEST||# 1111 - received changeID request
+Sat 2019.06.22 at 11:55:31 PM CEST||#  - SERVER ONLINE
+Sat 2019.06.22 at 11:56:10 PM CEST||# 545646 - received addAndRetrieveOperator request
+Sat 2019.06.22 at 11:56:10 PM CEST||# 545646 - Operator Junit1995at number 4111 added to database.
+Sat 2019.06.22 at 11:56:10 PM CEST||# 545646 - received request to login
+Sat 2019.06.22 at 11:56:22 PM CEST||# 545646 - received changeID request
+Sat 2019.06.22 at 11:58:27 PM CEST||# 4456456 - received addAndRetrieveOperator request
+Sat 2019.06.22 at 11:58:27 PM CEST||# 4456456 - Operator czdshfhngthA52at number 4111 added to database.
+Sat 2019.06.22 at 11:58:27 PM CEST||# 4456456 - received request to login
+Sat 2019.06.22 at 11:58:39 PM CEST||# 4456456 - received changeID request
+Sun 2019.06.23 at 12:00:54 AM CEST||# 32543 - received addAndRetrieveOperator request
+Sun 2019.06.23 at 12:00:54 AM CEST||# 32543 - Operator Ae34543fdat number 4111 added to database.
+Sun 2019.06.23 at 12:00:54 AM CEST||# 32543 - received request to login
+Sun 2019.06.23 at 12:01:06 AM CEST||# 32543 - received changeID request
+Sun 2019.06.23 at 12:02:25 AM CEST||# 1564654 - received addAndRetrieveOperator request
+Sun 2019.06.23 at 12:02:25 AM CEST||# 1564654 - Operator Ahgjh45345at number 4111 added to database.
+Sun 2019.06.23 at 12:02:25 AM CEST||# 1564654 - received request to login
+Sun 2019.06.23 at 12:02:42 AM CEST||# 1564654 - received changeID request
+Sun 2019.06.23 at 12:05:04 AM CEST||# 54534534 - received addAndRetrieveOperator request
+Sun 2019.06.23 at 12:05:04 AM CEST||# 54534534 - Operator Asdf1995at number 4111 added to database.
+Sun 2019.06.23 at 12:05:04 AM CEST||# 54534534 - received request to login
+Sun 2019.06.23 at 12:05:18 AM CEST||# 54534534 - received changeID request
+Sun 2019.06.23 at 12:06:06 AM CEST||# 54534534 - received changeID request
