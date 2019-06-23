@@ -5,12 +5,14 @@ import java.io.Serializable;
 
 public class Operator implements Serializable {
 
+    private static final long serialVersionUID = 44154261655452454L;
+	
     private String username;
     private String password;
     private String number;
     private boolean loggedIn;
-    private static final long serialVersionUID = 44154261655452454L;
-    public Operator(String number,String username, String password) {
+	
+    public Operator(String number, String username, String password) {
         this.username = username;
         this.password = password;
         this.number= number;
@@ -87,10 +89,7 @@ public class Operator implements Serializable {
      * @return
      */
     public boolean equals(Operator op){
-       if((this.getUsername().equals(op.getUsername()))&&(this.getNumber().equals(op.getNumber()))){
-           return true;
-       }
-       return false;
+       return (this.getUsername().equals(op.getUsername())) && (this.getNumber().equals(op.getNumber()));
     }
 
 }

@@ -6,8 +6,6 @@ import java.sql.SQLException;
 
 public class DBConnectionManagerOperator {
 
-
-
     private final String DATABASE="operatordb";
     private final String USERNAME="root";
     private final String PASSWORD="ASSAssincreed5";

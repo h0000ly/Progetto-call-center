@@ -8,6 +8,6 @@ public class EmptyField extends MasterClassGUIException{
 
     public EmptyField() {
         super(TITLE,TOSHOW);
-
     }
+	
 }

@@ -15,11 +15,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MultiThreadServer implements Runnable {
+	
+	// variables
     private Socket csocket;
     private Server real;
     private Map<MessageType, Method> methodCorrispondence = new HashMap<>();
-
-
+	// messages
+	private final String STARTED = "SERVER ONLINE";
+	private final String CONNECTED = "Server connected";
 
     MultiThreadServer(Socket csocket) throws NoSuchMethodException, SocketException {
         this.csocket = csocket;
@@ -38,8 +41,6 @@ public class MultiThreadServer implements Runnable {
         methodCorrispondence.put(MessageType.DELETEOPERATOR, Server.class.getMethod("removeOperator",MessageServer.class));
         methodCorrispondence.put(MessageType.JUSTTHEONEOPERATOR, Server.class.getMethod("findOperator",MessageServer.class));
         methodCorrispondence.put(MessageType.LOGGED, Server.class.getMethod("changeStatus",MessageServer.class));
-
-
     }
 
     /**
@@ -50,20 +51,18 @@ public class MultiThreadServer implements Runnable {
     public static void main(String args[]) throws Exception {
         DataWriterServer data=new DataWriterServer("");
         ServerSocket ssock = new ServerSocket(ServerInfo.PORT);
-        System.out.println("Server is listening");
-        data.updateHistory("SERVER ONLINE");
-
-
+        System.err.println(STARTED);
+        data.updateHistory(STARTED);
 
         while (true) {
             Socket sock = ssock.accept();
-            System.out.println("Connected");
+            System.err.println(CONNECTED);
 
             new Thread(new MultiThreadServer(sock)).start();
         }
     }
 
-    public void run(){
+    public void run() {
         try {
             ObjectInputStream inStream = new ObjectInputStream(csocket.getInputStream());
             ObjectOutputStream outStream = new ObjectOutputStream(csocket.getOutputStream());
@@ -72,14 +71,10 @@ public class MultiThreadServer implements Runnable {
             outStream.writeObject(result);
             outStream.flush();
             csocket.close();
-
-        } catch (IOException e) {
-            System.out.println(e);
-        } catch (IllegalAccessException | ClassNotFoundException e) {
+        } catch (IOException | IllegalAccessException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
-
 
     private Object returnMessage(MessageType tag, MessageServer messageServer) throws IllegalAccessException{
         Object result;
@@ -91,4 +86,5 @@ public class MultiThreadServer implements Runnable {
         }
         return result;
     }
+	
 }

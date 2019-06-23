@@ -6,6 +6,8 @@ import model.Operator;
 import java.io.Serializable;
 
 public class MessageServer implements Serializable {
+
+    private static final long serialVersionUID = 44154261654512454L;
     private String numCalling;
     private MessageType messageType;
     private String id;
@@ -14,8 +16,6 @@ public class MessageServer implements Serializable {
     private String numSequence;
     private Operator operator;
     private Operation operation;
-    private static final long serialVersionUID = 44154261654512454L;
-
 
     public MessageServer(MessageType messageType,String numCalling, String id, String number, String text) {
         this.messageType = messageType;
@@ -43,8 +43,6 @@ public class MessageServer implements Serializable {
         this.operation=operation;
         this.numCalling=numCalling;
     }
-
-
 
     public MessageType getMessageType() {
         return messageType;
@@ -77,4 +75,5 @@ public class MessageServer implements Serializable {
     public String getNumCalling() {
         return numCalling;
     }
+	
 }

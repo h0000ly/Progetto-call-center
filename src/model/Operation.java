@@ -3,12 +3,13 @@ package model;
 import java.io.Serializable;
 
 public class Operation implements Serializable {
+	
     private static final long serialVersionUID = 44154261655654454L;
     private String id;
     private String number;
     private String textOp;
 
-    public Operation(String id,String number, String textOp) {
+    public Operation(String id, String number, String textOp) {
         this.id = id;
         this.textOp = textOp;
         this.number=number;
@@ -68,11 +69,7 @@ public class Operation implements Serializable {
      * @return
      */
     public boolean equals(Operation op){
-
-        if((this.getId().equals(op.getId()))&&(this.getNumber().equals(op.getNumber()))){
-            return true;
-        }
-            return false;
+        return (this.getId().equals(op.getId())) && (this.getNumber().equals(op.getNumber()));
     }
 
     /**
@@ -82,9 +79,6 @@ public class Operation implements Serializable {
      * @return
      */
     public boolean equalsIDString(String id,String number){
-       if((this.getId().equals(id))&&(this.getNumber().equals(number))){
-           return true;
-       }
-       return false;
+       return (this.getId().equals(id)) && (this.getNumber().equals(number));
     }
 }

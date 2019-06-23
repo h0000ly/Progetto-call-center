@@ -9,9 +9,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-
-
 public class DBOperatorInserter {
+	
     private DataWriterServer data;
 
     /**
@@ -21,7 +20,7 @@ public class DBOperatorInserter {
      * @param operator
      */
     void insertOperator(Connection connection,String numCalling, Operator operator) {
-        data=new DataWriterServer(numCalling);
+        DataWriterServer dataWriter = new DataWriterServer(numCalling);
         try {
             System.err.println("[DBOperatorInserter] - Adding operator " + operator.getUsername() + " to database...");
             PreparedStatement ps = connection.prepareStatement("INSERT INTO operator VALUES (?,?,?,?);");
@@ -32,9 +31,10 @@ public class DBOperatorInserter {
             ps.execute();
             connection.commit();
             System.err.println("[DBOperatorInserter] - Operator " + operator.getUsername() + " added to database.");
-            data.updateHistory("Operator " + operator.getUsername() + "at number "+operator.getNumber()+" added to database.");
+            dataWriter.updateHistory("Operator " + operator.getUsername() + " at number " + operator.getNumber() + " added to database.");
         } catch (SQLException e) {
             System.err.println("[DBOperatorInserter] - Exception " + e + " encountered in method insertOperator.");
         }
     }
+	
 }

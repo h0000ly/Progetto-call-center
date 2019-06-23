@@ -10,27 +10,6 @@ import java.util.ArrayList;
 
 public class DBOperatorReader {
 
-   /* ArrayList<Operator> retrieveAllTheOperators(Connection connection) {
-        ArrayList<Operator> ops=new ArrayList<>(10);
-        try {
-            System.err.println("[DBOperatorReader] - Retrieving all the operators to check ...");
-            PreparedStatement ps = connection.prepareStatement("SELECT * FROM operator;");
-
-            ResultSet rs = ps.executeQuery();
-
-            while(rs.next()) {
-                Operator operator=new Operator(rs.getString("numbe"),rs.getString("username"),rs.getString("passwor"));
-                operator.setLoggedIn(rs.getBoolean("LoggedIn"));
-                ops.add(operator);
-            }
-        }catch (SQLException e) {
-            System.err.println("[DBOperatorReader] - Exception " + e + " encountered in method retrieveAllTheOperators.");
-        }
-
-        return ops;
-    }*/
-
-
     Operator retreiveJustTheOne(Connection connection,String numCalling,String number, String username) {
         Operator operator = null;
         try {
@@ -40,17 +19,14 @@ public class DBOperatorReader {
             ps.setString(2, username);
             ResultSet rs = ps.executeQuery();
             rs.next();
-            if(rs.getString("numbe")!=null&& rs.getString("username")!=null&& rs.getString("passwor")!=null) {
+            if(rs.getString("numbe") != null && rs.getString("username") != null && rs.getString("passwor") != null) {
                 operator = new Operator(rs.getString("numbe"), rs.getString("username"), rs.getString("passwor"));
                 operator.setLoggedIn(rs.getBoolean("LoggedIn"));
-            }
-            else {
-                return null;
             }
         } catch (SQLException e) {
             System.err.println("[DBOperatorReader] - Exception " + e + " encountered in method retrieveJustTheOne.");
         }
         return operator;
-
     }
+	
 }

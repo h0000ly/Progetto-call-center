@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 public class DBConnectionManagerOperation {
 
-    private final String DATABASE="operationdb";
-    private final String USERNAME="root";
-    private final String PASSWORD="ASSAssincreed5";
+    private final String DATABASE = "operationdb";
+    private final String USERNAME = "root";
+    private final String PASSWORD = "ASSAssincreed5";
 
     /**
      * Connect to database of the operations

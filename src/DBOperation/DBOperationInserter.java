@@ -11,7 +11,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class DBOperationInserter {
-    private DataWriterServer data;
 
     /**
      * This method is called to add a new operation in the database
@@ -20,12 +19,13 @@ public class DBOperationInserter {
      * @param operation
      */
     public void addOperation(Connection connection,String numCalling,Operation operation){
-        data=new DataWriterServer(numCalling);
-        DBOperationReader dBR=new DBOperationReader();
-        boolean found=false;
-        for(Operation a:dBR.retrieveAllTheOperations(connection,operation.getNumber())){
-            if(a.equals(operation)){
-                found=true;
+        DataWriterServer data  =new DataWriterServer(numCalling);
+        DBOperationReader operationReader = new DBOperationReader();
+        boolean found = false;
+        for (Operation operation : operationReader.retrieveAllTheOperations(connection, operation.getNumber())) {
+            if(operation.equals(operation)) {
+                found = true;
+				break;
             }
         }
         if(!found) {
@@ -38,17 +38,16 @@ public class DBOperationInserter {
                 ps.execute();
                 connection.commit();
                 System.err.println("[DBOperationInserter] - Operation " + operation.getId() + " added to database.");
-                data.updateHistory("Operation "+operation.getId()+" at number"+operation.getNumber()+" added to Database");
+                data.updateHistory("Operation "+ operation.getId() + " at number" + operation.getNumber() + " added to Database");
             } catch (SQLException e) {
                 System.err.println("[DBOperationInserter] - Exception " + e + " encountered in method insertOperation.");
             }
         }
         else{
-            OperationAlreadyUsed b=new OperationAlreadyUsed();
-            b.setVisible(true);
+            OperationAlreadyUsed operationAlreadyUsed = new OperationAlreadyUsed();
+            operationAlreadyUsed.setVisible(true);
         }
     }
-
 
 }
 

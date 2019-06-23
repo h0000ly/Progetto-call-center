@@ -13,7 +13,6 @@ import java.sql.SQLException;
 
 
 public class DBOperationDeleter {
-    private DataWriterServer data;
 
     /**
      * This method is called to remove an operation in the database
@@ -22,19 +21,19 @@ public class DBOperationDeleter {
      * @param id
      * @param number
      */
-    void removeOperation(Connection connection, String numCalling,String id, String number) {
-        boolean found=false;
-        data=new DataWriterServer(numCalling);
-        DBOperationReader dBR=new DBOperationReader();
-        if(dBR.retrieveAllTheOperations(connection,number).isEmpty()){
-            DBOperationEmpty d=new DBOperationEmpty();
-            d.setVisible(true);
+    void removeOperation(Connection connection, String numCalling, String id, String number) {
+        boolean found = false;
+        DataWriterServer data = new DataWriterServer(numCalling);
+        DBOperationReader operationReader = new DBOperationReader();
+        if (operationReader.retrieveAllTheOperations(connection, number).isEmpty()) {
+            DBOperationEmpty operationEmpty = new DBOperationEmpty();
+            operationEmpty .setVisible(true);
         }
-        else {
-
-            for (Operation a : dBR.retrieveAllTheOperations(connection,number)) {
-                if (a.equalsIDString(id, number)) {
+		else {
+            for (Operation operation : operationReader.retrieveAllTheOperations(connection, number)) {
+                if (operation.equalsIDString(id, number)) {
                     found = true;
+					break;
                 }
             }
             if (found) {
@@ -51,11 +50,12 @@ public class DBOperationDeleter {
                     System.err.println("[DBOperationDeleter] - Exception " + e + " encountered in method removeOperation.");
                 }
             } else {
-                OperationNotFound b = new OperationNotFound();
-                b.setVisible(true);
+                OperationNotFound operationNotFound = new OperationNotFound();
+                operationNotFound.setVisible(true);
             }
         }
     }
+	
 }
 
 

@@ -3,7 +3,7 @@ package GUInterface;
 import ClientServer.MessageServer;
 import ClientServer.MessageType;
 import ClientServer.ServerInfo;
-import dataHistory.DataWriterClient;
+import dataWriterHistory.DataWriterClient;
 import model.Operator;
 
 import javax.swing.*;
@@ -16,164 +16,160 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 
 public class MenuOperationsGUI extends JFrame {
-    private static final String DELETEOPERATIONBUTTONPRESSED="The operator pressed the Delete Operation button";
-    private static final String ADDOPERATIONBUTTONPRESSED="The operator pressed the Delete Operation button";
-    private static final String CHANGEIDOPERATIONBUTTONPRESSED="The operator pressed the Change ID Operation button";
-    private static final String CHANGETEXTOPERATIONBUTTONPRESSED="The operator pressed the Change Text Operation button";
-    private static final String DELETEOPERATORBUTTONPRESSED="The operator pressed the Delete Operator button";
-    private static final String CHANGEUSERNAMEOPERATORBUTTONPRESSED="The operator pressed the Change Username button";
-    private static final String CHANGEPASSWORDOPERATORBUTTONPRESSED="The operator pressed the Change Password button";
-    private static final String LOGOUTBUTTONPRESSED="The operator pressed the Logout button";
+	
+	private final String TITLE = "Menu operations window";
+	private final int WINDOWX1 = 600;
+	private final int WINDOWY1 = 200;
+	private final int WINDOWX2 = 400;
+	private final int WINDOWY2 = 300;
+	
+    private final String DELETEOPERATIONBUTTONPRESSED = "The operator pressed the Delete Operation button";
+    private final String ADDOPERATIONBUTTONPRESSED = "The operator pressed the Delete Operation button";
+    private final String CHANGEIDOPERATIONBUTTONPRESSED = "The operator pressed the Change ID Operation button";
+    private final String CHANGETEXTOPERATIONBUTTONPRESSED = "The operator pressed the Change Text Operation button";
+    private final String DELETEOPERATORBUTTONPRESSED = "The operator pressed the Delete Operator button";
+    private final String CHANGEUSERNAMEOPERATORBUTTONPRESSED = "The operator pressed the Change Username button";
+    private final String CHANGEPASSWORDOPERATORBUTTONPRESSED = "The operator pressed the Change Password button";
+    private final String LOGOUTBUTTONPRESSED = "The operator pressed the Logout button";
+	
     private Operator operator;
     private String numberCalling;
-    private DataWriterClient data;
-    public MenuOperationsGUI(String numberCalling,Operator operator){
-        this.operator=operator;
-        this.numberCalling=numberCalling;
-        data=new DataWriterClient(numberCalling);
+    private DataWriterClient dataWriter;
+	
+    public MenuOperationsGUI(String numberCalling, Operator operator){
+        this.operator = operator;
+        this.numberCalling = numberCalling;
+        dataWriter = new DataWriterClient(numberCalling);
         updateStatus();
-    this.setBounds(600,200,400,300);
+		
+		this.setBounds(WINDOWX1, WINDOWY1, WINDOWX2, WINDOWY2);
         this.setLayout(null);
         this.setResizable(false);
-        this.setTitle("Menu operations window");
-        JButton jB1=new JButton("Delete Operation");
-        jB1.setBounds(10,10,170,40);
-        jB1.addActionListener(new ActionListener() {
+        this.setTitle(TITLE);
+		
+        JButton delOpBtn = new JButton("Delete Operation");
+        delOpBtn.setBounds(10,10,170,40);
+        delOpBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                DeleteOperationGUI DONGUI=new DeleteOperationGUI(numberCalling,operator.getNumber());
-                DONGUI.setVisible(true);
-                data.updateHistory(DELETEOPERATIONBUTTONPRESSED);
+                DeleteOperationGUI deleteOperation = new DeleteOperationGUI(numberCalling, operator.getNumber());
+                deleteOperation.setVisible(true);
+                dataWriter.updateHistory(DELETEOPERATIONBUTTONPRESSED);
             }
         });
-        this.add(jB1);
+        this.add(delOpBtn);
 
-        JButton jB2=new JButton("Add Operation");
-        jB2.setBounds(200,10,170,40);
-        jB2.addActionListener(new ActionListener() {
+        JButton addOpBtn = new JButton("Add Operation");
+        addOpBtn.setBounds(200,10,170,40);
+        addOpBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               InsertOperationGUI IONGUI =new InsertOperationGUI(numberCalling,operator.getNumber());
-               IONGUI.setVisible(true);
-               data.updateHistory(ADDOPERATIONBUTTONPRESSED);
+               InsertOperationGUI insertOperation = new InsertOperationGUI(numberCalling,operator.getNumber());
+               insertOperation.setVisible(true);
+               dataWriter.updateHistory(ADDOPERATIONBUTTONPRESSED);
             }
         });
-        this.add(jB2);
+        this.add(addOpBtn);
 
-        JButton jB3=new JButton("Change ID operation");
-        jB3.setBounds(10,60,170,40);
-        jB3.addActionListener(new ActionListener() {
+        JButton changeIdOpBtn = new JButton("Change ID operation");
+        changeIdOpBtn.setBounds(10,60,170,40);
+        changeIdOpBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                UpdateIDOperationGUI UIDONGUI= new UpdateIDOperationGUI(numberCalling,operator.getNumber());
-                UIDONGUI.setVisible(true);
-                data.updateHistory(CHANGEIDOPERATIONBUTTONPRESSED);
+                UpdateIDOperationGUI updateOperationId = new UpdateIDOperationGUI(numberCalling, operator.getNumber());
+                updateOperationId.setVisible(true);
+                dataWriter.updateHistory(CHANGEIDOPERATIONBUTTONPRESSED);
             }
         });
-        this.add(jB3);
+        this.add(changeIdOpBtn);
 
-        JButton jB4=new JButton("Change Text operation");
-        jB4.setBounds(200,60,170,40);
-        jB4.addActionListener(new ActionListener() {
+        JButton changeTextOpBtn = new JButton("Change Text operation");
+        changeTextOpBtn.setBounds(200,60,170,40);
+        changeTextOpBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                UpdateTextOperationGUI UTONGUI=new UpdateTextOperationGUI(numberCalling,operator.getNumber());
-                UTONGUI.setVisible(true);
-                data.updateHistory(CHANGETEXTOPERATIONBUTTONPRESSED);
+                UpdateTextOperationGUI updateOperationText = new UpdateTextOperationGUI(numberCalling, operator.getNumber());
+                updateOperationText.setVisible(true);
+                dataWriter.updateHistory(CHANGETEXTOPERATIONBUTTONPRESSED);
             }
         });
-        this.add(jB4);
+        this.add(changeTextOpBtn);
 
 
-        JButton jB5=new JButton("Delete your account");
-        jB5.setBounds(10,110,170,40);
-        jB5.addActionListener(new ActionListener() {
+        JButton delAccntBtn = new JButton("Delete your account");
+        delAccntBtn.setBounds(10,110,170,40);
+        delAccntBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                DeleteOperatorGUI DORGUI=new DeleteOperatorGUI(getFrame(),numberCalling,operator);
-                DORGUI.setVisible(true);
-                data.updateHistory(DELETEOPERATORBUTTONPRESSED);
+                DeleteOperatorGUI deleteOperator = new DeleteOperatorGUI(getFrame(),numberCalling, operator);
+                deleteOperator.setVisible(true);
+                dataWriter.updateHistory(DELETEOPERATORBUTTONPRESSED);
             }
         });
-        this.add(jB5);
+        this.add(delAccntBtn);
 
 
-        JButton jB6=new JButton("Change your username");
-        jB6.setBounds(200,110,170,40);
-        jB6.addActionListener(new ActionListener() {
+        JButton changeNameBtn = new JButton("Change your username");
+        changeNameBtn.setBounds(200,110,170,40);
+        changeNameBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                UpdateUsernameOperatorGUI UUORGUI= new UpdateUsernameOperatorGUI(getFrame(),numberCalling,operator.getNumber(),operator.getUsername());
-                UUORGUI.setVisible(true);
-                data.updateHistory(CHANGEUSERNAMEOPERATORBUTTONPRESSED);
+                UpdateUsernameOperatorGUI updateOperatorUsername= new UpdateUsernameOperatorGUI(getFrame(), numberCalling, operator.getNumber(), operator.getUsername());
+                updateOperatorUsername.setVisible(true);
+                dataWriter.updateHistory(CHANGEUSERNAMEOPERATORBUTTONPRESSED);
             }
         });
-        this.add(jB6);
+        this.add(changeNameBtn);
 
-        JButton jB7=new JButton("Change your password");
-        jB7.setBounds(10,160,170,40);
-        jB7.addActionListener(new ActionListener() {
+        JButton changePswdBtn = new JButton("Change your password");
+        changePswdBtn.setBounds(10,160,170,40);
+        changePswdBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                UpdatePasswordOperatorGUI UPORGUI=new UpdatePasswordOperatorGUI(getFrame(),numberCalling,operator.getNumber(),operator.getUsername());
-                UPORGUI.setVisible(true);
-                data.updateHistory(CHANGEPASSWORDOPERATORBUTTONPRESSED);
+                UpdatePasswordOperatorGUI updateOperatorPassword = new UpdatePasswordOperatorGUI(getFrame(), numberCalling, operator.getNumber(), operator.getUsername());
+                updateOperatorPassword.setVisible(true);
+                dataWriter.updateHistory(CHANGEPASSWORDOPERATORBUTTONPRESSED);
             }
         });
-        this.add(jB7);
+        this.add(changePswdBtn);
 
 
 
-        JButton jB8=new JButton("Logout");
-        jB8.setBounds(200,160,170,40);
-        jB8.addActionListener(new ActionListener() {
+        JButton logOutBtn = new JButton("Logout");
+        logOutBtn.setBounds(200,160,170,40);
+        logOutBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                data.updateHistory(LOGOUTBUTTONPRESSED);
+                dataWriter.updateHistory(LOGOUTBUTTONPRESSED);
                 close();
             }
         });
-        this.add(jB8);
+        this.add(logOutBtn);
 
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.addWindowListener(new WindowListener() {
             @Override
-            public void windowOpened(WindowEvent e) {
+            public void windowOpened(WindowEvent e) { }
 
+            @Override
+            public void windowClosing(WindowEvent e) { }
+
+            @Override
+            public void windowClosed(WindowEvent e) { 
+				updateStatus();
             }
 
             @Override
-            public void windowClosing(WindowEvent e) {
-
-            }
+            public void windowIconified(WindowEvent e) { }
 
             @Override
-            public void windowClosed(WindowEvent e) {
-                updateStatus();
-
-
-
-            }
+            public void windowDeiconified(WindowEvent e) { }
 
             @Override
-            public void windowIconified(WindowEvent e) {
-
-            }
+            public void windowActivated(WindowEvent e) { }
 
             @Override
-            public void windowDeiconified(WindowEvent e) {
-
-            }
-
-            @Override
-            public void windowActivated(WindowEvent e) {
-
-            }
-
-            @Override
-            public void windowDeactivated(WindowEvent e) {
-
-            }
+            public void windowDeactivated(WindowEvent e) { }
         });
 
     }
@@ -181,34 +177,31 @@ public class MenuOperationsGUI extends JFrame {
     /**
      * This method change the status (logged in or logged out) of a defined operator
      */
-    public void updateStatus(){
+    public void updateStatus() {
         Socket socket = null;
         this.operator.setLoggedIn(!this.operator.isLoggedIn());
         try {
             socket = new Socket(ServerInfo.IP, ServerInfo.PORT);
             ObjectOutputStream os = new ObjectOutputStream(socket.getOutputStream());
-            os.writeObject(new MessageServer(MessageType.LOGGED,numberCalling,operator));
+            os.writeObject(new MessageServer(MessageType.LOGGED, numberCalling, operator));
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-
     }
 
     /**
      * This method dispose the window
      */
-    private void close(){
+    private void close() {
         this.dispose();
     }
 
-    public void updateOperator(Operator operator){
-
+    public void updateOperator(Operator operator) {
         this.operator=operator;
     }
 
-    private MenuOperationsGUI getFrame(){
+    private MenuOperationsGUI getFrame() {
         return this;
     }
-
 
 }

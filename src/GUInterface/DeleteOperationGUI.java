@@ -13,57 +13,78 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
-public class DeleteOperationGUI extends JFrame{
-    private JTextField jT1;
+public class DeleteOperationGUI extends JFrame {
+	
+	private final String TITLE = "Delete operation window";
+	private final String INPUT = "Insert the id of the operation to delete: ";
+	private final String BUTTON = "OK";
+	private final int WINDOWX1 = 600;
+	private final int WINDOWY1 = 200;
+	private final int WINDOWX2 = 350;
+	private final int WINDOWY2 = 150;
+	private final int LABELX1 = 10;
+	private final int LABELY1 = 10;
+	private final int LABELX2 = 300;
+	private final int LABELY2 = 25;
+	private final int FIELDX1 = 10;
+	private final int FIELDY1 = 40;
+	private final int FIELDX2 = 150;
+	private final int FIELDY2 = 25;
+	private final int BUTTONX1 = 180;
+	private final int BUTTONY1 = 40;
+	private final int BUTTONX2 = 75;
+	private final int BUTTONY2 = 20;
+	
+	
     private String number;
     private String numCalling;
 
-    public DeleteOperationGUI(String numCalling,String number) {
+    public DeleteOperationGUI(String numCalling, String number) {
         this.number = number;
-        this.numCalling=numCalling;
+        this.numCalling = numCalling;
         initiate();
     }
 
 
-    private void initiate(){
-        this.setBounds(600,200,350,150);//height= 200
+    private void initiate() {
+        this.setBounds(WINDOWX1, WINDOWY1, WINDOWX2, WINDOWY2);
         this.setLayout(null);
         this.setResizable(false);
-        this.setTitle("Delete operation window");
-        JLabel jL1=new JLabel("Insert the id of the operation to delete: ");
-        jL1.setBounds(10,10,300,25);
-        this.add(jL1);
-        jT1=new JTextField("");
-        jT1.setBounds(10,40,150,25);
-        this.add(jT1);
-        JButton button=new JButton("OK");
+        this.setTitle(TITLE);
+        JLabel inputLabel = new JLabel(INPUT);
+        inputLabel.setBounds(LABELX1, LABELY1, LABELX2, LABELX2);
+        this.add(inputLabel);
+        JTextField inputField = new JTextField("");
+        inputField.setBounds(FIELDX1, FIELDY1, FIELDX2, FIELDY2);
+        this.add(inputField);
+        JButton button = new JButton(BUTTON);
+        button.setBounds(BUTTONX1, BUTTONY1, BUTTONX2, BUTTONY2);
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(!jT1.getText().equals("")) {
-                    if(isValid(jT1.getText())) {
+                if (!inputField.getText().equals("")) {
+                    if (isValid(inputField.getText())) {
                         Socket socket = null;
                         try {
                             socket = new Socket(ServerInfo.IP, ServerInfo.PORT);
                             ObjectOutputStream os = new ObjectOutputStream(socket.getOutputStream());
-                            os.writeObject(new MessageServer(MessageType.DELETEOPERATION,numCalling, jT1.getText().trim(), number));
+                            os.writeObject(new MessageServer(MessageType.DELETEOPERATION, numCalling, inputField.getText().trim(), number));
                         } catch (IOException ex) {
                             ex.printStackTrace();
                         }
                         end();
                     }
                     else{
-                        IDIsANumber errorID=new IDIsANumber();
+                        IDIsANumber errorID = new IDIsANumber();
                         errorID.setVisible(true);
                     }
                 }
                 else{
-                    EmptyField emptyError=new EmptyField();
+                    EmptyField emptyError = new EmptyField();
                     emptyError.setVisible(true);
                 }
             }
         });
-        button.setBounds(180,40,75,20);
         this.add(button);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
@@ -80,8 +101,11 @@ public class DeleteOperationGUI extends JFrame{
      * @param iDToCheck
      * @return
      */
-    private boolean isValid(String iDToCheck){
-
+    private boolean isValid(String iDToCheck) {
+		// TODO: change
+		// return !Pattern.matches("[a-zA-Z]+", iDToCheck)
+		// --- or
+		// return iDToCheck.chars().allMatch(x -> Character.isDigit(x));
         for(int i=0;i<iDToCheck.length();i++){
             if(!Character.isDigit(iDToCheck.charAt(i))){
                 return false;

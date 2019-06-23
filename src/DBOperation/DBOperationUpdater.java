@@ -1,8 +1,8 @@
 package DBOperation;
 
 import GUInterface.Exception.OperationAlreadyUsed;
-import dataHistory.DataWriter;
-import dataHistory.DataWriterServer;
+import dataWriterHistory.DataWriter;
+import dataWriterHistory.DataWriterServer;
 import model.Operation;
 import GUInterface.Exception.DBOperationEmpty;
 import GUInterface.Exception.OperationNotFound;
@@ -13,37 +13,36 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class DBOperationUpdater {
-    private DataWriterServer data;
-    DBOperationReader dBR=new DBOperationReader();
+	
+    DBOperationReader operationReader = new DBOperationReader();
 
     /**
-     * This method is called to change the id of an operation in the database
+     * This method is called to change the id of an operation in the dataWriterbase
      * @param connection
      * @param numCalling
      * @param oldId
      * @param number
      * @param newId
      */
-
-    void changeOperationID(Connection connection,String numCalling,String oldId,String number,String newId){
-        boolean found =false;
-        boolean updatedFound=false;
-        data=new DataWriterServer(numCalling);
-        if(dBR.retrieveAllTheOperations(connection,number).isEmpty()){
-            DBOperationEmpty d=new DBOperationEmpty();
-            d.setVisible(true);
+    void changeOperationID(Connection connection, String numCalling, String oldId, String number, String newId) {
+        boolean found = false;
+        boolean updatedFound = false;
+        DataWriterServer dataWriter = new DataWriterServer(numCalling);
+        if(operationReader.retrieveAllTheOperations(connection, number).isEmpty()){
+            DBOperationEmpty operationEmpty = new DBOperationEmpty();
+            operationEmpty.setVisible(true);
         }
         else {
-            for (Operation a : dBR.retrieveAllTheOperations(connection,number)) {
-                if (a.equalsIDString(oldId, number)) {
+            for (Operation operation : operationReader.retrieveAllTheOperations(connection, number)) {
+                if (operation.equalsIDString(oldId, number)) {
                     found = true;
                 }
-                if(a.equalsIDString(newId,number)){
+                if(operation.equalsIDString(newId,number)) {
                     updatedFound=true;
                     break;
                 }
             }
-            if (found&&!updatedFound) {
+            if (found && !updatedFound) {
                 try {
                     System.err.println("[DBOperationUpdater] - Updating id " + oldId);
                     PreparedStatement ps = connection.prepareStatement("UPDATE operation SET id = ? WHERE id = ? AND numbe = ?;");
@@ -52,40 +51,40 @@ public class DBOperationUpdater {
                     ps.setString(3, number);
                     ps.execute();
                     connection.commit();
-                    System.err.println("[DBOperationUpdater] - id "+oldId+" changed in " + newId );
-                    data.updateHistory("Id apdated for the operation "+oldId+" at number "+number+", new id: "+newId);
+                    System.err.println("[DBOperationUpdater] - id " + oldId + " changed in " + newId );
+                    dataWriter.updateHistory("Id apdated for the operation " + oldId + " at number " + number + ", new id: " + newId);
                 } catch (SQLException e) {
                     System.err.println("[DBOperationUpdater] - Exception " + e + " encountered in method changeOperationID.");
                 }
             } else {
-                if(!found) {
-                    OperationNotFound b = new OperationNotFound();
-                    b.setVisible(true);
+                if (!found) {
+                    OperationNotFound operationNotFound = new OperationNotFound();
+                    operationNotFound.setVisible(true);
                 }
-                else if(updatedFound){
-                    OperationAlreadyUsed o=new OperationAlreadyUsed();
-                    o.setVisible(true);
+                else if( updatedFound) {
+                    OperationAlreadyUsed operationAlreadyUsed = new OperationAlreadyUsed();
+                    operationAlreadyUsed.setVisible(true);
                 }
             }
         }
     }
 
     /**
-     * This method is used to change the text of an operation in the database
+     * This method is used to change the text of an operation in the dataWriterbase
      * @param connection
      * @param numCalling
      * @param operation
      */
-    void changeOperationText(Connection connection,String numCalling,Operation operation) {
-        boolean found=false;
-        data=new DataWriterServer(numCalling);
-        if(dBR.retrieveAllTheOperations(connection,operation.getNumber()).isEmpty()){
-            DBOperationEmpty d=new DBOperationEmpty();
-            d.setVisible(true);
+    void changeOperationText(Connection connection, String numCalling, Operation operation) {
+        boolean found = false;
+        DataWriterServer dataWriter = new DataWriterServer(numCalling);
+        if (operationReader.retrieveAllTheOperations(connection, operation.getNumber()).isEmpty()) {
+            DBOperationEmpty operationEmpty = new DBOperationEmpty();
+            operationEmpty.setVisible(true);
         }
         else {
-            for (Operation a : dBR.retrieveAllTheOperations(connection,operation.getNumber())) {
-                if (a.equalsIDString(operation.getId(),operation.getNumber())) {
+            for (Operation operationAlt : operationReader.retrieveAllTheOperations(connection, operation.getNumber())) {
+                if (operationAlt.equalsIDString(operation.getId(), operation.getNumber())) {
                     found = true;
                 }
             }
@@ -99,13 +98,13 @@ public class DBOperationUpdater {
                     ps.execute();
                     connection.commit();
                     System.err.println("[DBOperationUpdater] - text " + operation.getTextOp() + " updated.");
-                    data.updateHistory("Text updated for the operation "+operation.getId()+" and number "+operation.getNumber());
+                    dataWriter.updateHistory("Text updated for the operation " + operation.getId() + " and number " + operation.getNumber());
                 } catch (SQLException e) {
                     System.err.println("[DBOperationUpdater] - Exception " + e + " encountered in method changeOperationText.");
                 }
             } else {
-                OperationNotFound b = new OperationNotFound();
-                b.setVisible(true);
+                OperationNotFound operationNotFound = new OperationNotFound();
+                operationNotFound.setVisible(true);
             }
         }
     }

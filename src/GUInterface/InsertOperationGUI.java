@@ -15,13 +15,41 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 
 public class InsertOperationGUI extends JFrame {
-
-    private JTextField jIDTextField;
-    private JTextField jTextTextField;
+	
+	private final String TITLE = "Add operation window";
+	private final String MESSAGE1 = "Insert the id of the operation: ";
+	private final String MESSAGE2 = "Insert the text for the operation: ";
+	private final String BUTTON = "OK";
+	private final String CANCEL = "Cancel";
+	private final int WINDOWX1 = 600;
+	private final int WINDOWY1 = 200;
+	private final int WINDOWX2 = 330;
+	private final int WINDOWY2 = 210;
+	private final int IDLABELX1 = 10;
+	private final int IDLABELY1 = 10;
+	private final int IDLABELX2 = 300;
+	private final int IDLABELY2 = 25;
+	private final int IDFIELDX1 = 10;
+	private final int IDFIELDY1 = 40;
+	private final int IDFIELDX2 = 150;
+	private final int IDFIELDY2 = 25;
+	private final int TEXTLABELX1 = 10;
+	private final int TEXTLABELY1 = 40;
+	private final int TEXTLABELX2 = 150;
+	private final int TEXTLABELY2 = 25;
+	private final int TEXTFIELDX1 = 0;
+	private final int TEXTFIELDY1 = 100;
+	private final int TEXTFIELDX2 = 200;
+	private final int TEXTFIELDY2 = 25;
+	private final int BUTTONX1 = 115;
+	private final int BUTTONY1 = 135;
+	private final int BUTTONX2 = 75;
+	private final int BUTTONY2 = 20;
+	
     private String number;
     private String numCalling;
 
-    public InsertOperationGUI(String numCalling,String number) {
+    public InsertOperationGUI(String numCalling, String number) {
         this.number = number;
         this.numCalling=numCalling;
         initialize();
@@ -31,50 +59,50 @@ public class InsertOperationGUI extends JFrame {
      * This method is used to add a new operation in the database operation
      */
     private void initialize(){
-        this.setBounds(600,200,330,210);
+        this.setBounds(WINDOWX1, WINDOWY1, WINDOWX2, WINDOWY2);
         this.setLayout(null);
         this.setResizable(false);
-        this.setTitle("Add operation window");
-        JLabel jL1=new JLabel("Insert the id of the operation: ");
-        jL1.setBounds(10,10,300,25);
-        this.add(jL1);
-        jIDTextField =new JTextField("");
-        jIDTextField.setBounds(10,40,150,25);
-        this.add(jIDTextField);
-        JLabel jL2=new JLabel("Insert the text for the operation: ");
-        jL2.setBounds(10,70,300,25);
-        this.add(jL2);
-        jTextTextField =new JTextField("");
-        jTextTextField.setBounds(10,100,200,25);
-        this.add(jTextTextField);
-        JButton button=new JButton("OK");
+        this.setTitle(TITLE);
+        JLabel idLabel=new JLabel(MESSAGE1);
+        idLabel.setBounds(IDLABELX1, IDLABELY1, IDLABELX2, IDLABELY2);
+        this.add(idLabel);
+        JTextField JTextField idField = new JTextField("");
+        idField.setBounds(IDFIELDX1, IDFIELDY1, IDFIELDX2, IDFIELDY2);
+        this.add(idField);
+        JLabel textLabel=new JLabel(MESSAGE1);
+        textLabel.setBounds(TEXTLABELX1, TEXTLABELY1, TEXTLABELX2, TEXTLABELY2);
+        this.add(textLabel);
+        JTextField textField = new JTextField("");
+        textField.setBounds(TEXTFIELDX1, TEXTFIELDY1, TEXTFIELDX2, TEXTFIELDY2);
+        this.add(textField);
+        JButton button=new JButton(BUTTON);
+        button.setBounds(BUTTONX1, BUTTONY1, BUTTONX2, BUTTONY2);
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                    Socket socket = null;
-                    if(!jIDTextField.getText().equals("")&&!jTextTextField.getText().equals("")) {
-                        if(isValid(jIDTextField.getText().trim())) {
-                            try {
-                                socket = new Socket(ServerInfo.IP, ServerInfo.PORT);
-                                ObjectOutputStream os = new ObjectOutputStream(socket.getOutputStream());
-                                os.writeObject(new MessageServer(MessageType.ADDOPERATION,numCalling, new Operation(jIDTextField.getText().trim(), number, jTextTextField.getText().trim())));
-                            } catch (IOException ex) {
-                                ex.printStackTrace();
-                            }
-                            end();
-                        }
-                        else{
-                            IDIsANumber error=new IDIsANumber();
-                            error.setVisible(true);
-                        }
-                    }
-                    else{
-                        EmptyField emptyError=new EmptyField();
-                        emptyError.setVisible(true);
-                    }
+				Socket socket = null;
+				if (!idField.getText().equals("") && !textField.getText().equals("")) {
+					if (isValid(idField.getText().trim())) {
+						try {
+							socket = new Socket(ServerInfo.IP, ServerInfo.PORT);
+							ObjectOutputStream os = new ObjectOutputStream(socket.getOutputStream());
+							os.writeObject(new MessageServer(MessageType.ADDOPERATION,numCalling, new Operation(idField.getText().trim(), number, textField.getText().trim())));
+						} catch (IOException ex) {
+							ex.printStackTrace();
+						}
+						end();
+					}
+					else{
+						IDIsANumber error = new IDIsANumber();
+						error.setVisible(true);
+					}
+				}
+				else{
+					EmptyField emptyError = new EmptyField();
+					emptyError.setVisible(true);
+				}
             }
         });
-        button.setBounds(115,135,75,20);
         this.add(button);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
@@ -85,7 +113,10 @@ public class InsertOperationGUI extends JFrame {
      * @return
      */
     private boolean isValid(String iDToCheck){
-
+		// TODO: change
+		// return !Pattern.matches("[a-zA-Z]+", iDToCheck)
+		// --- or
+		// return iDToCheck.chars().allMatch(x -> Character.isDigit(x));
         for(int i=0;i<iDToCheck.length();i++){
             if(!Character.isDigit(iDToCheck.charAt(i))){
                 return false;
