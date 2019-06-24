@@ -3,7 +3,8 @@ package GUInterface;
 import ClientServer.MessageServer;
 import ClientServer.MessageType;
 import ClientServer.ServerInfo;
-import dataWriterHistory.DataWriterClient;
+
+import dataHistory.DataWriterClient;
 import model.Operator;
 
 import javax.swing.*;
@@ -196,9 +197,11 @@ public class MenuOperationsGUI extends JFrame {
         this.dispose();
     }
 
-    public void updateOperator(Operator operator) {
-        this.operator=operator;
+    public void setOperator(Operator operator) {
+        this.operator = operator;
     }
+
+
 
     private MenuOperationsGUI getFrame() {
         return this;

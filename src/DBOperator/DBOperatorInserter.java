@@ -1,10 +1,10 @@
 package DBOperator;
 
-import dataHistory.DataWriter;
+
 import dataHistory.DataWriterServer;
 import model.Operator;
 
-import java.io.IOException;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

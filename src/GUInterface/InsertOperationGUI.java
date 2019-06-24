@@ -17,10 +17,9 @@ import java.net.Socket;
 public class InsertOperationGUI extends JFrame {
 	
 	private final String TITLE = "Add operation window";
-	private final String MESSAGE1 = "Insert the id of the operation: ";
-	private final String MESSAGE2 = "Insert the text for the operation: ";
+	private final String MESSAGEID = "Insert the id of the operation: ";
+	private final String MESSAGETEXT = "Insert the text for the operation: ";
 	private final String BUTTON = "OK";
-	private final String CANCEL = "Cancel";
 	private final int WINDOWX1 = 600;
 	private final int WINDOWY1 = 200;
 	private final int WINDOWX2 = 330;
@@ -34,10 +33,10 @@ public class InsertOperationGUI extends JFrame {
 	private final int IDFIELDX2 = 150;
 	private final int IDFIELDY2 = 25;
 	private final int TEXTLABELX1 = 10;
-	private final int TEXTLABELY1 = 40;
-	private final int TEXTLABELX2 = 150;
+	private final int TEXTLABELY1 = 70;
+	private final int TEXTLABELX2 = 300;
 	private final int TEXTLABELY2 = 25;
-	private final int TEXTFIELDX1 = 0;
+	private final int TEXTFIELDX1 = 10;
 	private final int TEXTFIELDY1 = 100;
 	private final int TEXTFIELDX2 = 200;
 	private final int TEXTFIELDY2 = 25;
@@ -63,13 +62,13 @@ public class InsertOperationGUI extends JFrame {
         this.setLayout(null);
         this.setResizable(false);
         this.setTitle(TITLE);
-        JLabel idLabel=new JLabel(MESSAGE1);
+        JLabel idLabel=new JLabel(MESSAGEID);
         idLabel.setBounds(IDLABELX1, IDLABELY1, IDLABELX2, IDLABELY2);
         this.add(idLabel);
-        JTextField JTextField idField = new JTextField("");
+        JTextField  idField = new JTextField("");
         idField.setBounds(IDFIELDX1, IDFIELDY1, IDFIELDX2, IDFIELDY2);
         this.add(idField);
-        JLabel textLabel=new JLabel(MESSAGE1);
+        JLabel textLabel=new JLabel(MESSAGETEXT);
         textLabel.setBounds(TEXTLABELX1, TEXTLABELY1, TEXTLABELX2, TEXTLABELY2);
         this.add(textLabel);
         JTextField textField = new JTextField("");
@@ -113,16 +112,7 @@ public class InsertOperationGUI extends JFrame {
      * @return
      */
     private boolean isValid(String iDToCheck){
-		// TODO: change
-		// return !Pattern.matches("[a-zA-Z]+", iDToCheck)
-		// --- or
-		// return iDToCheck.chars().allMatch(x -> Character.isDigit(x));
-        for(int i=0;i<iDToCheck.length();i++){
-            if(!Character.isDigit(iDToCheck.charAt(i))){
-                return false;
-            }
-        }
-        return true;
+		return iDToCheck.chars().allMatch(x -> Character.isDigit(x));
     }
 
     /**

@@ -21,8 +21,8 @@ public class MultiThreadServer implements Runnable {
     private Server real;
     private Map<MessageType, Method> methodCorrispondence = new HashMap<>();
 	// messages
-	private final String STARTED = "SERVER ONLINE";
-	private final String CONNECTED = "Server connected";
+	private static final String STARTED = "SERVER ONLINE";
+	private static final String CONNECTED = "Server connected";
 
     MultiThreadServer(Socket csocket) throws NoSuchMethodException, SocketException {
         this.csocket = csocket;

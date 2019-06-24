@@ -10,31 +10,50 @@ import java.awt.event.ActionListener;
 
 
 public class NumberPhoneGUI extends JFrame {
-	
-    private JTextField jNumber;
-    private JButton jButtonOk;
+    private final int MINLENGTH=3;
+    private final int MAXLENGTH=10;
+    private final int WINDOWX1=650;
+    private final int WINDOWY1=300;
+    private final int WINDOWX2=350;
+    private final int WINDOWY2=170;
+    private final int LABELNUMBERX1=10;
+    private final int LABELNUMBERY1=10;
+    private final int LABELNUMBERX2=290;
+    private final int LABELNUMBERY2=25;
+    private final int TEXTNUMBERX1=10;
+    private final int TEXTNUMBERY1=40;
+    private final int TEXTNUMBERX2=200;
+    private final int TEXTNUMBERY2=25;
+    private final int BUTTONNUMBERX1=100;
+    private final int BUTTONNUMBERY1=80;
+    private final int BUTTONNUMBERX2=60;
+    private final int BUTTONNUMBERY2=30;
+    private final String TITLE="Number Phone Window";
+    private final String LABEL="Please insert your phone number: ";
+    private final String BUTTONTEXT="OK";
+
 
     public NumberPhoneGUI() {
-        this.setBounds(650,300,350,170);
-        this.setTitle("Number Phone Window");
+        this.setBounds(WINDOWX1,WINDOWY1,WINDOWX2,WINDOWY2);
+        this.setTitle(TITLE);
         this.setResizable(false);
         this.setLayout(null);
-        JLabel info = new JLabel("Please insert your phone number: ");
-        info.setBounds(10,10,290,25);
+        JLabel info = new JLabel(LABEL);
+        info.setBounds(LABELNUMBERX1,LABELNUMBERY1,LABELNUMBERX2,LABELNUMBERY2);
         this.add(info);
-        jNumber = new JTextField("");
-        jNumber.setBounds(10,40,200,25);
-        this.add(jNumber);
-        jButtonOk = new JButton("OK");
-        jButtonOk.setBounds(100,80,60,30);
-        this.add(jButtonOk);
-        jButtonOk.addActionListener(new ActionListener() {
+        JTextField numberText = new JTextField("");
+        numberText.setBounds(TEXTNUMBERX1,TEXTNUMBERY1,TEXTNUMBERX2,TEXTNUMBERY2);
+        this.add(numberText);
+        JButton buttonOk = new JButton(BUTTONTEXT);
+        buttonOk.setBounds(BUTTONNUMBERX1,BUTTONNUMBERY1,BUTTONNUMBERX2,BUTTONNUMBERY2);
+        this.add(buttonOk);
+        buttonOk.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String toCheck = jNumber.getText().trim();
+                String toCheck = numberText.getText().trim();
                 if (!toCheck.equals("")) {
                     if (isValid(toCheck)) {
-                        if (toCheck.length() < 3 || toCheck.length() > 10) {
+                        if (toCheck.length() < MINLENGTH || toCheck.length() > MAXLENGTH) {
                             ErrorCall errorCall = new ErrorCall();
                             errorCall.setVisible(true);
                         }
@@ -64,16 +83,7 @@ public class NumberPhoneGUI extends JFrame {
      * @return
      */
     private boolean isValid(String iDToCheck){
-		// TODO: change
-		// return !Pattern.matches("[a-zA-Z]+", iDToCheck)
-		// --- or
-		// return iDToCheck.chars().allMatch(x -> Character.isDigit(x));
-        for(int i=0;i<iDToCheck.length();i++){
-            if(!Character.isDigit(iDToCheck.charAt(i))){
-                return false;
-            }
-        }
-        return true;
+        return iDToCheck.chars().allMatch(x -> Character.isDigit(x));
     }
 
     /**

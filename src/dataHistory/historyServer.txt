@@ -1,103 +1,298 @@
-Sat 2019.06.22 at 09:30:00 PM CEST||#  - SERVER ONLINE
-Sat 2019.06.22 at 09:31:01 PM CEST||# 1245 - received addAndRetrieveOperator request
-Sat 2019.06.22 at 09:31:01 PM CEST||# 1245 - Operator Abcd1995at number 9999 added to database.
-Sat 2019.06.22 at 09:31:01 PM CEST||# 1245 - received request to login
-Sat 2019.06.22 at 09:36:52 PM CEST||#  - SERVER ONLINE
-Sat 2019.06.22 at 09:37:45 PM CEST||# 12345 - received addAndRetrieveOperator request
-Sat 2019.06.22 at 09:37:45 PM CEST||# 12345 - Operator Roby1995at number 8888 added to database.
-Sat 2019.06.22 at 09:37:45 PM CEST||# 12345 - received request to login
-Sat 2019.06.22 at 09:42:49 PM CEST||# 6666 - received addAndRetrieveOperator request
-Sat 2019.06.22 at 09:42:49 PM CEST||# 6666 - Operator Derro1995at number 7777 added to database.
-Sat 2019.06.22 at 09:42:49 PM CEST||# 6666 - received request to login
-Sat 2019.06.22 at 09:43:57 PM CEST||#  - SERVER ONLINE
-Sat 2019.06.22 at 09:44:42 PM CEST||# 9876 - received addAndRetrieveOperator request
-Sat 2019.06.22 at 09:44:42 PM CEST||# 9876 - Operator Porca1995at number 4444 added to database.
-Sat 2019.06.22 at 09:44:42 PM CEST||# 9876 - received request to login
-Sat 2019.06.22 at 09:49:55 PM CEST||# 1234 - received addAndRetrieveOperator request
-Sat 2019.06.22 at 09:49:55 PM CEST||# 1234 - Operator Nonva1995at number 1111 added to database.
-Sat 2019.06.22 at 09:49:55 PM CEST||# 1234 - received request to login
-Sat 2019.06.22 at 09:53:56 PM CEST||# 4589 - received addAndRetrieveOperator request
-Sat 2019.06.22 at 09:53:56 PM CEST||# 4589 - Operator EhVolevi1995at number 2222 added to database.
-Sat 2019.06.22 at 09:53:56 PM CEST||# 4589 - received request to login
-Sat 2019.06.22 at 09:54:54 PM CEST||# 4589 - received changeUsername request
-Sat 2019.06.22 at 09:54:55 PM CEST||# 4589 - Username updated, new username: Adessosi1995
-Sat 2019.06.22 at 09:57:07 PM CEST||#  - SERVER ONLINE
-Sat 2019.06.22 at 09:57:44 PM CEST||# 1245 - received addAndRetrieveOperator request
-Sat 2019.06.22 at 09:57:44 PM CEST||# 1245 - Operator Deop1995at number 3695 added to database.
-Sat 2019.06.22 at 09:57:44 PM CEST||# 1245 - received request to login
-Sat 2019.06.22 at 09:59:34 PM CEST||# 1245 - received changeUsername request
-Sat 2019.06.22 at 09:59:41 PM CEST||# 1245 - Username updated, new username: Daje1995
-Sat 2019.06.22 at 10:02:35 PM CEST||# 1245 - received request to logout
-Sat 2019.06.22 at 10:11:27 PM CEST||#  - SERVER ONLINE
-Sat 2019.06.22 at 10:13:07 PM CEST||# 154654 - received request to login
-Sat 2019.06.22 at 10:13:45 PM CEST||# 154654 - received changePassword request
-Sat 2019.06.22 at 10:13:45 PM CEST||# 154654 - Password uptated for the operator Daje1995 and number 3695
-Sat 2019.06.22 at 10:14:01 PM CEST||# 154654 - received request to logout
-Sat 2019.06.22 at 10:18:18 PM CEST||#  - SERVER ONLINE
-Sat 2019.06.22 at 10:19:37 PM CEST||# 4545646 - received addAndRetrieveOperator request
-Sat 2019.06.22 at 10:28:19 PM CEST||# 45484 - received addAndRetrieveOperator request
-Sat 2019.06.22 at 10:31:23 PM CEST||#  - SERVER ONLINE
-Sat 2019.06.22 at 10:32:02 PM CEST||# 1265456 - received addAndRetrieveOperator request
-Sat 2019.06.22 at 10:32:02 PM CEST||# 1265456 - received request to login
-Sat 2019.06.22 at 10:41:08 PM CEST||# 2564156 - received addAndRetrieveOperator request
-Sat 2019.06.22 at 10:41:08 PM CEST||# 2564156 - received request to login
-Sat 2019.06.22 at 10:43:35 PM CEST||# 56489 - received addAndRetrieveOperator request
-Sat 2019.06.22 at 10:43:35 PM CEST||# 56489 - received request to login
-Sat 2019.06.22 at 10:44:26 PM CEST||# 56489 - received request to logout
-Sat 2019.06.22 at 10:48:02 PM CEST||# 56489 - received addAndRetrieveOperator request
-Sat 2019.06.22 at 10:48:02 PM CEST||# 56489 - received request to login
-Sat 2019.06.22 at 10:48:10 PM CEST||#  - SERVER ONLINE
-Sat 2019.06.22 at 10:52:16 PM CEST||#  - SERVER ONLINE
-Sat 2019.06.22 at 10:53:25 PM CEST||# 515152156 - received request to login
-Sat 2019.06.22 at 10:54:04 PM CEST||# 515152156 - received request to logout
-Sat 2019.06.22 at 11:05:32 PM CEST||# 654561 - received request to login
-Sat 2019.06.22 at 11:06:29 PM CEST||# 654561 - received request to logout
-Sat 2019.06.22 at 11:07:00 PM CEST||# 454654 - received addAndRetrieveOperator request
-Sat 2019.06.22 at 11:07:00 PM CEST||# 454654 - Operator Abcd1995at number 1111 added to database.
-Sat 2019.06.22 at 11:07:00 PM CEST||# 454654 - received request to login
-Sat 2019.06.22 at 11:07:47 PM CEST||# 454654 - received changeUsername request
-Sat 2019.06.22 at 11:12:29 PM CEST||# 58415856 - received addAndRetrieveOperator request
-Sat 2019.06.22 at 11:12:29 PM CEST||# 58415856 - Operator ZZZz1995at number 1111 added to database.
-Sat 2019.06.22 at 11:12:29 PM CEST||# 58415856 - received request to login
-Sat 2019.06.22 at 11:12:54 PM CEST||# 58415856 - received changeUsername request
-Sat 2019.06.22 at 11:13:08 PM CEST||# 58415856 - received request to logout
-Sat 2019.06.22 at 11:15:35 PM CEST||# 1111 - received addAndRetrieveOperator request
-Sat 2019.06.22 at 11:15:35 PM CEST||# 1111 - Operator Peppe1995at number 1111 added to database.
-Sat 2019.06.22 at 11:15:35 PM CEST||# 1111 - received request to login
-Sat 2019.06.22 at 11:15:58 PM CEST||# 1111 - received changeUsername request
-Sat 2019.06.22 at 11:16:50 PM CEST||# 1111 - received request to logout
-Sat 2019.06.22 at 11:17:29 PM CEST||# 1111 - received request to login
-Sat 2019.06.22 at 11:17:48 PM CEST||# 1111 - received changePassword request
-Sat 2019.06.22 at 11:17:48 PM CEST||# 1111 - Password uptated for the operator Abcd1995 and number 1111
-Sat 2019.06.22 at 11:18:00 PM CEST||# 1111 - received request to logout
-Sat 2019.06.22 at 11:33:32 PM CEST||#  - SERVER ONLINE
-Sat 2019.06.22 at 11:34:01 PM CEST||# 1111 - received addAndRetrieveOperator request
-Sat 2019.06.22 at 11:34:01 PM CEST||# 1111 - Operator Kebab1995at number 4111 added to database.
-Sat 2019.06.22 at 11:34:01 PM CEST||# 1111 - received request to login
-Sat 2019.06.22 at 11:34:14 PM CEST||# 1111 - received addOperation request
-Sat 2019.06.22 at 11:34:14 PM CEST||# 1111 - Operation 12 at number4111 added to Database
-Sat 2019.06.22 at 11:34:35 PM CEST||# 1111 - received addOperation request
-Sat 2019.06.22 at 11:34:35 PM CEST||# 1111 - Operation 15 at number4111 added to Database
-Sat 2019.06.22 at 11:34:52 PM CEST||# 1111 - received changeID request
-Sat 2019.06.22 at 11:55:31 PM CEST||#  - SERVER ONLINE
-Sat 2019.06.22 at 11:56:10 PM CEST||# 545646 - received addAndRetrieveOperator request
-Sat 2019.06.22 at 11:56:10 PM CEST||# 545646 - Operator Junit1995at number 4111 added to database.
-Sat 2019.06.22 at 11:56:10 PM CEST||# 545646 - received request to login
-Sat 2019.06.22 at 11:56:22 PM CEST||# 545646 - received changeID request
-Sat 2019.06.22 at 11:58:27 PM CEST||# 4456456 - received addAndRetrieveOperator request
-Sat 2019.06.22 at 11:58:27 PM CEST||# 4456456 - Operator czdshfhngthA52at number 4111 added to database.
-Sat 2019.06.22 at 11:58:27 PM CEST||# 4456456 - received request to login
-Sat 2019.06.22 at 11:58:39 PM CEST||# 4456456 - received changeID request
-Sun 2019.06.23 at 12:00:54 AM CEST||# 32543 - received addAndRetrieveOperator request
-Sun 2019.06.23 at 12:00:54 AM CEST||# 32543 - Operator Ae34543fdat number 4111 added to database.
-Sun 2019.06.23 at 12:00:54 AM CEST||# 32543 - received request to login
-Sun 2019.06.23 at 12:01:06 AM CEST||# 32543 - received changeID request
-Sun 2019.06.23 at 12:02:25 AM CEST||# 1564654 - received addAndRetrieveOperator request
-Sun 2019.06.23 at 12:02:25 AM CEST||# 1564654 - Operator Ahgjh45345at number 4111 added to database.
-Sun 2019.06.23 at 12:02:25 AM CEST||# 1564654 - received request to login
-Sun 2019.06.23 at 12:02:42 AM CEST||# 1564654 - received changeID request
-Sun 2019.06.23 at 12:05:04 AM CEST||# 54534534 - received addAndRetrieveOperator request
-Sun 2019.06.23 at 12:05:04 AM CEST||# 54534534 - Operator Asdf1995at number 4111 added to database.
-Sun 2019.06.23 at 12:05:04 AM CEST||# 54534534 - received request to login
-Sun 2019.06.23 at 12:05:18 AM CEST||# 54534534 - received changeID request
-Sun 2019.06.23 at 12:06:06 AM CEST||# 54534534 - received changeID request
+Sun 2019.06.23 at 04:51:04 PM CEST||#  - SERVER ONLINE
+Sun 2019.06.23 at 04:51:19 PM CEST||# 12356 - received retrieveJustTheRight request
+Sun 2019.06.23 at 04:51:24 PM CEST||# 12356 - The user pressed the button: 4
+Sun 2019.06.23 at 04:51:24 PM CEST||# 12356 - received retrieveJustTheRight request
+Sun 2019.06.23 at 04:51:24 PM CEST||# 12356 - The user pressed the button: 2
+Sun 2019.06.23 at 04:51:24 PM CEST||# 12356 - received retrieveJustTheRight request
+Sun 2019.06.23 at 04:51:24 PM CEST||# 12356 - The user pressed the button: 5
+Sun 2019.06.23 at 04:51:24 PM CEST||# 12356 - received retrieveJustTheRight request
+Sun 2019.06.23 at 04:51:25 PM CEST||# 12356 - The user pressed the button: 3
+Sun 2019.06.23 at 04:51:25 PM CEST||# 12356 - received retrieveJustTheRight request
+Sun 2019.06.23 at 04:51:25 PM CEST||# 12356 - The user pressed the button: 5
+Sun 2019.06.23 at 04:51:25 PM CEST||# 12356 - received retrieveJustTheRight request
+Sun 2019.06.23 at 04:51:25 PM CEST||# 12356 - The user pressed the button: 1
+Sun 2019.06.23 at 04:51:25 PM CEST||# 12356 - received retrieveJustTheRight request
+Sun 2019.06.23 at 04:51:25 PM CEST||# 12356 - The user pressed the button: 6
+Sun 2019.06.23 at 04:51:25 PM CEST||# 12356 - received retrieveJustTheRight request
+Sun 2019.06.23 at 04:51:26 PM CEST||# 12356 - The user pressed the button: 2
+Sun 2019.06.23 at 04:51:26 PM CEST||# 12356 - received retrieveJustTheRight request
+Sun 2019.06.23 at 04:51:26 PM CEST||# 12356 - The user pressed the button: 1
+Sun 2019.06.23 at 04:51:26 PM CEST||# 12356 - received retrieveJustTheRight request
+Sun 2019.06.23 at 04:51:26 PM CEST||# 12356 - The user pressed the button: 2
+Sun 2019.06.23 at 04:51:26 PM CEST||# 12356 - received retrieveJustTheRight request
+Sun 2019.06.23 at 04:51:27 PM CEST||# 12356 - The user deleted his last choice
+Sun 2019.06.23 at 04:51:27 PM CEST||# 12356 - received retrieveJustTheRight request
+Sun 2019.06.23 at 04:51:28 PM CEST||# 12356 - The user deleted his last choice
+Sun 2019.06.23 at 04:51:28 PM CEST||# 12356 - received retrieveJustTheRight request
+Sun 2019.06.23 at 04:51:28 PM CEST||# 12356 - The user deleted his last choice
+Sun 2019.06.23 at 04:51:28 PM CEST||# 12356 - received retrieveJustTheRight request
+Sun 2019.06.23 at 04:51:28 PM CEST||# 12356 - The user deleted his last choice
+Sun 2019.06.23 at 04:51:28 PM CEST||# 12356 - received retrieveJustTheRight request
+Sun 2019.06.23 at 04:51:28 PM CEST||# 12356 - The user deleted his last choice
+Sun 2019.06.23 at 04:51:28 PM CEST||# 12356 - received retrieveJustTheRight request
+Sun 2019.06.23 at 04:51:28 PM CEST||# 12356 - The user deleted his last choice
+Sun 2019.06.23 at 04:51:28 PM CEST||# 12356 - received retrieveJustTheRight request
+Sun 2019.06.23 at 04:51:29 PM CEST||# 12356 - The user deleted his last choice
+Sun 2019.06.23 at 04:51:29 PM CEST||# 12356 - received retrieveJustTheRight request
+Sun 2019.06.23 at 04:51:29 PM CEST||# 12356 - The user deleted his last choice
+Sun 2019.06.23 at 04:51:29 PM CEST||# 12356 - received retrieveJustTheRight request
+Sun 2019.06.23 at 04:51:29 PM CEST||# 12356 - The user deleted his last choice
+Sun 2019.06.23 at 04:51:29 PM CEST||# 12356 - received retrieveJustTheRight request
+Sun 2019.06.23 at 04:51:29 PM CEST||# 12356 - The user deleted his last choice
+Sun 2019.06.23 at 04:51:29 PM CEST||# 12356 - received retrieveJustTheRight request
+Sun 2019.06.23 at 06:30:36 PM CEST||# 123 - Status for operator hfgkjschanged to true
+Sun 2019.06.23 at 06:30:36 PM CEST||# 123 - LOGGED IN
+Sun 2019.06.23 at 06:30:36 PM CEST||# 123 - received request to login
+Mon 2019.06.24 at 11:21:54 AM CEST||#  - SERVER ONLINE
+Mon 2019.06.24 at 11:23:16 AM CEST||# 12345 - received retrieveJustTheRight request
+Mon 2019.06.24 at 11:23:23 AM CEST||# 12345 - The user pressed the button: 1
+Mon 2019.06.24 at 11:23:23 AM CEST||# 12345 - received retrieveJustTheRight request
+Mon 2019.06.24 at 11:23:24 AM CEST||# 12345 - The user pressed the button: 5
+Mon 2019.06.24 at 11:23:24 AM CEST||# 12345 - received retrieveJustTheRight request
+Mon 2019.06.24 at 11:23:25 AM CEST||# 12345 - The user pressed the button: 1
+Mon 2019.06.24 at 11:23:25 AM CEST||# 12345 - received retrieveJustTheRight request
+Mon 2019.06.24 at 11:23:26 AM CEST||# 12345 - The user deleted his last choice
+Mon 2019.06.24 at 11:23:26 AM CEST||# 12345 - received retrieveJustTheRight request
+Mon 2019.06.24 at 11:23:26 AM CEST||# 12345 - The user deleted his last choice
+Mon 2019.06.24 at 11:23:26 AM CEST||# 12345 - received retrieveJustTheRight request
+Mon 2019.06.24 at 11:23:26 AM CEST||# 12345 - The user deleted his last choice
+Mon 2019.06.24 at 11:23:26 AM CEST||# 12345 - received retrieveJustTheRight request
+Mon 2019.06.24 at 11:27:55 AM CEST||# 12456 - received retrieveJustTheRight request
+Mon 2019.06.24 at 11:28:36 AM CEST||# 12456 - The user pressed the button: 1
+Mon 2019.06.24 at 11:28:36 AM CEST||# 12456 - received retrieveJustTheRight request
+Mon 2019.06.24 at 11:28:36 AM CEST||# 12456 - The user pressed the button: 1
+Mon 2019.06.24 at 11:28:36 AM CEST||# 12456 - received retrieveJustTheRight request
+Mon 2019.06.24 at 11:28:36 AM CEST||# 12456 - The user pressed the button: 1
+Mon 2019.06.24 at 11:28:36 AM CEST||# 12456 - received retrieveJustTheRight request
+Mon 2019.06.24 at 11:28:36 AM CEST||# 12456 - The user pressed the button: 1
+Mon 2019.06.24 at 11:28:36 AM CEST||# 12456 - received retrieveJustTheRight request
+Mon 2019.06.24 at 11:28:43 AM CEST||# 12456 - The user deleted his last choice
+Mon 2019.06.24 at 11:28:43 AM CEST||# 12456 - received retrieveJustTheRight request
+Mon 2019.06.24 at 11:28:43 AM CEST||# 12456 - The user deleted his last choice
+Mon 2019.06.24 at 11:28:43 AM CEST||# 12456 - received retrieveJustTheRight request
+Mon 2019.06.24 at 11:28:43 AM CEST||# 12456 - The user deleted his last choice
+Mon 2019.06.24 at 11:28:43 AM CEST||# 12456 - received retrieveJustTheRight request
+Mon 2019.06.24 at 11:28:44 AM CEST||# 12456 - The user deleted his last choice
+Mon 2019.06.24 at 11:28:44 AM CEST||# 12456 - received retrieveJustTheRight request
+Mon 2019.06.24 at 11:35:19 AM CEST||# 1561 - received retrieveJustTheRight request
+Mon 2019.06.24 at 11:36:11 AM CEST||# 123456 - received retrieveJustTheRight request
+Mon 2019.06.24 at 11:36:30 AM CEST||# 123456 - received findOperator request 
+Mon 2019.06.24 at 11:36:30 AM CEST||# 123456 - Operator abCD1995 at number 5555 added to database.
+Mon 2019.06.24 at 11:36:30 AM CEST||# 123456 - received addAndRetrieveOperator request
+Mon 2019.06.24 at 11:36:30 AM CEST||# 123456 - Status for operator abCD1995changed to true
+Mon 2019.06.24 at 11:36:30 AM CEST||# 123456 - LOGGED IN
+Mon 2019.06.24 at 11:36:30 AM CEST||# 123456 - received request to login
+Mon 2019.06.24 at 11:39:30 AM CEST||# 123456 - received addOperation request
+Mon 2019.06.24 at 11:39:30 AM CEST||# 123456 - Operation 15 at number5555 added to Database
+Mon 2019.06.24 at 11:40:05 AM CEST||# 123456 - Id apdated for the operation 15 at number 5555, new id: 21
+Mon 2019.06.24 at 11:40:05 AM CEST||# 123456 - received changeID request
+Mon 2019.06.24 at 11:40:12 AM CEST||# 123456 - received changeID request
+Mon 2019.06.24 at 11:43:22 AM CEST||# 123456 - Status for operator abCD1995changed to false
+Mon 2019.06.24 at 11:43:22 AM CEST||# 123456 - LOGGED OUT
+Mon 2019.06.24 at 11:43:22 AM CEST||# 123456 - received request to logout
+Mon 2019.06.24 at 11:43:38 AM CEST||# 148 - received retrieveJustTheRight request
+Mon 2019.06.24 at 11:43:42 AM CEST||# 148 - The user pressed the button: 4
+Mon 2019.06.24 at 11:43:42 AM CEST||# 148 - received retrieveJustTheRight request
+Mon 2019.06.24 at 11:43:42 AM CEST||# 148 - The user pressed the button: 4
+Mon 2019.06.24 at 11:43:42 AM CEST||# 148 - received retrieveJustTheRight request
+Mon 2019.06.24 at 11:43:42 AM CEST||# 148 - The user pressed the button: 4
+Mon 2019.06.24 at 11:43:42 AM CEST||# 148 - received retrieveJustTheRight request
+Mon 2019.06.24 at 11:43:42 AM CEST||# 148 - The user pressed the button: 4
+Mon 2019.06.24 at 11:43:42 AM CEST||# 148 - received retrieveJustTheRight request
+Mon 2019.06.24 at 11:43:47 AM CEST||# 148 - The user deleted his last choice
+Mon 2019.06.24 at 11:43:47 AM CEST||# 148 - received retrieveJustTheRight request
+Mon 2019.06.24 at 11:43:47 AM CEST||# 148 - The user deleted his last choice
+Mon 2019.06.24 at 11:43:47 AM CEST||# 148 - received retrieveJustTheRight request
+Mon 2019.06.24 at 11:43:48 AM CEST||# 148 - The user deleted his last choice
+Mon 2019.06.24 at 11:43:48 AM CEST||# 148 - received retrieveJustTheRight request
+Mon 2019.06.24 at 11:43:48 AM CEST||# 148 - The user deleted his last choice
+Mon 2019.06.24 at 11:43:48 AM CEST||# 148 - received retrieveJustTheRight request
+Mon 2019.06.24 at 11:44:07 AM CEST||# 148 - received findOperator request 
+Mon 2019.06.24 at 11:44:07 AM CEST||# 148 - Operator AAAa1995 at number 9999 added to database.
+Mon 2019.06.24 at 11:44:07 AM CEST||# 148 - received addAndRetrieveOperator request
+Mon 2019.06.24 at 11:44:07 AM CEST||# 148 - Status for operator AAAa1995changed to true
+Mon 2019.06.24 at 11:44:07 AM CEST||# 148 - LOGGED IN
+Mon 2019.06.24 at 11:44:07 AM CEST||# 148 - received request to login
+Mon 2019.06.24 at 11:44:18 AM CEST||# 148 - received addOperation request
+Mon 2019.06.24 at 11:44:18 AM CEST||# 148 - Operation 15 at number9999 added to Database
+Mon 2019.06.24 at 11:44:33 AM CEST||# 148 - Id apdated for the operation 15 at number 9999, new id: 27
+Mon 2019.06.24 at 11:44:33 AM CEST||# 148 - received changeID request
+Mon 2019.06.24 at 11:45:27 AM CEST||# 148 - Text updated for the operation 27 and number 9999
+Mon 2019.06.24 at 11:45:27 AM CEST||# 148 - received changeText request
+Mon 2019.06.24 at 11:47:05 AM CEST||# 148 - received addOperation request
+Mon 2019.06.24 at 11:47:05 AM CEST||# 148 - Operation 15 at number9999 added to Database
+Mon 2019.06.24 at 11:47:30 AM CEST||# 148 - Operation 27 at number 9999 removed.
+Mon 2019.06.24 at 11:47:30 AM CEST||# 148 - received removeOperation request
+Mon 2019.06.24 at 11:50:46 AM CEST||# 148 - Password updated for the operator AAAa1995 and number 9999
+Mon 2019.06.24 at 11:50:46 AM CEST||# 148 - received changePassword request
+Mon 2019.06.24 at 11:51:40 AM CEST||# 148 - Status for operator AAAa1995changed to false
+Mon 2019.06.24 at 11:51:40 AM CEST||# 148 - LOGGED OUT
+Mon 2019.06.24 at 11:51:40 AM CEST||# 148 - received request to logout
+Mon 2019.06.24 at 11:54:57 AM CEST||# 123456 - received retrieveJustTheRight request
+Mon 2019.06.24 at 11:55:31 AM CEST||# 123456 - received findOperator request 
+Mon 2019.06.24 at 11:55:31 AM CEST||# 123456 - Operator POIu1995 at number 5555 added to database.
+Mon 2019.06.24 at 11:55:31 AM CEST||# 123456 - received addAndRetrieveOperator request
+Mon 2019.06.24 at 11:55:31 AM CEST||# 123456 - Status for operator POIu1995changed to true
+Mon 2019.06.24 at 11:55:31 AM CEST||# 123456 - LOGGED IN
+Mon 2019.06.24 at 11:55:31 AM CEST||# 123456 - received request to login
+Mon 2019.06.24 at 11:55:52 AM CEST||# 123456 - Id apdated for the operation 21 at number 5555, new id: 1
+Mon 2019.06.24 at 11:55:52 AM CEST||# 123456 - received changeID request
+Mon 2019.06.24 at 11:57:53 AM CEST||# 123456 - Status for operator POIu1995changed to false
+Mon 2019.06.24 at 11:57:53 AM CEST||# 123456 - LOGGED OUT
+Mon 2019.06.24 at 11:57:53 AM CEST||# 123456 - received request to logout
+Mon 2019.06.24 at 12:17:12 PM CEST||#  - SERVER ONLINE
+Mon 2019.06.24 at 12:20:43 PM CEST||# 12345689 - received retrieveJustTheRight request
+Mon 2019.06.24 at 12:20:58 PM CEST||# 12345689 - received findOperator request 
+Mon 2019.06.24 at 12:20:58 PM CEST||# 12345689 - Operator 123aA123 at number 123 added to database.
+Mon 2019.06.24 at 12:20:58 PM CEST||# 12345689 - received addAndRetrieveOperator request
+Mon 2019.06.24 at 12:20:58 PM CEST||# 12345689 - Status for operator 123aA123changed to true
+Mon 2019.06.24 at 12:20:58 PM CEST||# 12345689 - LOGGED IN
+Mon 2019.06.24 at 12:20:58 PM CEST||# 12345689 - received request to login
+Mon 2019.06.24 at 12:22:40 PM CEST||# 12345689 - Status for operator 123aA123changed to false
+Mon 2019.06.24 at 12:22:40 PM CEST||# 12345689 - LOGGED OUT
+Mon 2019.06.24 at 12:22:40 PM CEST||# 12345689 - received request to logout
+Mon 2019.06.24 at 12:29:27 PM CEST||# 1545648 - received retrieveJustTheRight request
+Mon 2019.06.24 at 12:29:43 PM CEST||# 1545648 - received retrieveJustTheRight request
+Mon 2019.06.24 at 12:35:22 PM CEST||# 1545648 - The user pressed the button: 1
+Mon 2019.06.24 at 12:35:22 PM CEST||# 1545648 - received retrieveJustTheRight request
+Mon 2019.06.24 at 12:35:26 PM CEST||# 1545648 - The user deleted his last choice
+Mon 2019.06.24 at 12:35:26 PM CEST||# 1545648 - received retrieveJustTheRight request
+Mon 2019.06.24 at 12:36:46 PM CEST||# 1545648 - received findOperator request 
+Mon 2019.06.24 at 12:36:46 PM CEST||# 1545648 - Status for operator POIu1995changed to true
+Mon 2019.06.24 at 12:36:46 PM CEST||# 1545648 - LOGGED IN
+Mon 2019.06.24 at 12:36:46 PM CEST||# 1545648 - received request to login
+Mon 2019.06.24 at 12:37:11 PM CEST||# 1545648 - Username updated, new username: Eskeree9
+Mon 2019.06.24 at 12:37:11 PM CEST||# 1545648 - received changeUsername request
+Mon 2019.06.24 at 12:37:58 PM CEST||# 1545648 - Username updated, new username: Eskere95
+Mon 2019.06.24 at 12:37:58 PM CEST||# 1545648 - received changeUsername request
+Mon 2019.06.24 at 12:41:10 PM CEST||# 1545648 - Status for operator POIu1995changed to false
+Mon 2019.06.24 at 12:41:10 PM CEST||# 1545648 - LOGGED OUT
+Mon 2019.06.24 at 12:41:10 PM CEST||# 1545648 - received request to logout
+Mon 2019.06.24 at 12:42:01 PM CEST||# 123546 - received retrieveJustTheRight request
+Mon 2019.06.24 at 05:06:09 PM CEST||#  - SERVER ONLINE
+Mon 2019.06.24 at 05:06:26 PM CEST||# 12356 - received retrieveJustTheRight request
+Mon 2019.06.24 at 05:06:54 PM CEST||# 12356 - received findOperator request 
+Mon 2019.06.24 at 05:06:54 PM CEST||# 12356 - Operator ASDASD1995 at number 2222 added to database.
+Mon 2019.06.24 at 05:06:54 PM CEST||# 12356 - received addAndRetrieveOperator request
+Mon 2019.06.24 at 05:06:54 PM CEST||# 12356 - Status for operator ASDASD1995changed to true
+Mon 2019.06.24 at 05:06:54 PM CEST||# 12356 - LOGGED IN
+Mon 2019.06.24 at 05:06:54 PM CEST||# 12356 - received request to login
+Mon 2019.06.24 at 05:07:06 PM CEST||# 12356 - Username updated, new username: XXXXXXXXXXXXX
+Mon 2019.06.24 at 05:07:06 PM CEST||# 12356 - received changeUsername request
+Mon 2019.06.24 at 05:07:30 PM CEST||# 12356 - Status for operator ASDASD1995changed to false
+Mon 2019.06.24 at 05:07:30 PM CEST||# 12356 - LOGGED OUT
+Mon 2019.06.24 at 05:07:30 PM CEST||# 12356 - received request to logout
+Mon 2019.06.24 at 05:13:10 PM CEST||#  - SERVER ONLINE
+Mon 2019.06.24 at 05:13:26 PM CEST||# 123456 - received retrieveJustTheRight request
+Mon 2019.06.24 at 05:13:40 PM CEST||# 123456 - received findOperator request 
+Mon 2019.06.24 at 05:13:40 PM CEST||# 123456 - Operator XXxx1995 at number 1111 added to database.
+Mon 2019.06.24 at 05:13:40 PM CEST||# 123456 - received addAndRetrieveOperator request
+Mon 2019.06.24 at 05:13:40 PM CEST||# 123456 - Status for operator XXxx1995changed to true
+Mon 2019.06.24 at 05:13:40 PM CEST||# 123456 - LOGGED IN
+Mon 2019.06.24 at 05:13:40 PM CEST||# 123456 - received request to login
+Mon 2019.06.24 at 05:13:50 PM CEST||# 123456 - Username updated, new username: xxXX1995
+Mon 2019.06.24 at 05:13:50 PM CEST||# 123456 - received changeUsername request
+Mon 2019.06.24 at 05:13:55 PM CEST||# 123456 - Status for operator XXxx1995changed to false
+Mon 2019.06.24 at 05:13:55 PM CEST||# 123456 - LOGGED OUT
+Mon 2019.06.24 at 05:13:55 PM CEST||# 123456 - received request to logout
+Mon 2019.06.24 at 06:18:29 PM CEST||# 222333 - Operator Nice Username at number 5555 added to database.
+Mon 2019.06.24 at 06:18:29 PM CEST||# 222333 - Username updated, new username: Nice Username 2
+Mon 2019.06.24 at 06:18:29 PM CEST||# 222333 - Password updated for the operator Nice Username 2 and number 5555
+Mon 2019.06.24 at 06:18:29 PM CEST||# 345556 - received findOperator request 
+Mon 2019.06.24 at 06:18:30 PM CEST||# 345556 - Operator Nice Username 2 at number 5555 removed.
+Mon 2019.06.24 at 06:20:20 PM CEST||# 222333 - Operator Nice Username at number 5555 added to database.
+Mon 2019.06.24 at 06:20:21 PM CEST||# 222333 - Username updated, new username: Nice Username 2
+Mon 2019.06.24 at 06:20:21 PM CEST||# 222333 - Password updated for the operator Nice Username 2 and number 5555
+Mon 2019.06.24 at 06:20:21 PM CEST||# 345556 - received findOperator request 
+Mon 2019.06.24 at 06:20:21 PM CEST||# 345556 - Operator Nice Username 2 at number 5555 removed.
+Mon 2019.06.24 at 06:20:55 PM CEST||#  - SERVER ONLINE
+Mon 2019.06.24 at 06:21:09 PM CEST||# 124564 - received retrieveJustTheRight request
+Mon 2019.06.24 at 06:21:23 PM CEST||# 124564 - received findOperator request 
+Mon 2019.06.24 at 06:21:23 PM CEST||# 124564 - Operator 1111AAaa at number 1111 added to database.
+Mon 2019.06.24 at 06:21:23 PM CEST||# 124564 - received addAndRetrieveOperator request
+Mon 2019.06.24 at 06:21:23 PM CEST||# 124564 - Status for operator 1111AAaachanged to true
+Mon 2019.06.24 at 06:21:23 PM CEST||# 124564 - LOGGED IN
+Mon 2019.06.24 at 06:21:23 PM CEST||# 124564 - received request to login
+Mon 2019.06.24 at 06:21:36 PM CEST||# 124564 - Username updated, new username: AAAa1111
+Mon 2019.06.24 at 06:21:36 PM CEST||# 124564 - received changeUsername request
+Mon 2019.06.24 at 06:22:01 PM CEST||# 124564 - Username updated, new username: AAAa1111
+Mon 2019.06.24 at 06:22:01 PM CEST||# 124564 - received changeUsername request
+Mon 2019.06.24 at 06:22:05 PM CEST||# 124564 - Username updated, new username: AAAa111o
+Mon 2019.06.24 at 06:22:05 PM CEST||# 124564 - received changeUsername request
+Mon 2019.06.24 at 06:23:06 PM CEST||# 1234564 - received retrieveJustTheRight request
+Mon 2019.06.24 at 06:23:20 PM CEST||# 1234564 - received findOperator request 
+Mon 2019.06.24 at 06:23:20 PM CEST||# 1234564 - Operator Sava1995 at number 0000 added to database.
+Mon 2019.06.24 at 06:23:20 PM CEST||# 1234564 - received addAndRetrieveOperator request
+Mon 2019.06.24 at 06:23:20 PM CEST||# 1234564 - Status for operator Sava1995changed to true
+Mon 2019.06.24 at 06:23:20 PM CEST||# 1234564 - LOGGED IN
+Mon 2019.06.24 at 06:23:20 PM CEST||# 1234564 - received request to login
+Mon 2019.06.24 at 06:23:28 PM CEST||# 1234564 - Username updated, new username: AVAa1995
+Mon 2019.06.24 at 06:23:28 PM CEST||# 1234564 - received changeUsername request
+Mon 2019.06.24 at 06:24:07 PM CEST||# 1234564 - Password updated for the operator Sava1995 and number 0000
+Mon 2019.06.24 at 06:24:07 PM CEST||# 1234564 - received changePassword request
+Mon 2019.06.24 at 06:25:43 PM CEST||#  - SERVER ONLINE
+Mon 2019.06.24 at 06:25:53 PM CEST||# 2135 - received retrieveJustTheRight request
+Mon 2019.06.24 at 06:26:03 PM CEST||# 2135 - received findOperator request 
+Mon 2019.06.24 at 06:26:03 PM CEST||# 2135 - Operator AAaa1995 at number 0000 added to database.
+Mon 2019.06.24 at 06:26:03 PM CEST||# 2135 - received addAndRetrieveOperator request
+Mon 2019.06.24 at 06:26:03 PM CEST||# 2135 - Status for operator AAaa1995changed to true
+Mon 2019.06.24 at 06:26:03 PM CEST||# 2135 - LOGGED IN
+Mon 2019.06.24 at 06:26:03 PM CEST||# 2135 - received request to login
+Mon 2019.06.24 at 06:26:12 PM CEST||# 2135 - Username updated, new username: aaAA1995
+Mon 2019.06.24 at 06:26:12 PM CEST||# 2135 - received changeUsername request
+Mon 2019.06.24 at 06:27:01 PM CEST||#  - SERVER ONLINE
+Mon 2019.06.24 at 06:28:08 PM CEST||# 2154541 - received retrieveJustTheRight request
+Mon 2019.06.24 at 06:28:18 PM CEST||# 2154541 - received findOperator request 
+Mon 2019.06.24 at 06:28:18 PM CEST||# 2154541 - Operator okIJ1995 at number 0000 added to database.
+Mon 2019.06.24 at 06:28:18 PM CEST||# 2154541 - received addAndRetrieveOperator request
+Mon 2019.06.24 at 06:28:18 PM CEST||# 2154541 - Status for operator okIJ1995changed to true
+Mon 2019.06.24 at 06:28:18 PM CEST||# 2154541 - LOGGED IN
+Mon 2019.06.24 at 06:28:18 PM CEST||# 2154541 - received request to login
+Mon 2019.06.24 at 06:28:26 PM CEST||# 2154541 - Username updated, new username: ASD1995a
+Mon 2019.06.24 at 06:28:55 PM CEST||# 2154541 - received changeUsername request
+Mon 2019.06.24 at 06:30:13 PM CEST||# 2154541 - Password updated for the operator okIJ1995 and number 0000
+Mon 2019.06.24 at 06:30:13 PM CEST||# 2154541 - received changePassword request
+Mon 2019.06.24 at 06:31:47 PM CEST||# 2154541 - Password updated for the operator okIJ1995 and number 0000
+Mon 2019.06.24 at 06:31:47 PM CEST||# 2154541 - received changePassword request
+Mon 2019.06.24 at 06:32:37 PM CEST||#  - SERVER ONLINE
+Mon 2019.06.24 at 06:32:50 PM CEST||# 148685 - received retrieveJustTheRight request
+Mon 2019.06.24 at 06:33:16 PM CEST||# 148685 - received findOperator request 
+Mon 2019.06.24 at 06:33:16 PM CEST||# 148685 - Operator 148gheRT at number 0000 added to database.
+Mon 2019.06.24 at 06:33:16 PM CEST||# 148685 - received addAndRetrieveOperator request
+Mon 2019.06.24 at 06:33:16 PM CEST||# 148685 - Status for operator 148gheRTchanged to true
+Mon 2019.06.24 at 06:33:16 PM CEST||# 148685 - LOGGED IN
+Mon 2019.06.24 at 06:33:16 PM CEST||# 148685 - received request to login
+Mon 2019.06.24 at 06:33:45 PM CEST||# 148685 - Username updated, new username: ASSAaa1995
+Mon 2019.06.24 at 06:34:11 PM CEST||# 148685 - received changeUsername request
+Mon 2019.06.24 at 06:35:46 PM CEST||# 112315 - received retrieveJustTheRight request
+Mon 2019.06.24 at 06:36:01 PM CEST||# 112315 - received findOperator request 
+Mon 2019.06.24 at 06:36:01 PM CEST||# 112315 - Operator Deorrjkdgk1995 at number 0000 added to database.
+Mon 2019.06.24 at 06:36:01 PM CEST||# 112315 - received addAndRetrieveOperator request
+Mon 2019.06.24 at 06:36:01 PM CEST||# 112315 - Status for operator Deorrjkdgk1995changed to true
+Mon 2019.06.24 at 06:36:01 PM CEST||# 112315 - LOGGED IN
+Mon 2019.06.24 at 06:36:01 PM CEST||# 112315 - received request to login
+Mon 2019.06.24 at 06:36:23 PM CEST||# 112315 - Username updated, new username: Avicii1995
+Mon 2019.06.24 at 06:36:30 PM CEST||# 112315 - received changeUsername request
+Mon 2019.06.24 at 06:39:16 PM CEST||# 112315 - Password updated for the operator Deorrjkdgk1995 and number 0000
+Mon 2019.06.24 at 06:39:42 PM CEST||# 112315 - received changePassword request
+Mon 2019.06.24 at 06:40:36 PM CEST||# 1215512 - received retrieveJustTheRight request
+Mon 2019.06.24 at 06:40:50 PM CEST||# 1215512 - received findOperator request 
+Mon 2019.06.24 at 06:40:50 PM CEST||# 1215512 - Operator Username1995 at number 0000 added to database.
+Mon 2019.06.24 at 06:40:50 PM CEST||# 1215512 - received addAndRetrieveOperator request
+Mon 2019.06.24 at 06:40:50 PM CEST||# 1215512 - Status for operator Username1995changed to true
+Mon 2019.06.24 at 06:40:50 PM CEST||# 1215512 - LOGGED IN
+Mon 2019.06.24 at 06:40:50 PM CEST||# 1215512 - received request to login
+Mon 2019.06.24 at 06:41:07 PM CEST||# 1215512 - Username updated, new username: User1995
+Mon 2019.06.24 at 06:41:25 PM CEST||# 1215512 - received changeUsername request
+Mon 2019.06.24 at 06:50:51 PM CEST||#  - SERVER ONLINE
+Mon 2019.06.24 at 06:51:01 PM CEST||# 125456 - received retrieveJustTheRight request
+Mon 2019.06.24 at 06:51:14 PM CEST||# 125456 - received findOperator request 
+Mon 2019.06.24 at 06:51:14 PM CEST||# 125456 - Operator Beppe1995 at number 0000 added to database.
+Mon 2019.06.24 at 06:51:14 PM CEST||# 125456 - received addAndRetrieveOperator request
+Mon 2019.06.24 at 06:51:14 PM CEST||# 125456 - Status for operator Beppe1995changed to true
+Mon 2019.06.24 at 06:51:14 PM CEST||# 125456 - LOGGED IN
+Mon 2019.06.24 at 06:51:14 PM CEST||# 125456 - received request to login
+Mon 2019.06.24 at 06:51:25 PM CEST||# 125456 - Username updated, new username: Nicetry1995
+Mon 2019.06.24 at 06:51:28 PM CEST||# 125456 - received changeUsername request
+Mon 2019.06.24 at 06:55:50 PM CEST||# 125456 - Password updated for the operator Beppe1995 and number 0000
+Mon 2019.06.24 at 06:55:50 PM CEST||# 125456 - received changePassword request

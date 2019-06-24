@@ -81,4 +81,8 @@ public class Operation implements Serializable {
     public boolean equalsIDString(String id,String number){
        return (this.getId().equals(id)) && (this.getNumber().equals(number));
     }
+
+    public String getNextAvailableChoice(){
+        return this.getId().charAt(this.getId().length() - 1) + " - " + this.getTextOp();
+    }
 }

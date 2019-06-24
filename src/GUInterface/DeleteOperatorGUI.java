@@ -48,7 +48,7 @@ public class DeleteOperatorGUI extends JFrame {
         this.setResizable(false);
         this.setTitle(TITLE);
         JLabel msgLabel=new JLabel(MESSAGE);
-        msgLabel.setBounds(LABELX1, LABELY1, LABELX2, LABELX2);
+        msgLabel.setBounds(LABELX1, LABELY1, LABELX2, LABELY2);
         this.add(msgLabel);
         JButton button=new JButton(BUTTON);
 		button.setBounds(BUTTONX1, BUTTONY1, BUTTONX2, BUTTONY2);

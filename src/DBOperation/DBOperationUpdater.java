@@ -1,13 +1,13 @@
 package DBOperation;
 
 import GUInterface.Exception.OperationAlreadyUsed;
-import dataWriterHistory.DataWriter;
-import dataWriterHistory.DataWriterServer;
+
+import dataHistory.DataWriterServer;
 import model.Operation;
 import GUInterface.Exception.DBOperationEmpty;
 import GUInterface.Exception.OperationNotFound;
 
-import java.io.IOException;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -39,7 +39,6 @@ public class DBOperationUpdater {
                 }
                 if(operation.equalsIDString(newId,number)) {
                     updatedFound=true;
-                    break;
                 }
             }
             if (found && !updatedFound) {

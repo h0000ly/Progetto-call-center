@@ -1,11 +1,11 @@
 package DBOperation;
 
-import dataHistory.DataWriter;
+
 import dataHistory.DataWriterServer;
 import model.Operation;
 import GUInterface.Exception.OperationAlreadyUsed;
 
-import java.io.IOException;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -22,8 +22,8 @@ public class DBOperationInserter {
         DataWriterServer data  =new DataWriterServer(numCalling);
         DBOperationReader operationReader = new DBOperationReader();
         boolean found = false;
-        for (Operation operation : operationReader.retrieveAllTheOperations(connection, operation.getNumber())) {
-            if(operation.equals(operation)) {
+        for (Operation op : operationReader.retrieveAllTheOperations(connection, operation.getNumber())) {
+            if(op.equals(operation)) {
                 found = true;
 				break;
             }

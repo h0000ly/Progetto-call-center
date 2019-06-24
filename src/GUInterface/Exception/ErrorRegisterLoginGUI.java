@@ -11,12 +11,12 @@ public class ErrorRegisterLoginGUI extends JFrame implements ActionListener {
 	private final int WINDOWY = 300;
 	private final int SIZEX = 400;
 	private final int SIZEY = 150;
-	private final String TITLE = "Error"
-	private final String BTNTEXT = "OK"
-	private final int BTNBOUNDSX1 = 150;
-	private final int BTNBOUNDSY1 = 150;
-	private final int BTNBOUNDSX2 = 150;
-	private final int BTNBOUNDSY2 = 150;
+	private final String TITLE = "Error";
+	private final String BTNTEXT = "OK";
+	private final int BTNBOUNDSX1 = 50;
+	private final int BTNBOUNDSY1 = 10;
+	private final int BTNBOUNDSX2 = 60;
+	private final int BTNBOUNDSY2 = 30;
 	
     private ExceptionEnum exceptionEnum;
     private String forTheAllign="       ";
@@ -37,7 +37,7 @@ public class ErrorRegisterLoginGUI extends JFrame implements ActionListener {
 		JLabel errLabel = new JLabel(forTheAllign + exceptionEnum.getValue());
         this.add(errLabel);
 		// add button
-        buttonPanel buttonPanel = new JPanel();
+        JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(null);
         JButton OKButton = new JButton(BTNTEXT);
         OKButton.setBounds(BTNBOUNDSX1, BTNBOUNDSY1, BTNBOUNDSX2, BTNBOUNDSY2);

@@ -17,9 +17,36 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 
 public class UpdateIDOperationGUI extends JFrame {
-	
-    private JTextField jOldIDTextField;
-    private JTextField jNewIDTextField;
+
+    private final String TITLE="UpdateID operation window";
+    private final String OLDIDLABEL="Insert the old id of the operation: ";
+    private final String NEWIDLABEL="Insert the new id for the operation: ";
+    private final int WINDOWX1=600;
+    private final int WINDOWY1=200;
+    private final int WINDOWX2=350;
+    private final int WINDOWY2=200;
+    private final int OLDIDLABELX1=10;
+    private final int OLDIDLABELY1=10;
+    private final int OLDIDLABELX2=300;
+    private final int OLDIDLABELY2=25;
+    private final int OLDIDTEXTX1=10;
+    private final int OLDIDTEXTY1=40;
+    private final int OLDIDTEXTX2=150;
+    private final int OLDIDTEXTY2=25;
+    private final int NEWIDLABELX1=10;
+    private final int NEWIDLABELY1=70;
+    private final int NEWIDLABELX2=300;
+    private final int NEWIDLABELY2=25;
+    private final int NEWIDTEXTX1=10;
+    private final int NEWIDTEXTY1=100;
+    private final int NEWIDTEXTX2=200;
+    private final int NEWIDTEXTY2=25;
+    private final int BUTTONX1=125;
+    private final int BUTTONY1=135;
+    private final int BUTTONX2=75;
+    private final int BUTTONY2=20;
+    //private JTextField jOldIDTextField;
+    //private JTextField jNewIDTextField;
     private String number;
     private String numberCalling;
 
@@ -30,24 +57,24 @@ public class UpdateIDOperationGUI extends JFrame {
 	}
 
      private void initialize() {
-        this.setBounds(600,200,350,200);
+        this.setBounds(WINDOWX1,WINDOWY1,WINDOWX2,WINDOWY2);
         this.setLayout(null);
         this.setResizable(false);
-        this.setTitle("UpdateID operation window");
-        JLabel jL1 = new JLabel("Insert the old id of the operation: ");
-        jL1.setBounds(10,10,300,25);
+        this.setTitle(TITLE);
+        JLabel jL1 = new JLabel(OLDIDLABEL);
+        jL1.setBounds(OLDIDLABELX1,OLDIDLABELY1,OLDIDLABELX2,OLDIDLABELY2);
         this.add(jL1);
-        jOldIDTextField = new JTextField("");
-        jOldIDTextField.setBounds(10,40,150,25);
+        JTextField jOldIDTextField = new JTextField("");
+        jOldIDTextField.setBounds(OLDIDTEXTX1,OLDIDTEXTY1,OLDIDTEXTX2,OLDIDTEXTY2);
         this.add(jOldIDTextField);
-        JLabel jL2 = new JLabel("Insert the new id for the operation: ");
-        jL2.setBounds(10,70,300,25);
+        JLabel jL2 = new JLabel(NEWIDLABEL);
+        jL2.setBounds(NEWIDLABELX1,NEWIDLABELY1,NEWIDLABELX2,NEWIDLABELY2);
         this.add(jL2);
-        jNewIDTextField = new JTextField("");
-        jNewIDTextField.setBounds(10,100,200,25);
+        JTextField jNewIDTextField = new JTextField("");
+        jNewIDTextField.setBounds(NEWIDTEXTX1,NEWIDTEXTY1,NEWIDTEXTX2,NEWIDTEXTY2);
         this.add(jNewIDTextField);
         JButton button = new JButton("OK");
-        button.setBounds(125,135,75,20);
+        button.setBounds(BUTTONX1,BUTTONY1,BUTTONX2,BUTTONY2);
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -60,7 +87,7 @@ public class UpdateIDOperationGUI extends JFrame {
                             ObjectInputStream is = new ObjectInputStream(socket.getInputStream());
                             os.writeObject(new MessageServer(MessageType.MODIFYIDOPERATION, numberCalling, jOldIDTextField.getText().trim(), number, jNewIDTextField.getText().trim()));
                             Operation operationUpdated = (Operation) is.readObject();
-                            if(operationUpdated != null && operationUpdated.getId().equals(jOldIDTextField.getText().trim())) {
+                            if(operationUpdated != null && operationUpdated.getId().equals(jNewIDTextField.getText().trim())) {
                                 end();
                             }
                         } catch (IOException | ClassNotFoundException ex) {
@@ -95,16 +122,7 @@ public class UpdateIDOperationGUI extends JFrame {
      * @return
      */
     private boolean isValid(String iDToCheck){
-		// TODO: change
-		// return !Pattern.matches("[a-zA-Z]+", iDToCheck)
-		// --- or
-		// return iDToCheck.chars().allMatch(x -> Character.isDigit(x));
-        for(int i=0;i<iDToCheck.length();i++){
-            if(!Character.isDigit(iDToCheck.charAt(i))){
-                return false;
-            }
-        }
-        return true;
+        return iDToCheck.chars().allMatch(x -> Character.isDigit(x));
     }
 
 

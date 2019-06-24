@@ -19,8 +19,27 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 
 public class UpdateUsernameOperatorGUI extends JFrame {
-	
-    private JTextField jT1;
+
+    private final int WINDOWX1=600;
+    private final int WINDOWY1=200;
+    private final int WINDOWX2=370;
+    private final int WINDOWY2=150;
+    private final int LABELUSERX1=10;
+    private final int LABELUSERY1=10;
+    private final int LABELUSERX2=300;
+    private final int LABELUSERY2=25;
+    private final int TEXTUSERX1=10;
+    private final int TEXTUSERY1=35;
+    private final int TEXTUSERX2=200;
+    private final int TEXTUSERY2=25;
+    private final int BUTTONX1=135;
+    private final int BUTTONY1=80;
+    private final int BUTTONX2=60;
+    private final int BUTTONY2=20;
+    private final String TITLE="Update username operator window";
+    private final String LABEL="Insert your new Username: ";
+    private final String BUTTON="OK";
+    //private JTextField jT1;
     private String number;
     private String numCalling;
     private MenuOperationsGUI menuOperationsGUI;
@@ -33,18 +52,18 @@ public class UpdateUsernameOperatorGUI extends JFrame {
     }
 
     private void initialize(String username) {
-        this.setBounds(600,200,370,150);
+        this.setBounds(WINDOWX1,WINDOWY1,WINDOWX2,WINDOWY2);
         this.setLayout(null);
         this.setResizable(false);
-        this.setTitle("Update username operator window");
-        JLabel jL1 = new JLabel("Insert your new Username: ");
-        jL1.setBounds(10,10,300,25);
+        this.setTitle(TITLE);
+        JLabel jL1 = new JLabel(LABEL);
+        jL1.setBounds(LABELUSERX1,LABELUSERY1,LABELUSERX2,LABELUSERY2);
         this.add(jL1);
-        jT1 = new JTextField("");
-        jT1.setBounds(10,35,200,25);
+        JTextField jT1 = new JTextField("");
+        jT1.setBounds(TEXTUSERX1,TEXTUSERY1,TEXTUSERX2,TEXTUSERY2);
         this.add(jT1);
-        JButton button=new JButton("OK");
-        button.setBounds(135,80,60,20);
+        JButton button=new JButton(BUTTON);
+        button.setBounds(BUTTONX1,BUTTONY1,BUTTONX2,BUTTONY2);
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -58,12 +77,12 @@ public class UpdateUsernameOperatorGUI extends JFrame {
 							ObjectInputStream is = new ObjectInputStream(socket.getInputStream());
 							os.writeObject(new MessageServer(MessageType.MODIFYUSERNAME, numCalling, number, username, jT1.getText().trim()));
 							updatedOperator = (Operator) is.readObject();
-							if (updatedOperator.getUsername().equals(jT1.getText().trim())){
+							if (updatedOperator.getUsername().equals(username)){
 								OperatorAlreadyUsed operatorAlreadyUsed = new OperatorAlreadyUsed();
 								operatorAlreadyUsed.setVisible(true);
 							}
 							else {
-								menuOperationsGUI.updateOperator(updatedOperator);
+								menuOperationsGUI.setOperator(updatedOperator);
 								end();
 							}
 						} catch (IOException | ClassNotFoundException ex) {
@@ -98,7 +117,7 @@ public class UpdateUsernameOperatorGUI extends JFrame {
      * @return
      */
     private boolean isValid(JTextField toCheck){
-        return toCheck.getText().trim().length() < 8;
+        return toCheck.getText().trim().length() >= 8;
     }
 
 }

@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.util.regex.Pattern;
 
 public class DeleteOperationGUI extends JFrame {
 	
@@ -52,7 +53,7 @@ public class DeleteOperationGUI extends JFrame {
         this.setResizable(false);
         this.setTitle(TITLE);
         JLabel inputLabel = new JLabel(INPUT);
-        inputLabel.setBounds(LABELX1, LABELY1, LABELX2, LABELX2);
+        inputLabel.setBounds(LABELX1, LABELY1, LABELX2, LABELY2);
         this.add(inputLabel);
         JTextField inputField = new JTextField("");
         inputField.setBounds(FIELDX1, FIELDY1, FIELDX2, FIELDY2);
@@ -102,15 +103,6 @@ public class DeleteOperationGUI extends JFrame {
      * @return
      */
     private boolean isValid(String iDToCheck) {
-		// TODO: change
-		// return !Pattern.matches("[a-zA-Z]+", iDToCheck)
-		// --- or
-		// return iDToCheck.chars().allMatch(x -> Character.isDigit(x));
-        for(int i=0;i<iDToCheck.length();i++){
-            if(!Character.isDigit(iDToCheck.charAt(i))){
-                return false;
-            }
-        }
-        return true;
+		return iDToCheck.chars().allMatch(x -> Character.isDigit(x));
     }
 }

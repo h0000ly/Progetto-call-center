@@ -35,8 +35,9 @@ public class CallGUI extends JFrame implements ActionListener {
     private final String STARTCALL = "Call started";
     private final String ENDCALL = "Call ended";
     private final String NUMBERBUTTONPRESSED = "The user pressed the button";
-	private final String IMAGE = "endCall.jpg";
-    private  calling = false;
+	private final String IMAGEEND = "endCall.jpg";
+	private final String IMAGESTART="enterCall.jpg";
+    private  boolean calling;
     private String st = "";
 	
     private JTextField textOnDisplay;
@@ -79,7 +80,7 @@ public class CallGUI extends JFrame implements ActionListener {
         this.setLayout(null);
         buttonAndTextPanel = new JPanel();
         buttonAndTextPanel.setLayout(null);
-		// TODO: fix
+
         buttonAndTextPanel.setBounds(10, 50, 290, 290);
         buttonAndTextPanel.setBounds(0, 10, buttonAndTextPanel.getWidth(), buttonAndTextPanel.getHeight());
 		
@@ -159,14 +160,14 @@ public class CallGUI extends JFrame implements ActionListener {
         buttonDel.setBounds(button6.getX(), button0.getY(), BUTTONWIDTH, BUTTONHEIGHT);
         buttonAndTextPanel.add(buttonDel);
 
-        buttonSC = new JButton(new ImageIcon(IMAGE));
+        buttonSC = new JButton(new ImageIcon(IMAGEEND));
         buttonSC.setBackground(new Color(BUTTONR, BUTTONG, BUTTONB));
         buttonSC.addActionListener(this);
         buttonSC.setActionCommand("endcall");
         buttonSC.setBounds(130, 80, 120, BUTTONHEIGHT);
         buttonAndTextPanel.add(buttonSC);
 
-        buttonEC = new JButton(new ImageIcon("enterCall.jpg"));
+        buttonEC = new JButton(new ImageIcon(IMAGESTART));
         buttonEC.setBackground(Color.white);
         buttonEC.addActionListener(this);
         buttonEC.setBackground(new Color(BUTTONR, BUTTONG, BUTTONB));
@@ -276,14 +277,7 @@ public class CallGUI extends JFrame implements ActionListener {
             os.writeObject(new MessageServer(MessageType.RETURNAVAILABLECHOICES, numberCalling,telNumberCalled,toTest));
             options = (ArrayList<Operation>) is.readObject();
             for(Operation operation : options){
-				// TODO: maybe put this as a public method in Operation?
-				// --- in Operation class
-				// public String getRepr() {
-				// 	return this.id.charAt(this.id.length() - 1) + " - " + this.textOp;
-				// }
-				// --- here
-				// optionString.add(operation.getRepr());
-                optionString.add(operation.getId().charAt(operation.getId().length() - 1) + " - " + operation.getTextOp());
+                optionString.add(operation.getNextAvailableChoice());
             }
             showOptions(optionString);
         } catch (IOException | ClassNotFoundException ex) {

@@ -15,9 +15,36 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 
 public class UpdateTextOperationGUI extends JFrame {
-	
-    private JTextField jT1;
-    private JTextField jT2;
+    private final int WINDOWX1=600;
+    private final int WINDOWY1=200;
+    private final int WINDOWX2=345;
+    private final int WINDOWY2=180;
+    private final int LABELIDX1=10;
+    private final int LABELIDY1=10;
+    private final int LABELIDX2=300;
+    private final int LABELIDY2=25;
+    private final int TEXTIDX1=10;
+    private final int TEXTIDY1=30;
+    private final int TEXTIDX2=200;
+    private final int TEXTIDY2=25;
+    private final int LABELTEXTX1=10;
+    private final int LABELTEXTY1=60;
+    private final int LABELTEXTX2=300;
+    private final int LABELTEXTY2=25;
+    private final int TEXTTEXTX1=10;
+    private final int TEXTTEXTY1=80;
+    private final int TEXTTEXTX2=200;
+    private final int TEXTTEXTY2=25;
+    private final int BUTTONX1=130;
+    private final int BUTTONY1=113;
+    private final int BUTTONX2=60;
+    private final int BUTTONY2=20;
+    private final String TITLE="UpdateText operation window";
+    private final String LABELID="Insert the id of the operation to modify: ";
+    private final String LABELTEXT="Insert the new text for the operation: ";
+    private final String BUTTON="OK";
+    //private JTextField jT1;
+    //private JTextField jT2;
     private String number;
     private String numCalling;
 
@@ -28,24 +55,24 @@ public class UpdateTextOperationGUI extends JFrame {
     }
 	
     private void initialize(){
-        this.setBounds(600,200,345,180);
+        this.setBounds(WINDOWX1,WINDOWY1,WINDOWX2,WINDOWY2);
         this.setLayout(null);
         this.setResizable(false);
-        this.setTitle("UpdateText operation window");
-        JLabel jL1 = new JLabel("Insert the id of the operation to modify: ");
-        jL1.setBounds(10,10,300,25);
+        this.setTitle(TITLE);
+        JLabel jL1 = new JLabel(LABELID);
+        jL1.setBounds(LABELIDX1,LABELIDY1,LABELIDX2,LABELIDY2);
         this.add(jL1);
-        jT1 = new JTextField("");
-        jT1.setBounds(10,30,200,25);
+        JTextField jT1 = new JTextField("");
+        jT1.setBounds(TEXTIDX1,TEXTIDY1,TEXTIDX2,TEXTIDY2);
         this.add(jT1);
-        JLabel jL2 = new JLabel("Insert the new text for the operation: ");
-        jL2.setBounds(10,60,300,25);
+        JLabel jL2 = new JLabel(LABELTEXT);
+        jL2.setBounds(LABELTEXTX1,LABELTEXTY1,LABELTEXTX2,LABELTEXTY2);
         this.add(jL2);
-        jT2 = new JTextField("");
-        jT2.setBounds(10,80,200,25);
+        JTextField jT2 = new JTextField("");
+        jT2.setBounds(TEXTTEXTX1,TEXTTEXTY1,TEXTTEXTX2,TEXTTEXTY2);
         this.add(jT2);
-        JButton button = new JButton("OK");
-        button.setBounds(130,113,60,20);
+        JButton button = new JButton(BUTTON);
+        button.setBounds(BUTTONX1,BUTTONY1,BUTTONX2,BUTTONY2);
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -82,10 +109,6 @@ public class UpdateTextOperationGUI extends JFrame {
      * @return
      */
     private boolean isValid(String iDToCheck){
-		// TODO: change
-		// return !Pattern.matches("[a-zA-Z]+", iDToCheck)
-		// --- or
-		// return iDToCheck.chars().allMatch(x -> Character.isDigit(x));
         for(int i=0;i<iDToCheck.length();i++){
             if(!Character.isDigit(iDToCheck.charAt(i))){
                 return false;

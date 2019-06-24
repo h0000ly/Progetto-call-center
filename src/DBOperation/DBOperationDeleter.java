@@ -1,12 +1,10 @@
 package DBOperation;
 
-import dataHistory.DataWriter;
+
 import dataHistory.DataWriterServer;
 import model.Operation;
 import GUInterface.Exception.DBOperationEmpty;
 import GUInterface.Exception.OperationNotFound;
-
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

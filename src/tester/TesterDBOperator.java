@@ -25,6 +25,7 @@ public class TesterDBOperator {
         instance.addOperatorToDatabase(numCalling,new Operator("5555","Nice Username","Nice Password"));
         instance.updateUsername(numCalling,"5555","Nice Username", "Nice Username 2");
         instance.updatePassword(numCalling,new Operator("5555","Nice Username 2","Nice Password 2"));
+
     }
     @After
     public void dataClean(){
